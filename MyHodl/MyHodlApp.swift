@@ -18,4 +18,5 @@ struct MyHodlApp: App {
                 .preferredColorScheme(themeManager.preferredSystemScheme())
         }
     }
+    
 }
