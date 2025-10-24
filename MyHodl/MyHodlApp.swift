@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct MyHodlApp: App {
+    @State private var themeManager = ThemeManager()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView()
+                .environment(themeManager)
+                .preferredColorScheme(themeManager.preferredSystemScheme())
         }
     }
 }

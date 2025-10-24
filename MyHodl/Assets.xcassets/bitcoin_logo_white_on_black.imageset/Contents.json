@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "bitcoin_logo_white_on_black.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

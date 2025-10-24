@@ -6,17 +6,27 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		760947692EAA66A70010F54D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760947642EAA66A70010F54D /* ContentView.swift */; };
+		7609476A2EAA66A70010F54D /* MyHodlApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760947672EAA66A70010F54D /* MyHodlApp.swift */; };
+		7609476B2EAA66A70010F54D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 760947632EAA66A70010F54D /* Assets.xcassets */; };
+		7609476C2EAA66A70010F54D /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 760947652EAA66A70010F54D /* Launch Screen.storyboard */; };
+		7609476E2EAA66C30010F54D /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7609476D2EAA66C30010F54D /* Theme.swift */; };
+		760947702EAA66CC0010F54D /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7609476F2EAA66CC0010F54D /* ThemeManager.swift */; };
+		76412F742EAB6590005E5A9A /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76412F732EAB6590005E5A9A /* RootView.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		760947632EAA66A70010F54D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		760947642EAA66A70010F54D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		760947652EAA66A70010F54D /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		760947662EAA66A70010F54D /* MyHodl.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyHodl.entitlements; sourceTree = "<group>"; };
+		760947672EAA66A70010F54D /* MyHodlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHodlApp.swift; sourceTree = "<group>"; };
+		7609476D2EAA66C30010F54D /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		7609476F2EAA66CC0010F54D /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		76412F732EAB6590005E5A9A /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		76E1196B2E4D0E8F00AA1AED /* MyHodl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyHodl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		76E1196D2E4D0E8F00AA1AED /* MyHodl */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = MyHodl;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		76E119682E4D0E8F00AA1AED /* Frameworks */ = {
@@ -29,10 +39,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		760947622EAA66A70010F54D /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				7609476D2EAA66C30010F54D /* Theme.swift */,
+				7609476F2EAA66CC0010F54D /* ThemeManager.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		760947682EAA66A70010F54D /* MyHodl */ = {
+			isa = PBXGroup;
+			children = (
+				760947632EAA66A70010F54D /* Assets.xcassets */,
+				760947642EAA66A70010F54D /* ContentView.swift */,
+				760947652EAA66A70010F54D /* Launch Screen.storyboard */,
+				760947662EAA66A70010F54D /* MyHodl.entitlements */,
+				760947672EAA66A70010F54D /* MyHodlApp.swift */,
+				76412F732EAB6590005E5A9A /* RootView.swift */,
+				760947622EAA66A70010F54D /* Theme */,
+			);
+			path = MyHodl;
+			sourceTree = "<group>";
+		};
 		76E119622E4D0E8F00AA1AED = {
 			isa = PBXGroup;
 			children = (
-				76E1196D2E4D0E8F00AA1AED /* MyHodl */,
+				760947682EAA66A70010F54D /* MyHodl */,
 				76E1196C2E4D0E8F00AA1AED /* Products */,
 			);
 			sourceTree = "<group>";
@@ -60,9 +93,6 @@
 			);
 			dependencies = (
 			);
-			fileSystemSynchronizedGroups = (
-				76E1196D2E4D0E8F00AA1AED /* MyHodl */,
-			);
 			name = MyHodl;
 			packageProductDependencies = (
 			);
@@ -78,7 +108,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1640;
-				LastUpgradeCheck = 1640;
+				LastUpgradeCheck = 2600;
 				TargetAttributes = {
 					76E1196A2E4D0E8F00AA1AED = {
 						CreatedOnToolsVersion = 16.4;
@@ -109,6 +139,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7609476B2EAA66A70010F54D /* Assets.xcassets in Resources */,
+				7609476C2EAA66A70010F54D /* Launch Screen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +151,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7609476E2EAA66C30010F54D /* Theme.swift in Sources */,
+				760947692EAA66A70010F54D /* ContentView.swift in Sources */,
+				7609476A2EAA66A70010F54D /* MyHodlApp.swift in Sources */,
+				760947702EAA66CC0010F54D /* ThemeManager.swift in Sources */,
+				76412F742EAB6590005E5A9A /* RootView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,6 +196,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -177,12 +215,15 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
 			};
 			name = Debug;
 		};
@@ -220,6 +261,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -232,10 +274,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 6.0;
 			};
 			name = Release;
 		};
@@ -247,7 +292,9 @@
 				CODE_SIGN_ENTITLEMENTS = MyHodl/MyHodl.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -255,11 +302,11 @@
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.5;
@@ -267,10 +314,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.DarkSatyr.MyHodl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
-				SDKROOT = auto;
+				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
 				XROS_DEPLOYMENT_TARGET = 2.5;
 			};
@@ -284,7 +330,9 @@
 				CODE_SIGN_ENTITLEMENTS = MyHodl/MyHodl.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -292,11 +340,11 @@
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.5;
@@ -304,10 +352,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.DarkSatyr.MyHodl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
-				SDKROOT = auto;
+				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
 				XROS_DEPLOYMENT_TARGET = 2.5;
 			};
