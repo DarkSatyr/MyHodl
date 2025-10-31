@@ -15,8 +15,8 @@ struct MyHodlApp: App {
         WindowGroup {
             RootView()
                 .environment(themeManager)
+                .foregroundStyle(themeManager.currentTheme.background)
                 .preferredColorScheme(themeManager.preferredSystemScheme())
         }
     }
-    
 }

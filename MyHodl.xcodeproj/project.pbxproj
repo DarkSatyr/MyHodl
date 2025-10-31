@@ -14,6 +14,8 @@
 		7609476E2EAA66C30010F54D /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7609476D2EAA66C30010F54D /* Theme.swift */; };
 		760947702EAA66CC0010F54D /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7609476F2EAA66CC0010F54D /* ThemeManager.swift */; };
 		76412F742EAB6590005E5A9A /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76412F732EAB6590005E5A9A /* RootView.swift */; };
+		7668D2202EB34ADE00131EB5 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7668D21F2EB34ADE00131EB5 /* SettingsView.swift */; };
+		7668D22B2EB5264200131EB5 /* ThemeSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7668D22A2EB5264200131EB5 /* ThemeSettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		7609476D2EAA66C30010F54D /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		7609476F2EAA66CC0010F54D /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		76412F732EAB6590005E5A9A /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		7668D21F2EB34ADE00131EB5 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		7668D22A2EB5264200131EB5 /* ThemeSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSettingsView.swift; sourceTree = "<group>"; };
 		76E1196B2E4D0E8F00AA1AED /* MyHodl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyHodl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -51,15 +55,25 @@
 		760947682EAA66A70010F54D /* MyHodl */ = {
 			isa = PBXGroup;
 			children = (
-				760947632EAA66A70010F54D /* Assets.xcassets */,
+				76412F732EAB6590005E5A9A /* RootView.swift */,
 				760947642EAA66A70010F54D /* ContentView.swift */,
 				760947652EAA66A70010F54D /* Launch Screen.storyboard */,
 				760947662EAA66A70010F54D /* MyHodl.entitlements */,
 				760947672EAA66A70010F54D /* MyHodlApp.swift */,
-				76412F732EAB6590005E5A9A /* RootView.swift */,
+				7668D2292EB5262A00131EB5 /* Settings */,
 				760947622EAA66A70010F54D /* Theme */,
+				760947632EAA66A70010F54D /* Assets.xcassets */,
 			);
 			path = MyHodl;
+			sourceTree = "<group>";
+		};
+		7668D2292EB5262A00131EB5 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				7668D21F2EB34ADE00131EB5 /* SettingsView.swift */,
+				7668D22A2EB5264200131EB5 /* ThemeSettingsView.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		76E119622E4D0E8F00AA1AED = {
@@ -152,8 +166,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				7609476E2EAA66C30010F54D /* Theme.swift in Sources */,
+				7668D22B2EB5264200131EB5 /* ThemeSettingsView.swift in Sources */,
 				760947692EAA66A70010F54D /* ContentView.swift in Sources */,
 				7609476A2EAA66A70010F54D /* MyHodlApp.swift in Sources */,
+				7668D2202EB34ADE00131EB5 /* SettingsView.swift in Sources */,
 				760947702EAA66CC0010F54D /* ThemeManager.swift in Sources */,
 				76412F742EAB6590005E5A9A /* RootView.swift in Sources */,
 			);
@@ -294,6 +310,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -332,6 +349,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;

@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(ThemeManager.self) private var themeManager
+    
     var body: some View {
         VStack {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundStyle(.tint)
             Text("Hello, world!")
+                .background(themeManager.currentTheme.background)
         }
         .padding()
     }

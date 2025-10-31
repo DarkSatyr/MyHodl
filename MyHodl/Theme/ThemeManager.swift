@@ -7,43 +7,52 @@
 
 import SwiftUI
 
-enum ThemeType: String {
-    case system
-    case dark
-    case light
-}
-
 @MainActor
 @Observable
 class ThemeManager {
     
     var currentTheme: Theme
+    var type: ThemeType
     private static let key = "theme.type"
     
     init() {
-        currentTheme = Self.preferredTheme()
+        let type = Self.readThemeType()
+        currentTheme = Self.theme(for: type)
+        self.type = type
     }
     
     func setThemeType(_ type: ThemeType) {
         Self.saveThemeType(type)
-        currentTheme = Self.preferredTheme()
+        currentTheme = Self.preferredTheme(type: type)
+        self.type = type
     }
     
     func updateSystemScheme(_ scheme: ColorScheme) {
-        if Self.readThemeType() != .system {
+        if type != .system {
             return
         }
-        currentTheme = Self.preferredTheme(scheme: scheme)
+        currentTheme = Self.preferredTheme(type: type, scheme: scheme)
     }
     
     func preferredSystemScheme() -> ColorScheme? {
-        switch Self.readThemeType() {
+        switch type {
         case .dark:
             return .dark
         case .light:
             return .light
         case .system:
             return nil
+        }
+    }
+    
+    static func systemScheme() -> ColorScheme {
+        switch UITraitCollection.current.userInterfaceStyle {
+        case .dark:
+            return .dark
+        case .light:
+            return .light
+        default:
+            return .dark
         }
     }
     
@@ -56,20 +65,8 @@ class ThemeManager {
         UserDefaults.standard.set(type.rawValue, forKey: key)
     }
     
-    private static func preferredTheme(scheme: ColorScheme? = nil) -> Theme {
-        let type = readThemeType()
-        return theme(for: type, scheme: scheme)
-    }
-    
-    private static func systemScheme() -> ColorScheme {
-        switch UITraitCollection.current.userInterfaceStyle {
-        case .dark:
-            return .dark
-        case .light:
-            return .light
-        default:
-            return .dark
-        }
+    private static func preferredTheme(type: ThemeType, scheme: ColorScheme? = nil) -> Theme {
+        theme(for: type, scheme: scheme)
     }
     
     private static func theme(for type: ThemeType, scheme: ColorScheme? = nil) -> Theme {
