@@ -16,6 +16,9 @@
 		76412F742EAB6590005E5A9A /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76412F732EAB6590005E5A9A /* RootView.swift */; };
 		7668D2202EB34ADE00131EB5 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7668D21F2EB34ADE00131EB5 /* SettingsView.swift */; };
 		7668D22B2EB5264200131EB5 /* ThemeSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7668D22A2EB5264200131EB5 /* ThemeSettingsView.swift */; };
+		76E104F92EC1D8BC006C1E83 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 76E104F72EC1D8BC006C1E83 /* Localizable.strings */; };
+		76E104FB2EC1D914006C1E83 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 76E104FA2EC1D914006C1E83 /* swiftgen.yml */; };
+		76E105052EC1DF87006C1E83 /* LocalizationStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E105032EC1DF87006C1E83 /* LocalizationStrings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +32,10 @@
 		76412F732EAB6590005E5A9A /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		7668D21F2EB34ADE00131EB5 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		7668D22A2EB5264200131EB5 /* ThemeSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSettingsView.swift; sourceTree = "<group>"; };
+		76E104F82EC1D8BC006C1E83 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		76E104FA2EC1D914006C1E83 /* swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
+		76E104FC2EC1D98C006C1E83 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
+		76E105032EC1DF87006C1E83 /* LocalizationStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationStrings.swift; sourceTree = "<group>"; };
 		76E1196B2E4D0E8F00AA1AED /* MyHodl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyHodl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -55,13 +62,16 @@
 		760947682EAA66A70010F54D /* MyHodl */ = {
 			isa = PBXGroup;
 			children = (
+				76E104FA2EC1D914006C1E83 /* swiftgen.yml */,
 				76412F732EAB6590005E5A9A /* RootView.swift */,
 				760947642EAA66A70010F54D /* ContentView.swift */,
 				760947652EAA66A70010F54D /* Launch Screen.storyboard */,
 				760947662EAA66A70010F54D /* MyHodl.entitlements */,
 				760947672EAA66A70010F54D /* MyHodlApp.swift */,
+				76E105042EC1DF87006C1E83 /* Generated */,
 				7668D2292EB5262A00131EB5 /* Settings */,
 				760947622EAA66A70010F54D /* Theme */,
+				76E104F42EC1D57E006C1E83 /* Supporting Files */,
 				760947632EAA66A70010F54D /* Assets.xcassets */,
 			);
 			path = MyHodl;
@@ -74,6 +84,30 @@
 				7668D22A2EB5264200131EB5 /* ThemeSettingsView.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		76E104F42EC1D57E006C1E83 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				76E104FD2EC1D9A8006C1E83 /* Localizations */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		76E104FD2EC1D9A8006C1E83 /* Localizations */ = {
+			isa = PBXGroup;
+			children = (
+				76E104F72EC1D8BC006C1E83 /* Localizable.strings */,
+			);
+			path = Localizations;
+			sourceTree = "<group>";
+		};
+		76E105042EC1DF87006C1E83 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				76E105032EC1DF87006C1E83 /* LocalizationStrings.swift */,
+			);
+			path = Generated;
 			sourceTree = "<group>";
 		};
 		76E119622E4D0E8F00AA1AED = {
@@ -99,6 +133,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 76E119772E4D0E9100AA1AED /* Build configuration list for PBXNativeTarget "MyHodl" */;
 			buildPhases = (
+				76E104FE2EC1DA45006C1E83 /* SwiftGen */,
 				76E119672E4D0E8F00AA1AED /* Sources */,
 				76E119682E4D0E8F00AA1AED /* Frameworks */,
 				76E119692E4D0E8F00AA1AED /* Resources */,
@@ -135,6 +170,7 @@
 			knownRegions = (
 				en,
 				Base,
+				uk,
 			);
 			mainGroup = 76E119622E4D0E8F00AA1AED;
 			minimizedProjectReferenceProxies = 1;
@@ -154,11 +190,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				7609476B2EAA66A70010F54D /* Assets.xcassets in Resources */,
+				76E104F92EC1D8BC006C1E83 /* Localizable.strings in Resources */,
 				7609476C2EAA66A70010F54D /* Launch Screen.storyboard in Resources */,
+				76E104FB2EC1D914006C1E83 /* swiftgen.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		76E104FE2EC1DA45006C1E83 /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# SwiftGen\nset -euo pipefail\n/opt/homebrew/bin/swiftgen config run --config \"$SRCROOT/MyHodl/swiftgen.yml\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		76E119672E4D0E8F00AA1AED /* Sources */ = {
@@ -172,10 +231,23 @@
 				7668D2202EB34ADE00131EB5 /* SettingsView.swift in Sources */,
 				760947702EAA66CC0010F54D /* ThemeManager.swift in Sources */,
 				76412F742EAB6590005E5A9A /* RootView.swift in Sources */,
+				76E105052EC1DF87006C1E83 /* LocalizationStrings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		76E104F72EC1D8BC006C1E83 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				76E104F82EC1D8BC006C1E83 /* en */,
+				76E104FC2EC1D98C006C1E83 /* uk */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		76E119752E4D0E9100AA1AED /* Debug */ = {
@@ -183,6 +255,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -238,6 +311,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 6.0;
 			};
@@ -248,6 +322,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -296,6 +371,7 @@
 				MTL_FAST_MATH = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 6.0;
 			};
 			name = Release;

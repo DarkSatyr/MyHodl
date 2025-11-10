@@ -35,7 +35,7 @@ struct SettingsView: View {
             }
             .scrollContentBackground(.hidden)
             .listStyle(.insetGrouped)
-            .navigationTitle("Налаштування")
+            .navigationTitle(L10n.settings)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Скасувати", action: { dismiss() })
