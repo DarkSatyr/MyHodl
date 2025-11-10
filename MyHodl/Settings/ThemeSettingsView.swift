@@ -44,7 +44,7 @@ struct ThemeSettingsView: View {
             .listStyle(.insetGrouped)
             .scrollContentBackground(.hidden)
             .background(themeManager.currentTheme.background)
-            .navigationTitle("Select Theme")
+            .navigationTitle(L10n.themeSelect)
         }
         .onAppear {
             selectedType = themeManager.type

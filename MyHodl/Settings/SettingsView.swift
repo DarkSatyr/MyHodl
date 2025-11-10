@@ -22,13 +22,13 @@ struct SettingsView: View {
                             Text(themeManager.type.name)
                                 .foregroundStyle(themeManager.currentTheme.textSecondary)
                         } label: {
-                            Label("Тема", systemImage: "paintbrush.fill")
+                            Label(L10n.theme, systemImage: "paintbrush.fill")
                                 .foregroundStyle(themeManager.currentTheme.text)
                         }
                     }
                     .listRowBackground(themeManager.currentTheme.card)
                 } header: {
-                    Text("Visual Appearance")
+                    Text(L10n.themeVisualAppearence)
                         .foregroundStyle(themeManager.currentTheme.textSecondary)
                 }
                 .foregroundStyle(themeManager.currentTheme.textSecondary)
@@ -38,7 +38,7 @@ struct SettingsView: View {
             .navigationTitle(L10n.settings)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Скасувати", action: { dismiss() })
+                    Button(L10n.buttonDiscard, action: { dismiss() })
                         .foregroundStyle(themeManager.currentTheme.text)
                 }
             }

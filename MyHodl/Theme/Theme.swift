@@ -15,22 +15,22 @@ enum ThemeType: String, CaseIterable {
     var name: String {
         switch self {
         case .system:
-            return "System"
+            return L10n.themeSystem
         case .dark:
-            return "Dark"
+            return L10n.themeDark
         case .light:
-            return "Light"
+            return L10n.themeLight
         }
     }
     
     var subtitle: String {
         switch self {
         case .system:
-            return "Follow device settings"
+            return L10n.themeSystemDesc
         case .dark:
-            return "Dimmed appearance, comfortable at night"
+            return L10n.themeDarkDesc
         case .light:
-            return "Bright appearance with maximum contrast"
+            return L10n.themeLightDesc
         }
     }
 }

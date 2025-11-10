@@ -10,11 +10,31 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 public enum L10n {
+  /// Discard
+  public static let buttonDiscard = L10n.tr("Localizable", "button_discard", fallback: "Discard")
   /// Localizable.strings
   ///   MyHodl
   /// 
   ///   Created by DarkSatyr on 10.11.2025.
-  public static let settings = L10n.tr("Localizable", "Settings", fallback: "Settings")
+  public static let settings = L10n.tr("Localizable", "settings", fallback: "Settings")
+  /// Theme
+  public static let theme = L10n.tr("Localizable", "theme", fallback: "Theme")
+  /// Dark
+  public static let themeDark = L10n.tr("Localizable", "theme_dark", fallback: "Dark")
+  /// Dimmed appearance, comfortable at night
+  public static let themeDarkDesc = L10n.tr("Localizable", "theme_dark_desc", fallback: "Dimmed appearance, comfortable at night")
+  /// Light
+  public static let themeLight = L10n.tr("Localizable", "theme_light", fallback: "Light")
+  /// Bright appearance with maximum contrast
+  public static let themeLightDesc = L10n.tr("Localizable", "theme_light_desc", fallback: "Bright appearance with maximum contrast")
+  /// Select Theme
+  public static let themeSelect = L10n.tr("Localizable", "theme_select", fallback: "Select Theme")
+  /// System
+  public static let themeSystem = L10n.tr("Localizable", "theme_system", fallback: "System")
+  /// Follow device settings
+  public static let themeSystemDesc = L10n.tr("Localizable", "theme_system_desc", fallback: "Follow device settings")
+  /// Visual Appearance
+  public static let themeVisualAppearence = L10n.tr("Localizable", "theme_visual_appearence", fallback: "Visual Appearance")
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces
