@@ -45,6 +45,7 @@ struct ThemeSettingsView: View {
             .scrollContentBackground(.hidden)
             .background(themeManager.currentTheme.background)
             .navigationTitle(L10n.themeSelect)
+            .toolbarTitleDisplayMode(.inline)
         }
         .onAppear {
             selectedType = themeManager.type

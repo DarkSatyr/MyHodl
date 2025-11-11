@@ -36,12 +36,6 @@ struct SettingsView: View {
             .scrollContentBackground(.hidden)
             .listStyle(.insetGrouped)
             .navigationTitle(L10n.settings)
-            .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button(L10n.buttonDiscard, action: { dismiss() })
-                        .foregroundStyle(themeManager.currentTheme.text)
-                }
-            }
         }
         .background(themeManager.currentTheme.background)
     }

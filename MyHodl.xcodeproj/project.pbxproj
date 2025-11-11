@@ -19,6 +19,8 @@
 		76E104F92EC1D8BC006C1E83 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 76E104F72EC1D8BC006C1E83 /* Localizable.strings */; };
 		76E104FB2EC1D914006C1E83 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 76E104FA2EC1D914006C1E83 /* swiftgen.yml */; };
 		76E105052EC1DF87006C1E83 /* LocalizationStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E105032EC1DF87006C1E83 /* LocalizationStrings.swift */; };
+		76EB83632EC37C4A00D92E67 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EB83622EC37C4A00D92E67 /* DashboardView.swift */; };
+		76EB83662EC37D6300D92E67 /* MyHoldingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EB83652EC37D6300D92E67 /* MyHoldingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		76E104FC2EC1D98C006C1E83 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		76E105032EC1DF87006C1E83 /* LocalizationStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationStrings.swift; sourceTree = "<group>"; };
 		76E1196B2E4D0E8F00AA1AED /* MyHodl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyHodl.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		76EB83622EC37C4A00D92E67 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		76EB83652EC37D6300D92E67 /* MyHoldingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHoldingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,9 +72,11 @@
 				760947652EAA66A70010F54D /* Launch Screen.storyboard */,
 				760947662EAA66A70010F54D /* MyHodl.entitlements */,
 				760947672EAA66A70010F54D /* MyHodlApp.swift */,
-				76E105042EC1DF87006C1E83 /* Generated */,
+				76EB83612EC37C2000D92E67 /* Dashboard */,
+				76EB83642EC37C7A00D92E67 /* Holdings */,
 				7668D2292EB5262A00131EB5 /* Settings */,
 				760947622EAA66A70010F54D /* Theme */,
+				76E105042EC1DF87006C1E83 /* Generated */,
 				76E104F42EC1D57E006C1E83 /* Supporting Files */,
 				760947632EAA66A70010F54D /* Assets.xcassets */,
 			);
@@ -124,6 +130,22 @@
 				76E1196B2E4D0E8F00AA1AED /* MyHodl.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		76EB83612EC37C2000D92E67 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				76EB83622EC37C4A00D92E67 /* DashboardView.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		76EB83642EC37C7A00D92E67 /* Holdings */ = {
+			isa = PBXGroup;
+			children = (
+				76EB83652EC37D6300D92E67 /* MyHoldingsView.swift */,
+			);
+			path = Holdings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,8 +249,10 @@
 			files = (
 				7609476E2EAA66C30010F54D /* Theme.swift in Sources */,
 				7668D22B2EB5264200131EB5 /* ThemeSettingsView.swift in Sources */,
+				76EB83662EC37D6300D92E67 /* MyHoldingsView.swift in Sources */,
 				760947692EAA66A70010F54D /* ContentView.swift in Sources */,
 				7609476A2EAA66A70010F54D /* MyHodlApp.swift in Sources */,
+				76EB83632EC37C4A00D92E67 /* DashboardView.swift in Sources */,
 				7668D2202EB34ADE00131EB5 /* SettingsView.swift in Sources */,
 				760947702EAA66CC0010F54D /* ThemeManager.swift in Sources */,
 				76412F742EAB6590005E5A9A /* RootView.swift in Sources */,

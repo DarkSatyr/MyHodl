@@ -11,17 +11,27 @@ struct ContentView: View {
     @Environment(ThemeManager.self) private var themeManager
     
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-                .background(themeManager.currentTheme.background)
+        TabView {
+            DashboardView()
+                .tabItem {
+                    Label("Dashboard", systemImage: "chart.line.uptrend.xyaxis")
+                }
+            
+            MyHoldingsView()
+                .tabItem {
+                    Label("Holdings", systemImage: "bitcoinsign.circle")
+                }
+            
+            SettingsView()
+                .tabItem {
+                    Label(L10n.settings, systemImage: "gearshape")
+                }
         }
-        .padding()
+        .tint(themeManager.currentTheme.accent)
     }
 }
 
 #Preview {
     ContentView()
+        .environment(ThemeManager())
 }
