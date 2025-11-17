@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "via.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

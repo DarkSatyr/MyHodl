@@ -14,12 +14,12 @@ struct ContentView: View {
         TabView {
             DashboardView()
                 .tabItem {
-                    Label("Dashboard", systemImage: "chart.line.uptrend.xyaxis")
+                    Label(L10n.dashboard, systemImage: "chart.line.uptrend.xyaxis")
                 }
             
             MyHoldingsView()
                 .tabItem {
-                    Label("Holdings", systemImage: "bitcoinsign.circle")
+                    Label(L10n.holdings, systemImage: "bitcoinsign.circle")
                 }
             
             SettingsView()

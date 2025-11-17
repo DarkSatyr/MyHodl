@@ -13,7 +13,7 @@ struct MyHoldingsView: View {
     var body: some View {
         NavigationStack {
             Text("")
-                .navigationTitle("My Holdings")
+                .navigationTitle(L10n.myHoldings)
         }
         .background(themeManager.currentTheme.background)
     }

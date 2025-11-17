@@ -56,11 +56,15 @@ extension Theme {
     // Font
     var font: Font { Font.system(size: 16) }
     var subtitleFont: Font { Font.system(size: 14) }
+    var headerFont: Font { Font.system(size: 34, weight: .bold) }
+    var highlightedFont: Font { Font.system(size: 20, weight: .bold) }
+    var sectionHeaderFont: Font { Font.system(size: 17, weight: .semibold) }
+    var sectionTextFont: Font { Font.system(size: 17, weight: .semibold) }
     // Color
     var background: Color { Color.background }
     var text: Color { Color.text }
     var textSecondary: Color { Color.textSecondary }
     var card: Color { Color.card }
-    var accent: Color { Color.accentColor }
+    var accent: Color { Color.accent }
     var accentPressed: Color { Color.accentPressed }
 }
