@@ -18,7 +18,9 @@ struct DashboardView: View {
         NavigationStack {
             ScrollView(showsIndicators: false) {
                 VStack(spacing: 20) {
-                    BalanceView()
+                    BalanceView(total: viewModel.totalBalance,
+                                changePercent: viewModel.totalBalanceChange,
+                                changePercentColor: themeManager.currentTheme.color(for: viewModel.totalBalanceChangeColor))
                     AssetAllocationView()
                     TopHoldingsView(assets: viewModel.assets)
                 }

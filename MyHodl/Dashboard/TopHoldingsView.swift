@@ -48,7 +48,7 @@ struct TopHoldingsView: View {
 }
 
 #Preview {
-    TopHoldingsView(assets: [DashboardAsset(code: "BTC", fullName: "Bitcoin", icon: .bundle(name: "btc"), currentPrice: "100000", percentChange: "-2.1%")])
+    TopHoldingsView(assets: [DashboardAsset(code: "BTC", fullName: "Bitcoin", icon: .bundle(name: "btc"), currentPrice: "100000", previousPrice: "90001", percentChange: "-2.1%", amount: "1.2")])
         .fixedSize(horizontal: false, vertical: true)
         .environment(ThemeManager())
 }

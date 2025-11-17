@@ -25,6 +25,18 @@ enum PriceFormat {
     }
 }
 
+enum AmountFormat {
+    static func amount(_ amount: String, currency: String) -> String? {
+        guard let amount = Decimal(string: amount) else {
+            return nil
+        }
+        return Self.amount(amount, currency: currency)
+    }
+    static func amount(_ amount: Decimal, currency: String) -> String? {
+        CryptoFormat.crypto(amount, currency: currency)
+    }
+}
+
 // MARK: - Percent Formatting
 enum Percent {
     private static let formatter: NumberFormatter = {
@@ -58,15 +70,15 @@ enum Fiat {
 }
 
 //// MARK: - Crypto Formatting (BTC, ETH, Satoshis)
-//enum CryptoFormat {
-//    private static let btcFormatter: NumberFormatter = {
-//        let f = NumberFormatter()
-//        f.minimumFractionDigits = 0
-//        f.maximumFractionDigits = 8 // BTC precision
-//        return f
-//    }()
-//
-//    static func btc(_ value: Decimal) -> String {
-//        btcFormatter.string(for: value) ?? "0"
-//    }
-//}
+enum CryptoFormat {
+    private static let formatter: NumberFormatter = {
+        let f = NumberFormatter()
+        f.minimumFractionDigits = 0
+        f.maximumFractionDigits = 8 // BTC precision
+        return f
+    }()
+
+    static func crypto(_ value: Decimal, currency: String) -> String {
+        formatter.string(for: value) ?? "0"
+    }
+}

@@ -32,6 +32,7 @@
 		76EB83812EC6696700D92E67 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EB83802EC6696600D92E67 /* Formatters.swift */; };
 		76EB83832EC73F2B00D92E67 /* ImageResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EB83822EC73F2B00D92E67 /* ImageResource.swift */; };
 		76EB83852EC73F6300D92E67 /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EB83842EC73F6300D92E67 /* IconView.swift */; };
+		76EB83882ECB4B8200D92E67 /* CryptoPrecision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EB83872ECB4B8200D92E67 /* CryptoPrecision.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		76EB83802EC6696600D92E67 /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
 		76EB83822EC73F2B00D92E67 /* ImageResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResource.swift; sourceTree = "<group>"; };
 		76EB83842EC73F6300D92E67 /* IconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
+		76EB83872ECB4B8200D92E67 /* CryptoPrecision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoPrecision.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,7 +167,6 @@
 				76EB837B2EC5124800D92E67 /* TopHoldingsView.swift */,
 				76EB837D2EC64A6500D92E67 /* DashboardCard.swift */,
 				76EB83672EC3C37600D92E67 /* DayChangeTracker.swift */,
-				76EB83712EC4AC9100D92E67 /* TitleView.swift */,
 				76EB83732EC4B4D300D92E67 /* StubDataModel.swift */,
 			);
 			path = Dashboard;
@@ -185,6 +186,7 @@
 				76EB83862EC74B2500D92E67 /* UI */,
 				76EB83802EC6696600D92E67 /* Formatters.swift */,
 				76EB83822EC73F2B00D92E67 /* ImageResource.swift */,
+				76EB83872ECB4B8200D92E67 /* CryptoPrecision.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -193,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				76EB83842EC73F6300D92E67 /* IconView.swift */,
+				76EB83712EC4AC9100D92E67 /* TitleView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				76EB83682EC3C37600D92E67 /* DayChangeTracker.swift in Sources */,
 				76EB83812EC6696700D92E67 /* Formatters.swift in Sources */,
 				76412F742EAB6590005E5A9A /* RootView.swift in Sources */,
+				76EB83882ECB4B8200D92E67 /* CryptoPrecision.swift in Sources */,
 				76EB837E2EC64A6500D92E67 /* DashboardCard.swift in Sources */,
 				76E105052EC1DF87006C1E83 /* LocalizationStrings.swift in Sources */,
 				76EB83722EC4AC9100D92E67 /* TitleView.swift in Sources */,

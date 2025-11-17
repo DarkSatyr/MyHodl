@@ -31,7 +31,7 @@ struct DashboardCard: View {
 }
 
 #Preview {
-    BalanceView()
+    BalanceView(total: "112.34", changePercent: "-1.2%", changePercentColor: .red)
         .fixedSize(horizontal: false, vertical: true)
         .environment(ThemeManager())
 }

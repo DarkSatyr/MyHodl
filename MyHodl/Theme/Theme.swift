@@ -44,6 +44,8 @@ protocol Theme {
     var text: Color { get }
     var textSecondary: Color { get }
     var card: Color { get }
+    
+    func color(for direction: PriceDirection) -> Color
 }
 
 struct DarkTheme: Theme {
@@ -67,4 +69,14 @@ extension Theme {
     var card: Color { Color.card }
     var accent: Color { Color.accent }
     var accentPressed: Color { Color.accentPressed }
+    func color(for direction: PriceDirection) -> Color {
+        switch direction {
+        case .up:
+            return .positive
+        case .down:
+            return .negative
+        case .neutral:
+            return .accent
+        }
+    }
 }

@@ -13,13 +13,31 @@ struct DashboardAsset: Identifiable {
     let fullName: String
     let icon: ImageSource
     let currentPrice: String
+    let previousPrice: String
     let percentChange: String
+    let amount: String
     var id: String { code }
+}
+
+enum PriceDirection {
+    case up
+    case down
+    case neutral
 }
 
 final class DashboardViewModel: ObservableObject {
     
+    struct SubTotal {
+        let total: Decimal
+        let currency: String
+    }
+    
     @Published var assets = [DashboardAsset]()
+    @Published var totalBalance = "-"
+    @Published var totalBalanceChange = "-"
+    @Published var totalBalanceChangeColor = PriceDirection.neutral
+    let currency = "usd"
+    
     private let assetsStubs = StubDataModel().assets
     
     init() {
@@ -31,7 +49,32 @@ final class DashboardViewModel: ObservableObject {
                                       fullName: asset.fullName,
                                       icon: image,
                                       currentPrice: asset.currentPrice,
-                                      percentChange: change ?? "-")
+                                      previousPrice: asset.startingPrice,
+                                      percentChange: change ?? "-",
+                                      amount: asset.amount)
             }
+        let totalCurrent = Self.total(for: assets, price: \.currentPrice)
+        totalBalance = AmountFormat.amount(totalCurrent, currency: currency) ?? "-"
+        let totalPrevious = Self.total(for: assets, price: \.previousPrice)
+        totalBalanceChange = PriceFormat.change(start: totalPrevious, current: totalCurrent) ?? "-"
+        totalBalanceChangeColor = totalCurrent == totalPrevious ? .neutral : (totalCurrent < totalPrevious ? .down : .up)
+    }
+    
+    private static func total(for assets: [DashboardAsset], price: KeyPath<DashboardAsset, String>) -> Decimal {
+        assets
+            .reduce(Decimal(), { result, asset in
+                guard let total = Self.total(by: asset[keyPath: price], amount: asset.amount) else {
+                    return result
+                }
+                return result + total
+            })
+    }
+    
+    private static func total(by price: String, amount: String) -> Decimal? {
+        guard let amount = Decimal(string: amount),
+              let price = Decimal(string: price) else {
+            return nil
+        }
+        return amount * price
     }
 }
