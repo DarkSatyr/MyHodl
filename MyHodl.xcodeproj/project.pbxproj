@@ -33,6 +33,7 @@
 		76EB83832EC73F2B00D92E67 /* ImageResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EB83822EC73F2B00D92E67 /* ImageResource.swift */; };
 		76EB83852EC73F6300D92E67 /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EB83842EC73F6300D92E67 /* IconView.swift */; };
 		76EB83882ECB4B8200D92E67 /* CryptoPrecision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EB83872ECB4B8200D92E67 /* CryptoPrecision.swift */; };
+		76EB838A2ECBA6E300D92E67 /* Decimal+Hodl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EB83892ECBA6E300D92E67 /* Decimal+Hodl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,7 @@
 		76EB83822EC73F2B00D92E67 /* ImageResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResource.swift; sourceTree = "<group>"; };
 		76EB83842EC73F6300D92E67 /* IconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
 		76EB83872ECB4B8200D92E67 /* CryptoPrecision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoPrecision.swift; sourceTree = "<group>"; };
+		76EB83892ECBA6E300D92E67 /* Decimal+Hodl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decimal+Hodl.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 				76EB83802EC6696600D92E67 /* Formatters.swift */,
 				76EB83822EC73F2B00D92E67 /* ImageResource.swift */,
 				76EB83872ECB4B8200D92E67 /* CryptoPrecision.swift */,
+				76EB83892ECBA6E300D92E67 /* Decimal+Hodl.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				760947692EAA66A70010F54D /* ContentView.swift in Sources */,
 				76EB837C2EC5124800D92E67 /* TopHoldingsView.swift in Sources */,
 				76EB837A2EC5123300D92E67 /* AssetAllocationView.swift in Sources */,
+				76EB838A2ECBA6E300D92E67 /* Decimal+Hodl.swift in Sources */,
 				7609476A2EAA66A70010F54D /* MyHodlApp.swift in Sources */,
 				76EB83782EC5120B00D92E67 /* BalanceView.swift in Sources */,
 				76EB83832EC73F2B00D92E67 /* ImageResource.swift in Sources */,

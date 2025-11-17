@@ -12,17 +12,23 @@ struct DashboardAsset: Identifiable {
     let code: String
     let fullName: String
     let icon: ImageSource
-    let currentPrice: String
-    let previousPrice: String
-    let percentChange: String
-    let amount: String
+    let currentPrice: Decimal
+    let previousPrice: Decimal
+    let amount: Decimal
     var id: String { code }
-}
-
-enum PriceDirection {
-    case up
-    case down
-    case neutral
+    
+    var changePercent: Decimal? {
+        guard previousPrice != 0 else { return nil }
+        return (currentPrice - previousPrice) / previousPrice
+    }
+    
+    var totalEntry: Decimal {
+        previousPrice * amount
+    }
+    
+    var totalCurrent: Decimal {
+        currentPrice * amount
+    }
 }
 
 final class DashboardViewModel: ObservableObject {
@@ -33,10 +39,8 @@ final class DashboardViewModel: ObservableObject {
     }
     
     @Published var assets = [DashboardAsset]()
-    @Published var totalBalance = "-"
-    @Published var totalBalanceChange = "-"
-    @Published var totalBalanceChangeColor = PriceDirection.neutral
-    let currency = "usd"
+    @Published var totalBalance: Decimal?
+    @Published var totalBalanceChange: Decimal?
     
     private let assetsStubs = StubDataModel().assets
     
@@ -44,37 +48,35 @@ final class DashboardViewModel: ObservableObject {
         assets = assetsStubs
             .map { asset in
                 let image = asset.icon != nil ? ImageSource.bundle(name: asset.icon!) : ImageSource.placeholder
-                let change = PriceFormat.change(start: asset.startingPrice, current: asset.currentPrice)
                 return DashboardAsset(code: asset.code,
                                       fullName: asset.fullName,
                                       icon: image,
                                       currentPrice: asset.currentPrice,
                                       previousPrice: asset.startingPrice,
-                                      percentChange: change ?? "-",
                                       amount: asset.amount)
             }
-        let totalCurrent = Self.total(for: assets, price: \.currentPrice)
-        totalBalance = AmountFormat.amount(totalCurrent, currency: currency) ?? "-"
-        let totalPrevious = Self.total(for: assets, price: \.previousPrice)
-        totalBalanceChange = PriceFormat.change(start: totalPrevious, current: totalCurrent) ?? "-"
-        totalBalanceChangeColor = totalCurrent == totalPrevious ? .neutral : (totalCurrent < totalPrevious ? .down : .up)
+        let totalCurrent = Self.totalCurrent(for: assets)
+        totalBalance = totalCurrent
+        let totalEntry = Self.totalEntry(for: assets)
+        totalBalanceChange = Self.totalBalanceChangePercent(current: totalCurrent, entry: totalEntry)
     }
     
-    private static func total(for assets: [DashboardAsset], price: KeyPath<DashboardAsset, String>) -> Decimal {
+    private static func totalBalanceChangePercent(current: Decimal, entry: Decimal) -> Decimal? {
+        guard entry > 0 else { return nil }
+        return (current - entry) / entry
+    }
+    
+    private static func totalCurrent(for assets: [DashboardAsset]) -> Decimal {
         assets
-            .reduce(Decimal(), { result, asset in
-                guard let total = Self.total(by: asset[keyPath: price], amount: asset.amount) else {
-                    return result
-                }
-                return result + total
+            .reduce(0, { result, asset in
+                result + asset.totalCurrent
             })
     }
     
-    private static func total(by price: String, amount: String) -> Decimal? {
-        guard let amount = Decimal(string: amount),
-              let price = Decimal(string: price) else {
-            return nil
-        }
-        return amount * price
+    private static func totalEntry(for assets: [DashboardAsset]) -> Decimal {
+        assets
+            .reduce(0, { result, asset in
+                result + asset.totalEntry
+            })
     }
 }

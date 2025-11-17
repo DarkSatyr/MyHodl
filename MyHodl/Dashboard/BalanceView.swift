@@ -10,9 +10,16 @@ import SwiftUI
 struct BalanceView: View {
     
     @Environment(ThemeManager.self) private var themeManager
-    var total: String
-    var changePercent: String
-    var changePercentColor: Color
+    var total: Decimal?
+    var changePercent: Decimal?
+    private var changePercentColor: Color {
+        themeManager.currentTheme.color(for: changePercent?.priceDirection ?? .neutral)
+    }
+    
+    init(total: Decimal?, changePercent: Decimal?) {
+        self.total = total
+        self.changePercent = changePercent
+    }
     
     var body: some View {
         ZStack {
@@ -22,11 +29,11 @@ struct BalanceView: View {
                     .font(themeManager.currentTheme.sectionHeaderFont)
                     .foregroundStyle(themeManager.currentTheme.textSecondary)
                 HStack {
-                    Text(total)
+                    Text(AmountFormat.amount(total, currency: baseCurrency))
                         .font(themeManager.currentTheme.headerFont)
                         .foregroundStyle(themeManager.currentTheme.text)
                     Spacer()
-                    Text(changePercent)
+                    Text(AmountFormat.percent(changePercent))
                         .font(themeManager.currentTheme.sectionTextFont)
                         .foregroundStyle(changePercentColor)
                 }
@@ -37,7 +44,7 @@ struct BalanceView: View {
 }
 
 #Preview {
-    BalanceView(total: "1233.34", changePercent: "+2.3%", changePercentColor: .positive)
+    BalanceView(total: 1233.34, changePercent: 2.3)
         .fixedSize(horizontal: false, vertical: true)
         .environment(ThemeManager())
 }

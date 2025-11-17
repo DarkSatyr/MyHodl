@@ -9,31 +9,26 @@ import Foundation
 
 // MARK: - Price Formatting
 
-enum PriceFormat {
-    static func change(start: Decimal, current: Decimal) -> String? {
-        guard start != 0 else { return nil }
-        let change = (current - start) / start
-        return Percent.format(change)
+let baseCurrency = "usd"
+
+enum AmountFormat {
+    
+    static func amount(_ amount: Decimal?, currency: String) -> String {
+        guard let amount else { return "-" }
+        return CryptoFormat.crypto(amount, currency: currency)
     }
     
-    static func change(start: String, current: String) -> String? {
-        guard let start = Decimal(string: start),
-              let current = Decimal(string: current) else {
-            return nil
-        }
-        return change(start: start, current: current)
+    static func percent(_ value: Decimal?) -> String {
+        guard let value else { return "-" }
+        return Percent.format(value)
     }
 }
 
-enum AmountFormat {
-    static func amount(_ amount: String, currency: String) -> String? {
-        guard let amount = Decimal(string: amount) else {
-            return nil
-        }
-        return Self.amount(amount, currency: currency)
-    }
-    static func amount(_ amount: Decimal, currency: String) -> String? {
-        CryptoFormat.crypto(amount, currency: currency)
+enum PriceFormat {
+    
+    static func price(_ price: Decimal?, currency: String) -> String {
+        guard let price else { return "-" }
+        return CryptoFormat.crypto(price, currency: currency)
     }
 }
 
@@ -48,8 +43,8 @@ enum Percent {
         return f
     }()
 
-    static func format(_ value: Decimal) -> String? {
-        formatter.string(for: value)
+    static func format(_ value: Decimal) -> String {
+        formatter.string(for: value) ?? "0%"
     }
 }
 

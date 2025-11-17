@@ -32,10 +32,10 @@ struct TopHoldingsView: View {
                         }
                         Spacer()
                         VStack(alignment: .trailing, spacing: 2) {
-                            Text(asset.currentPrice)
+                            Text(PriceFormat.price(asset.currentPrice, currency: baseCurrency))
                                 .font(themeManager.currentTheme.sectionTextFont)
                                 .foregroundStyle(themeManager.currentTheme.text)
-                            Text(asset.percentChange)
+                            Text(AmountFormat.percent(asset.changePercent))
                                 .font(themeManager.currentTheme.font)
                                 .foregroundStyle(themeManager.currentTheme.accent)
                         }
@@ -48,7 +48,7 @@ struct TopHoldingsView: View {
 }
 
 #Preview {
-    TopHoldingsView(assets: [DashboardAsset(code: "BTC", fullName: "Bitcoin", icon: .bundle(name: "btc"), currentPrice: "100000", previousPrice: "90001", percentChange: "-2.1%", amount: "1.2")])
+    TopHoldingsView(assets: [DashboardAsset(code: "BTC", fullName: "Bitcoin", icon: .bundle(name: "btc"), currentPrice: 100000, previousPrice: 90001, amount: 1.2)])
         .fixedSize(horizontal: false, vertical: true)
         .environment(ThemeManager())
 }
