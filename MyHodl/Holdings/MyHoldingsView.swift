@@ -10,17 +10,16 @@ import SwiftUI
 struct MyHoldingsView: View {
     @Environment(ThemeManager.self) private var themeManager
     @StateObject private var viewModel = MyHoldingsViewModel()
-    @State private var searchText = ""
     
     var body: some View {
         PageView {
             ScrollView(showsIndicators: false) {
-                SearchBar(text: $searchText, placeholder: L10n.searchCoins)
+                SearchBar(text: $viewModel.searchText, placeholder: L10n.searchCoins)
                     .padding(.horizontal, 16)
                 VStack(spacing: 20) {
                     BalanceView(total: viewModel.totalBalance,
                                 changePercent: viewModel.totalBalanceChange)
-                    AllAssetsView(assets: viewModel.assets)
+                    AllAssetsView(assets: viewModel.filteredAssets)
                 }
                 .padding(.horizontal, 16)
                 .padding(.top, 16)

@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import Combine
 
 final class MyHoldingsViewModel: ObservableObject {
     
     @Published var assets = [DashboardAsset]()
+    @Published var filteredAssets = [DashboardAsset]()
     @Published var totalBalance: Decimal?
     @Published var totalBalanceChange: Decimal?
+    @Published var searchText = ""
     
     private let assetsStubs = StubDataModel().assets
     
@@ -29,6 +32,22 @@ final class MyHoldingsViewModel: ObservableObject {
         totalBalance = totalCurrent
         let totalEntry = Self.totalEntry(for: assets)
         totalBalanceChange = Self.totalBalanceChangePercent(current: totalCurrent, entry: totalEntry)
+        
+        Publishers.CombineLatest($assets, $searchText)
+            .debounce(for: .milliseconds(50), scheduler: RunLoop.main)
+            .map { assets, searchText in
+                Self.filterAssets(assets, searchText: searchText)
+            }
+            .assign(to: &$filteredAssets)
+    }
+    
+    private static func filterAssets(_ assets: [DashboardAsset], searchText: String) -> [DashboardAsset] {
+        guard !searchText.isEmpty else { return assets }
+        return assets
+            .filter { asset in
+                asset.code.localizedCaseInsensitiveContains(searchText) ||
+                asset.fullName.localizedCaseInsensitiveContains(searchText)
+            }
     }
     
     private static func totalBalanceChangePercent(current: Decimal, entry: Decimal) -> Decimal? {
