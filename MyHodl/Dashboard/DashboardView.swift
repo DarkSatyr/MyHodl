@@ -21,7 +21,7 @@ struct DashboardView: View {
                     if let assetAllocation = viewModel.assetAllocation {
                         AssetAllocationView(assetAllocation: assetAllocation)
                     }
-                    TopHoldingsView(assets: viewModel.assets)
+                    TopAssetsView(assets: viewModel.assets)
                 }
                 .padding(.horizontal, 16)
                 .padding(.top, 16)

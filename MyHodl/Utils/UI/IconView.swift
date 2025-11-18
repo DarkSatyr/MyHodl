@@ -10,13 +10,18 @@ import SwiftUI
 struct IconView: View {
     let source: ImageSource
     @Environment(ThemeManager.self) private var themeManager
+    
+    private var placeholder: Image {
+        Image(systemName: "bitcoinsign.circle")
+    }
 
     var body: some View {
         switch source {
-        case .bundle(let name):
-            Image(name)
+        case .local(let name):
+            Image(safe: name, placeholder: placeholder)
                 .resizable()
                 .scaledToFit()
+                .foregroundStyle(themeManager.currentTheme.text)
         case .system(let symbol):
             Image(systemName: symbol)
                 .resizable()
@@ -33,10 +38,22 @@ struct IconView: View {
 //                }
 //            }
         case .placeholder:
-            Image(systemName: "bitcoinsign.circle")
+            placeholder
                 .resizable()
                 .scaledToFit()
                 .foregroundStyle(themeManager.currentTheme.text)
+        }
+    }
+    
+    
+}
+
+extension Image {
+    init(safe name: String?, placeholder: Image) {
+        if let name, let uiImage = UIImage(named: name) {
+            self = Image(uiImage: uiImage)
+        } else {
+            self = placeholder
         }
     }
 }

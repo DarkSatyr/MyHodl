@@ -8,7 +8,7 @@
 import Foundation
 
 enum ImageSource {
-    case bundle(name: String)
+    case local(name: String?)
     case system(symbol: String)
 //    case url(URL)
     case placeholder

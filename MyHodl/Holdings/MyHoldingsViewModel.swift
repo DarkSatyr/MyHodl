@@ -18,13 +18,12 @@ final class MyHoldingsViewModel: ObservableObject {
     init() {
         assets = assetsStubs
             .map { asset in
-                let image = asset.icon != nil ? ImageSource.bundle(name: asset.icon!) : ImageSource.placeholder
-                return DashboardAsset(code: asset.code,
-                                      fullName: asset.fullName,
-                                      icon: image,
-                                      currentPrice: asset.currentPrice,
-                                      previousPrice: asset.startingPrice,
-                                      amount: asset.amount)
+                DashboardAsset(code: asset.code,
+                               fullName: asset.fullName,
+                               icon: ImageSource.local(name: asset.icon),
+                               currentPrice: asset.currentPrice,
+                               previousPrice: asset.startingPrice,
+                               amount: asset.amount)
             }
         let totalCurrent = Self.totalCurrent(for: assets)
         totalBalance = totalCurrent

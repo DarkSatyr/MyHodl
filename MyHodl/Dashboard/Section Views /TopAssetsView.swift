@@ -1,5 +1,5 @@
 //
-//  TopHoldingsView.swift
+//  TopAssetsView.swift
 //  MyHodl
 //
 //  Created by DarkSatyr on 12.11.2025.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TopHoldingsView: View {
+struct TopAssetsView: View {
     var assets: [DashboardAsset]
     @Environment(ThemeManager.self) private var themeManager
     
@@ -60,7 +60,7 @@ struct TopHoldingsView: View {
 }
 
 #Preview {
-    TopHoldingsView(assets: [DashboardAsset(code: "BTC", fullName: "Bitcoin", icon: .bundle(name: "btc"), currentPrice: 100000, previousPrice: 90001, amount: 1.2)])
+    TopAssetsView(assets: [DashboardAsset(code: "BTC", fullName: "Bitcoin", icon: .local(name: "btc"), currentPrice: 100000, previousPrice: 90001, amount: 1.2)])
         .fixedSize(horizontal: false, vertical: true)
         .environment(ThemeManager())
 }

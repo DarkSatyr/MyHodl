@@ -20,6 +20,7 @@ struct MyHoldingsView: View {
                 VStack(spacing: 20) {
                     BalanceView(total: viewModel.totalBalance,
                                 changePercent: viewModel.totalBalanceChange)
+                    AllAssetsView(assets: viewModel.assets)
                 }
                 .padding(.horizontal, 16)
                 .padding(.top, 16)
