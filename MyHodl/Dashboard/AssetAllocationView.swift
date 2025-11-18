@@ -7,9 +7,15 @@
 
 import SwiftUI
 
+struct AssetAllocation {
+    let crypto: Decimal
+    let fiat: Decimal
+}
+
 struct AssetAllocationView: View {
     
     @Environment(ThemeManager.self) private var themeManager
+    var assetAllocation: AssetAllocation
     
     var body: some View {
         ZStack(alignment: .leading) {
@@ -19,12 +25,22 @@ struct AssetAllocationView: View {
                     .font(themeManager.currentTheme.sectionHeaderFont)
                     .foregroundStyle(themeManager.currentTheme.textSecondary)
                 VStack(alignment: .leading, spacing: 8) {
-                    Text(L10n.crypto)
-                        .font(themeManager.currentTheme.highlightedFont)
-                        .foregroundStyle(themeManager.currentTheme.text)
-                    Text("75%")
-                        .font(themeManager.currentTheme.highlightedFont)
-                        .foregroundStyle(themeManager.currentTheme.accent)
+                    if assetAllocation.crypto > assetAllocation.fiat {
+                        Text(L10n.crypto)
+                            .font(themeManager.currentTheme.highlightedFont)
+                            .foregroundStyle(themeManager.currentTheme.text)
+                        Text(AmountFormat.percent(assetAllocation.crypto))
+                            .font(themeManager.currentTheme.highlightedFont)
+                            .foregroundStyle(themeManager.currentTheme.accent)
+                    } else {
+                        Text(L10n.fiat)
+                            .font(themeManager.currentTheme.highlightedFont)
+                            .foregroundStyle(themeManager.currentTheme.text)
+                        Text(AmountFormat.percent(assetAllocation.fiat))
+                            .font(themeManager.currentTheme.highlightedFont)
+                            .foregroundStyle(themeManager.currentTheme.accent)
+                    }
+                    
                     HStack {
                         HStack {
                             Text(L10n.crypto)
@@ -45,8 +61,20 @@ struct AssetAllocationView: View {
     }
 }
 
+extension AssetAllocation {
+    init(crypto: Decimal) {
+        self.crypto = crypto
+        self.fiat = 1 - crypto
+    }
+    
+    init(fiat: Decimal) {
+        self.fiat = fiat
+        self.crypto = 1 - fiat
+    }
+}
+
 #Preview {
-    AssetAllocationView()
+    AssetAllocationView(assetAllocation: AssetAllocation(crypto: 0.638, fiat: 1 - 0.638))
         .fixedSize(horizontal: false, vertical: true)
         .environment(ThemeManager())
 }

@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - Price Formatting
 
-let baseCurrency = "usd"
+let baseCurrency = "USD"
 
 @MainActor
 enum AmountFormat {
@@ -18,9 +18,14 @@ enum AmountFormat {
         return CryptoFormat.amount(amount, currency: currency)
     }
     
+    static func percentChange(_ value: Decimal?) -> String {
+        guard let value else { return "-" }
+        return Percent.formatChange(value)
+    }
+    
     static func percent(_ value: Decimal?) -> String {
         guard let value else { return "-" }
-        return Percent.format(value)
+        return Percent.formatAmount(value)
     }
 }
 
@@ -43,8 +48,14 @@ enum Percent {
         return f
     }()
 
-    static func format(_ value: Decimal) -> String {
-        formatter.string(for: value) ?? "0%"
+    static func formatChange(_ value: Decimal) -> String {
+        formatter.positivePrefix = "+"
+        return formatter.string(for: value) ?? "0%"
+    }
+    
+    static func formatAmount(_ value: Decimal) -> String {
+        formatter.positivePrefix = ""
+        return formatter.string(for: value) ?? "0%"
     }
 }
 

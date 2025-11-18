@@ -10,6 +10,14 @@ import SwiftUI
 struct TopHoldingsView: View {
     var assets: [DashboardAsset]
     @Environment(ThemeManager.self) private var themeManager
+    
+    init(assets: [DashboardAsset]) {
+        self.assets = Array(assets.sorted(by: { lhs, rhs in
+            lhs.totalCurrent > rhs.totalCurrent
+        })
+        .prefix(6))
+    }
+    
     var body: some View {
         VStack(alignment: .leading) {
             Text(L10n.topHoldings)
@@ -32,12 +40,16 @@ struct TopHoldingsView: View {
                         }
                         Spacer()
                         VStack(alignment: .trailing, spacing: 2) {
-                            Text(PriceFormat.price(asset.currentPrice, currency: baseCurrency))
+                            Text(AmountFormat.amount(asset.totalCurrent, currency: baseCurrency))
                                 .font(themeManager.currentTheme.sectionTextFont)
                                 .foregroundStyle(themeManager.currentTheme.text)
-                            Text(AmountFormat.percent(asset.changePercent))
-                                .font(themeManager.currentTheme.font)
-                                .foregroundStyle(themeManager.currentTheme.accent)
+                            if asset.code.uppercased() != baseCurrency {
+                                Text(AmountFormat.percentChange(asset.changePercent))
+                                    .font(themeManager.currentTheme.font)
+                                    .foregroundStyle(themeManager.currentTheme.color(change: asset.changePercent))
+                            } else {
+                                Spacer()
+                            }
                         }
                     }
                 }

@@ -27,4 +27,12 @@ enum FiatSymbol: String {
             return code.uppercased()
         }
     }
+    
+    static let fiatCurrencies = [
+        "USD", "EUR", "GBP", "UAH"
+    ]
+    
+    static func isFiatSymbol(_ symbol: String) -> Bool {
+        fiatCurrencies.contains(symbol.uppercased())
+    }
 }

@@ -12,9 +12,6 @@ struct BalanceView: View {
     @Environment(ThemeManager.self) private var themeManager
     var total: Decimal?
     var changePercent: Decimal?
-    private var changePercentColor: Color {
-        themeManager.currentTheme.color(for: changePercent?.priceDirection ?? .neutral)
-    }
     
     init(total: Decimal?, changePercent: Decimal?) {
         self.total = total
@@ -33,9 +30,9 @@ struct BalanceView: View {
                         .font(themeManager.currentTheme.headerFont)
                         .foregroundStyle(themeManager.currentTheme.text)
                     Spacer()
-                    Text(AmountFormat.percent(changePercent))
+                    Text(AmountFormat.percentChange(changePercent))
                         .font(themeManager.currentTheme.sectionTextFont)
-                        .foregroundStyle(changePercentColor)
+                        .foregroundStyle(themeManager.currentTheme.color(change: changePercent))
                 }
             }
             .padding(.all)

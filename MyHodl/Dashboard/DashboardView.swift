@@ -20,7 +20,9 @@ struct DashboardView: View {
                 VStack(spacing: 20) {
                     BalanceView(total: viewModel.totalBalance,
                                 changePercent: viewModel.totalBalanceChange)
-                    AssetAllocationView()
+                    if let assetAllocation = viewModel.assetAllocation {
+                        AssetAllocationView(assetAllocation: assetAllocation)
+                    }
                     TopHoldingsView(assets: viewModel.assets)
                 }
                 .padding(.horizontal, 16)

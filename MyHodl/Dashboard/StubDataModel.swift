@@ -69,8 +69,8 @@ class StubDataModel {
             Asset(code: "UAH",
                   fullName: "Ukrainian Hryvnia",
                   type: .fiat,
-                  startingPrice: Decimal(string: "40")!,
-                  currentPrice: Decimal(string: "43")!,
+                  startingPrice: Decimal(string: "0.025")!,
+                  currentPrice: Decimal(string: "0.023")!,
                   amount: Decimal(string: "631.21")!,
                   icon: nil),
         ]

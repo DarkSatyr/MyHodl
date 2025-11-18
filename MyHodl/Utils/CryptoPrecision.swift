@@ -62,7 +62,7 @@ enum CryptoPrecision {
         ], 6)
         
         // Fiat
-        set(fiat, 2)
+        set(FiatSymbol.fiatCurrencies, 2)
         
         // Інші популярні L1 / L2 (типово 6 або 8)
         set([
@@ -72,6 +72,4 @@ enum CryptoPrecision {
         
         return t
     }()
-    
-    private static let fiat = ["USD", "UAH", "EUR", "GBP"]
 }
