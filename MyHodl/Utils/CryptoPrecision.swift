@@ -7,10 +7,6 @@
 
 import Foundation
 
-/// Централізоване джерело precision для криптовалют.
-/// MVP-варіант:
-/// - amountDigits: ближче до реальних on-chain decimals для популярних монет
-/// - priceDigits: рахується динамічно від ціни (без великого хардкоду)
 enum CryptoPrecision {
     
     struct Info {
@@ -24,26 +20,19 @@ enum CryptoPrecision {
         return amountTable[key]?.amountDigits ?? fallback.amountDigits
     }
     
-    /// Скільки знаків показувати для ЦІНИ — динамічно від величини.
-    /// Це не “реальний” tickSize біржі, але виглядає дуже природно.
-    static func priceDigits(for price: Decimal) -> Int {
-        let v = NSDecimalNumber(decimal: price).doubleValue
-        switch abs(v) {
-        case _ where v >= 1000:    return 2
-        case _ where v >= 1:       return 4
-        case _ where v >= 0.01:    return 6
-        case _ where v >= 0.0001:  return 8
-        default:                   return 10
-        }
+    static func priceDigits(for symbol: String, and price: Decimal) -> Int {
+        let v = price.magnitude
+        if v >= 1000 { return 2 }
+        if v >= 1 { return 4 }
+        if v >= 0.01 { return 6 }
+        if v >= 0.0001 { return 8 }
+        return 10
     }
     
     // MARK: - Internal
     
     private static let fallback = Info(amountDigits: 8)
     
-    /// Таблиця amountDecimals для основних монет.
-    /// (вибірка реальних значень для популярних активів;
-    /// решта — fallback 8)
     private static let amountTable: [String: Info] = {
         var t: [String: Info] = [:]
         
@@ -73,9 +62,7 @@ enum CryptoPrecision {
         ], 6)
         
         // Fiat
-        set([
-            "USD", "UAH", "EUR", "GBP"
-        ], 2)
+        set(fiat, 2)
         
         // Інші популярні L1 / L2 (типово 6 або 8)
         set([
@@ -83,9 +70,8 @@ enum CryptoPrecision {
             "SOL", "MATIC", "AVAX", "NEO", "ONT", "VET"
         ], 6)
         
-        // Якщо хочеш — сюди ж можна руками додавати рідкі монети з твого списку,
-        // коли буде час/настрій, або напівавтоматним скриптом з CoinGecko.
-        
         return t
     }()
+    
+    private static let fiat = ["USD", "UAH", "EUR", "GBP"]
 }

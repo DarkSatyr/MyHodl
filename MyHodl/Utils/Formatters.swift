@@ -11,11 +11,11 @@ import Foundation
 
 let baseCurrency = "usd"
 
+@MainActor
 enum AmountFormat {
-    
     static func amount(_ amount: Decimal?, currency: String) -> String {
         guard let amount else { return "-" }
-        return CryptoFormat.crypto(amount, currency: currency)
+        return CryptoFormat.amount(amount, currency: currency)
     }
     
     static func percent(_ value: Decimal?) -> String {
@@ -24,15 +24,15 @@ enum AmountFormat {
     }
 }
 
+@MainActor
 enum PriceFormat {
-    
     static func price(_ price: Decimal?, currency: String) -> String {
         guard let price else { return "-" }
-        return CryptoFormat.crypto(price, currency: currency)
+        return CryptoFormat.price(price, currency: currency)
     }
 }
 
-// MARK: - Percent Formatting
+@MainActor
 enum Percent {
     private static let formatter: NumberFormatter = {
         let f = NumberFormatter()
@@ -48,32 +48,22 @@ enum Percent {
     }
 }
 
-// MARK: - Fiat Formatting (USD, EUR, etc)
-enum Fiat {
-    private static let formatter: NumberFormatter = {
-        let f = NumberFormatter()
-        f.numberStyle = .currency
-        f.currencyCode = "USD"
-        f.maximumFractionDigits = 2
-        return f
-    }()
-
-    static func format(_ amount: Decimal, currency: String = "USD") -> String {
-        formatter.currencyCode = currency
-        return formatter.string(for: amount) ?? "--"
-    }
-}
-
-//// MARK: - Crypto Formatting (BTC, ETH, Satoshis)
+@MainActor
 enum CryptoFormat {
     private static let formatter: NumberFormatter = {
         let f = NumberFormatter()
-        f.minimumFractionDigits = 0
+        f.minimumFractionDigits = 2
         f.maximumFractionDigits = 8 // BTC precision
         return f
     }()
 
-    static func crypto(_ value: Decimal, currency: String) -> String {
-        formatter.string(for: value) ?? "0"
+    static func amount(_ value: Decimal, currency: String) -> String {
+        formatter.maximumFractionDigits = CryptoPrecision.amountDigits(for: currency)
+        return formatter.string(for: value) ?? "0"
+    }
+    
+    static func price(_ value: Decimal, currency: String) -> String {
+        formatter.maximumFractionDigits = CryptoPrecision.priceDigits(for: currency, and: value)
+        return formatter.string(for: value) ?? "0"
     }
 }

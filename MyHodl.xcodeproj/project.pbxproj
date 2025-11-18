@@ -34,6 +34,7 @@
 		76EB83852EC73F6300D92E67 /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EB83842EC73F6300D92E67 /* IconView.swift */; };
 		76EB83882ECB4B8200D92E67 /* CryptoPrecision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EB83872ECB4B8200D92E67 /* CryptoPrecision.swift */; };
 		76EB838A2ECBA6E300D92E67 /* Decimal+Hodl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EB83892ECBA6E300D92E67 /* Decimal+Hodl.swift */; };
+		76EB838C2ECC734400D92E67 /* FiatSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EB838B2ECC734400D92E67 /* FiatSymbol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,7 @@
 		76EB83842EC73F6300D92E67 /* IconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
 		76EB83872ECB4B8200D92E67 /* CryptoPrecision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoPrecision.swift; sourceTree = "<group>"; };
 		76EB83892ECBA6E300D92E67 /* Decimal+Hodl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decimal+Hodl.swift"; sourceTree = "<group>"; };
+		76EB838B2ECC734400D92E67 /* FiatSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiatSymbol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 			children = (
 				76EB83862EC74B2500D92E67 /* UI */,
 				76EB83802EC6696600D92E67 /* Formatters.swift */,
+				76EB838B2ECC734400D92E67 /* FiatSymbol.swift */,
 				76EB83822EC73F2B00D92E67 /* ImageResource.swift */,
 				76EB83872ECB4B8200D92E67 /* CryptoPrecision.swift */,
 				76EB83892ECBA6E300D92E67 /* Decimal+Hodl.swift */,
@@ -315,6 +318,7 @@
 				76EB83782EC5120B00D92E67 /* BalanceView.swift in Sources */,
 				76EB83832EC73F2B00D92E67 /* ImageResource.swift in Sources */,
 				76EB83632EC37C4A00D92E67 /* DashboardView.swift in Sources */,
+				76EB838C2ECC734400D92E67 /* FiatSymbol.swift in Sources */,
 				7668D2202EB34ADE00131EB5 /* SettingsView.swift in Sources */,
 				760947702EAA66CC0010F54D /* ThemeManager.swift in Sources */,
 				76EB83682EC3C37600D92E67 /* DayChangeTracker.swift in Sources */,
