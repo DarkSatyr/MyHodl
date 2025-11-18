@@ -27,21 +27,22 @@ struct DashboardView: View {
                 }
                 .padding(.horizontal, 16)
                 .padding(.top, 16)
-                .padding(.bottom, 40)
+                .padding(.bottom, 20)
             }
             .background(
                 DashboardSurface()
                     .ignoresSafeArea()
             )
             .safeAreaInset(edge: .top) {
-                TitleView(
-                    leftLabel: L10n.dashboard,
-                    rightLabel: dayChangeTracker.currentDay.formatted(date: .abbreviated,
-                                                                      time: .omitted)
-                )
+                TitleView {
+                    Text(L10n.dashboard)
+                } right: {
+                    Text(dayChangeTracker.currentDay.formatted(date: .abbreviated,
+                                                               time: .omitted))
+                }
                 .fixedSize(horizontal: false, vertical: true)
             }
-            .toolbar(.hidden, for: .navigationBar) // свій хедер, системний ховаємо
+            .toolbar(.hidden, for: .navigationBar)
         }
         .background(themeManager.currentTheme.background)
         .onAppear {

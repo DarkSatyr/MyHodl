@@ -7,20 +7,20 @@
 
 import SwiftUI
 
-struct TitleView: View {
+struct TitleView<Left: View, Right: View>: View {
     @Environment(ThemeManager.self) private var themeManager
-    var leftLabel: String
-    var rightLabel: String
+    @ViewBuilder var left: () -> Left
+    @ViewBuilder var right: () -> Right
     
     var body: some View {
         NavigationStack {
             ScrollView {
                 HStack(alignment: .lastTextBaseline) {
-                    Text(leftLabel)
+                    left()
                         .font(themeManager.currentTheme.headerFont)
                         .foregroundStyle(themeManager.currentTheme.text)
                     Spacer()
-                    Text(rightLabel)
+                    right()
                         .font(.headline).foregroundStyle(.secondary)
                         .foregroundStyle(themeManager.currentTheme.text)
                 }
@@ -37,6 +37,10 @@ struct TitleView: View {
 }
 
 #Preview {
-    TitleView(leftLabel: "Some Label", rightLabel: "12 Nov. 2025")
-        .environment(ThemeManager())
+    TitleView {
+        Text("Some Label")
+    } right: {
+        Text("12 Nov. 2025")
+    }
+    .environment(ThemeManager())
 }
