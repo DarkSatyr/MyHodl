@@ -12,7 +12,7 @@ struct SettingsView: View {
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
-        NavigationStack {
+        PageView {
             List {
                 Section {
                     NavigationLink {
@@ -35,9 +35,11 @@ struct SettingsView: View {
             }
             .scrollContentBackground(.hidden)
             .listStyle(.insetGrouped)
-            .navigationTitle(L10n.settings)
+        } title: {
+            TitleView {
+                Text(L10n.settings)
+            } right: {}
         }
-        .background(themeManager.currentTheme.background)
     }
 }
 
