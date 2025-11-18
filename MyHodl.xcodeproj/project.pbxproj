@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		760947692EAA66A70010F54D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760947642EAA66A70010F54D /* ContentView.swift */; };
+		760947692EAA66A70010F54D /* MyHodlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760947642EAA66A70010F54D /* MyHodlView.swift */; };
 		7609476A2EAA66A70010F54D /* MyHodlApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760947672EAA66A70010F54D /* MyHodlApp.swift */; };
 		7609476B2EAA66A70010F54D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 760947632EAA66A70010F54D /* Assets.xcassets */; };
 		7609476C2EAA66A70010F54D /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 760947652EAA66A70010F54D /* Launch Screen.storyboard */; };
@@ -35,11 +35,15 @@
 		76EB83882ECB4B8200D92E67 /* CryptoPrecision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EB83872ECB4B8200D92E67 /* CryptoPrecision.swift */; };
 		76EB838A2ECBA6E300D92E67 /* Decimal+Hodl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EB83892ECBA6E300D92E67 /* Decimal+Hodl.swift */; };
 		76EB838C2ECC734400D92E67 /* FiatSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EB838B2ECC734400D92E67 /* FiatSymbol.swift */; };
+		76EB838F2ECCD91B00D92E67 /* BackgroundSurface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EB838E2ECCD91B00D92E67 /* BackgroundSurface.swift */; };
+		76EB83922ECCE43900D92E67 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EB83912ECCE43900D92E67 /* PageView.swift */; };
+		76EB83942ECCEB9A00D92E67 /* MyHoldingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EB83932ECCEB9A00D92E67 /* MyHoldingsViewModel.swift */; };
+		76EB83962ECCEC2200D92E67 /* DashboardAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EB83952ECCEC2200D92E67 /* DashboardAsset.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		760947632EAA66A70010F54D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		760947642EAA66A70010F54D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		760947642EAA66A70010F54D /* MyHodlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHodlView.swift; sourceTree = "<group>"; };
 		760947652EAA66A70010F54D /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		760947662EAA66A70010F54D /* MyHodl.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyHodl.entitlements; sourceTree = "<group>"; };
 		760947672EAA66A70010F54D /* MyHodlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHodlApp.swift; sourceTree = "<group>"; };
@@ -69,6 +73,10 @@
 		76EB83872ECB4B8200D92E67 /* CryptoPrecision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoPrecision.swift; sourceTree = "<group>"; };
 		76EB83892ECBA6E300D92E67 /* Decimal+Hodl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decimal+Hodl.swift"; sourceTree = "<group>"; };
 		76EB838B2ECC734400D92E67 /* FiatSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiatSymbol.swift; sourceTree = "<group>"; };
+		76EB838E2ECCD91B00D92E67 /* BackgroundSurface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundSurface.swift; sourceTree = "<group>"; };
+		76EB83912ECCE43900D92E67 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
+		76EB83932ECCEB9A00D92E67 /* MyHoldingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHoldingsViewModel.swift; sourceTree = "<group>"; };
+		76EB83952ECCEC2200D92E67 /* DashboardAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardAsset.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,12 +102,9 @@
 		760947682EAA66A70010F54D /* MyHodl */ = {
 			isa = PBXGroup;
 			children = (
-				76E104FA2EC1D914006C1E83 /* swiftgen.yml */,
-				76412F732EAB6590005E5A9A /* RootView.swift */,
-				760947642EAA66A70010F54D /* ContentView.swift */,
-				760947652EAA66A70010F54D /* Launch Screen.storyboard */,
-				760947662EAA66A70010F54D /* MyHodl.entitlements */,
 				760947672EAA66A70010F54D /* MyHodlApp.swift */,
+				76412F732EAB6590005E5A9A /* RootView.swift */,
+				76EB83902ECCE39300D92E67 /* Content */,
 				76EB83612EC37C2000D92E67 /* Dashboard */,
 				76EB83642EC37C7A00D92E67 /* Holdings */,
 				7668D2292EB5262A00131EB5 /* Settings */,
@@ -107,6 +112,9 @@
 				76EB837F2EC6695600D92E67 /* Utils */,
 				76E105042EC1DF87006C1E83 /* Generated */,
 				76E104F42EC1D57E006C1E83 /* Supporting Files */,
+				760947652EAA66A70010F54D /* Launch Screen.storyboard */,
+				760947662EAA66A70010F54D /* MyHodl.entitlements */,
+				76E104FA2EC1D914006C1E83 /* swiftgen.yml */,
 				760947632EAA66A70010F54D /* Assets.xcassets */,
 			);
 			path = MyHodl;
@@ -166,9 +174,11 @@
 			children = (
 				76EB83622EC37C4A00D92E67 /* DashboardView.swift */,
 				76EB83752EC4B72E00D92E67 /* DashboardViewModel.swift */,
+				76EB83952ECCEC2200D92E67 /* DashboardAsset.swift */,
 				76EB838D2ECCD8B900D92E67 /* Section Views  */,
 				76EB837D2EC64A6500D92E67 /* DashboardCard.swift */,
 				76EB83672EC3C37600D92E67 /* DayChangeTracker.swift */,
+				76EB838E2ECCD91B00D92E67 /* BackgroundSurface.swift */,
 				76EB83732EC4B4D300D92E67 /* StubDataModel.swift */,
 			);
 			path = Dashboard;
@@ -178,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				76EB83652EC37D6300D92E67 /* MyHoldingsView.swift */,
+				76EB83932ECCEB9A00D92E67 /* MyHoldingsViewModel.swift */,
 			);
 			path = Holdings;
 			sourceTree = "<group>";
@@ -212,6 +223,15 @@
 				76EB837B2EC5124800D92E67 /* TopHoldingsView.swift */,
 			);
 			path = "Section Views ";
+			sourceTree = "<group>";
+		};
+		76EB83902ECCE39300D92E67 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				760947642EAA66A70010F54D /* MyHodlView.swift */,
+				76EB83912ECCE43900D92E67 /* PageView.swift */,
+			);
+			path = Content;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,8 +337,9 @@
 				76EB83852EC73F6300D92E67 /* IconView.swift in Sources */,
 				7609476E2EAA66C30010F54D /* Theme.swift in Sources */,
 				7668D22B2EB5264200131EB5 /* ThemeSettingsView.swift in Sources */,
+				76EB83942ECCEB9A00D92E67 /* MyHoldingsViewModel.swift in Sources */,
 				76EB83662EC37D6300D92E67 /* MyHoldingsView.swift in Sources */,
-				760947692EAA66A70010F54D /* ContentView.swift in Sources */,
+				760947692EAA66A70010F54D /* MyHodlView.swift in Sources */,
 				76EB837C2EC5124800D92E67 /* TopHoldingsView.swift in Sources */,
 				76EB837A2EC5123300D92E67 /* AssetAllocationView.swift in Sources */,
 				76EB838A2ECBA6E300D92E67 /* Decimal+Hodl.swift in Sources */,
@@ -327,8 +348,11 @@
 				76EB83832EC73F2B00D92E67 /* ImageResource.swift in Sources */,
 				76EB83632EC37C4A00D92E67 /* DashboardView.swift in Sources */,
 				76EB838C2ECC734400D92E67 /* FiatSymbol.swift in Sources */,
+				76EB83962ECCEC2200D92E67 /* DashboardAsset.swift in Sources */,
+				76EB838F2ECCD91B00D92E67 /* BackgroundSurface.swift in Sources */,
 				7668D2202EB34ADE00131EB5 /* SettingsView.swift in Sources */,
 				760947702EAA66CC0010F54D /* ThemeManager.swift in Sources */,
+				76EB83922ECCE43900D92E67 /* PageView.swift in Sources */,
 				76EB83682EC3C37600D92E67 /* DayChangeTracker.swift in Sources */,
 				76EB83812EC6696700D92E67 /* Formatters.swift in Sources */,
 				76412F742EAB6590005E5A9A /* RootView.swift in Sources */,

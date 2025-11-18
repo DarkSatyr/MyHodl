@@ -12,13 +12,13 @@ struct RootView: View {
     @Environment(ThemeManager.self) private var themeManager
 
     var body: some View {
-        ContentView()
-        .background(themeManager.currentTheme.background)
-        .onAppear {
-            themeManager.updateSystemScheme(systemScheme)
-        }
-        .onChange(of: systemScheme) { _, new in
-            themeManager.updateSystemScheme(new)
-        }
+        MyHodlView()
+            .background(themeManager.currentTheme.background)
+            .onAppear {
+                themeManager.updateSystemScheme(systemScheme)
+            }
+            .onChange(of: systemScheme) { _, new in
+                themeManager.updateSystemScheme(new)
+            }
     }
 }

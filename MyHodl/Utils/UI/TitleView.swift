@@ -9,30 +9,22 @@ import SwiftUI
 
 struct TitleView<Left: View, Right: View>: View {
     @Environment(ThemeManager.self) private var themeManager
-    @ViewBuilder var left: () -> Left
-    @ViewBuilder var right: () -> Right
+    @ViewBuilder let left: () -> Left
+    @ViewBuilder let right: () -> Right
     
     var body: some View {
-        NavigationStack {
-            ScrollView {
-                HStack(alignment: .lastTextBaseline) {
-                    left()
-                        .font(themeManager.currentTheme.headerFont)
-                        .foregroundStyle(themeManager.currentTheme.text)
-                    Spacer()
-                    right()
-                        .font(.headline).foregroundStyle(.secondary)
-                        .foregroundStyle(themeManager.currentTheme.text)
-                }
-                .padding(.horizontal, 16)
-                .padding(.top, 8)
-                .padding(.bottom, 12)
-
-                // далі контент…
-            }
-            .navigationTitle("")
-            .toolbarTitleDisplayMode(.inline)
+        HStack(alignment: .lastTextBaseline) {
+            left()
+                .font(themeManager.currentTheme.headerFont)
+                .foregroundStyle(themeManager.currentTheme.text)
+            Spacer()
+            right()
+                .font(.headline).foregroundStyle(.secondary)
+                .foregroundStyle(themeManager.currentTheme.text)
         }
+        .padding(.horizontal, 16)
+        .padding(.top, 8)
+        .padding(.bottom, 12)
     }
 }
 

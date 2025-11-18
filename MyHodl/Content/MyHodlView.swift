@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  MyHodlView.swift
 //  MyHodl
 //
 //  Created by DarkSatyr on 13.08.2025.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct MyHodlView: View {
     @Environment(ThemeManager.self) private var themeManager
     
     var body: some View {
@@ -32,6 +32,6 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    MyHodlView()
         .environment(ThemeManager())
 }

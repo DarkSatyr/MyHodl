@@ -7,15 +7,13 @@
 
 import SwiftUI
 
-import SwiftUI
-
 struct DashboardView: View {
     @StateObject private var viewModel = DashboardViewModel()
     @Environment(ThemeManager.self) private var themeManager
     @StateObject private var dayChangeTracker = DayChangeTracker()
     
     var body: some View {
-        NavigationStack {
+        PageView {
             ScrollView(showsIndicators: false) {
                 VStack(spacing: 20) {
                     BalanceView(total: viewModel.totalBalance,
@@ -29,22 +27,14 @@ struct DashboardView: View {
                 .padding(.top, 16)
                 .padding(.bottom, 20)
             }
-            .background(
-                DashboardSurface()
-                    .ignoresSafeArea()
-            )
-            .safeAreaInset(edge: .top) {
-                TitleView {
-                    Text(L10n.dashboard)
-                } right: {
-                    Text(dayChangeTracker.currentDay.formatted(date: .abbreviated,
-                                                               time: .omitted))
-                }
-                .fixedSize(horizontal: false, vertical: true)
+        } title: {
+            TitleView {
+                Text(L10n.dashboard)
+            } right: {
+                Text(dayChangeTracker.currentDay.formatted(date: .abbreviated,
+                                                           time: .omitted))
             }
-            .toolbar(.hidden, for: .navigationBar)
         }
-        .background(themeManager.currentTheme.background)
         .onAppear {
             dayChangeTracker.start()
         }
@@ -54,24 +44,4 @@ struct DashboardView: View {
 #Preview {
     DashboardView()
         .environment(ThemeManager())
-}
-
-struct DashboardSurface: View {
-    @Environment(ThemeManager.self) private var themeManager
-    
-    var body: some View {
-        RoundedRectangle(cornerRadius: 28, style: .continuous)
-            .fill(surfaceColor)
-    }
-    
-    private var surfaceColor: LinearGradient {
-        LinearGradient(
-            colors: [
-                themeManager.currentTheme.accent.opacity(0.10),
-                Color.black.opacity(0.85)
-            ],
-            startPoint: .bottom,
-            endPoint: .topLeading
-        )
-    }
 }

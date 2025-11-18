@@ -1,19 +1,17 @@
 //
-//  DashboardViewModel.swift
+//  MyHoldingsViewModel.swift
 //  MyHodl
 //
-//  Created by DarkSatyr on 12.11.2025.
+//  Created by DarkSatyr on 18.11.2025.
 //
 
 import SwiftUI
-import Combine
 
-final class DashboardViewModel: ObservableObject {
+final class MyHoldingsViewModel: ObservableObject {
     
     @Published var assets = [DashboardAsset]()
     @Published var totalBalance: Decimal?
     @Published var totalBalanceChange: Decimal?
-    @Published var assetAllocation: AssetAllocation?
     
     private let assetsStubs = StubDataModel().assets
     
@@ -32,8 +30,6 @@ final class DashboardViewModel: ObservableObject {
         totalBalance = totalCurrent
         let totalEntry = Self.totalEntry(for: assets)
         totalBalanceChange = Self.totalBalanceChangePercent(current: totalCurrent, entry: totalEntry)
-        let totalCurrentFiat = Self.totalFiatAllocation(for: assets)
-        assetAllocation = AssetAllocation(fiat: totalCurrentFiat / totalCurrent)
     }
     
     private static func totalBalanceChangePercent(current: Decimal, entry: Decimal) -> Decimal? {
@@ -54,12 +50,5 @@ final class DashboardViewModel: ObservableObject {
                 result + asset.totalEntry
             })
     }
-    
-    private static func totalFiatAllocation(for assets: [DashboardAsset]) -> Decimal {
-        let fiatAssets = assets
-            .filter { asset in
-                FiatSymbol.isFiatSymbol(asset.code)
-            }
-        return totalCurrent(for: fiatAssets)
-    }
 }
+
