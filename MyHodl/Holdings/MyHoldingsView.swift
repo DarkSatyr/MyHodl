@@ -15,6 +15,8 @@ struct MyHoldingsView: View {
     var body: some View {
         PageView {
             ScrollView(showsIndicators: false) {
+                SearchBar(text: $searchText, placeholder: L10n.searchCoins)
+                    .padding(.horizontal, 16)
                 VStack(spacing: 20) {
                     BalanceView(total: viewModel.totalBalance,
                                 changePercent: viewModel.totalBalanceChange)

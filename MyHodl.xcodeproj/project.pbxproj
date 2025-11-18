@@ -16,6 +16,7 @@
 		76412F742EAB6590005E5A9A /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76412F732EAB6590005E5A9A /* RootView.swift */; };
 		7668D2202EB34ADE00131EB5 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7668D21F2EB34ADE00131EB5 /* SettingsView.swift */; };
 		7668D22B2EB5264200131EB5 /* ThemeSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7668D22A2EB5264200131EB5 /* ThemeSettingsView.swift */; };
+		769999322ECCF67600F1C3AA /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769999312ECCF67600F1C3AA /* SearchBar.swift */; };
 		76E104F92EC1D8BC006C1E83 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 76E104F72EC1D8BC006C1E83 /* Localizable.strings */; };
 		76E104FB2EC1D914006C1E83 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 76E104FA2EC1D914006C1E83 /* swiftgen.yml */; };
 		76E105052EC1DF87006C1E83 /* LocalizationStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E105032EC1DF87006C1E83 /* LocalizationStrings.swift */; };
@@ -52,6 +53,7 @@
 		76412F732EAB6590005E5A9A /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		7668D21F2EB34ADE00131EB5 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		7668D22A2EB5264200131EB5 /* ThemeSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSettingsView.swift; sourceTree = "<group>"; };
+		769999312ECCF67600F1C3AA /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		76E104F82EC1D8BC006C1E83 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		76E104FA2EC1D914006C1E83 /* swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		76E104FC2EC1D98C006C1E83 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 			children = (
 				76EB83842EC73F6300D92E67 /* IconView.swift */,
 				76EB83712EC4AC9100D92E67 /* TitleView.swift */,
+				769999312ECCF67600F1C3AA /* SearchBar.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 				76EB83962ECCEC2200D92E67 /* DashboardAsset.swift in Sources */,
 				76EB838F2ECCD91B00D92E67 /* BackgroundSurface.swift in Sources */,
 				7668D2202EB34ADE00131EB5 /* SettingsView.swift in Sources */,
+				769999322ECCF67600F1C3AA /* SearchBar.swift in Sources */,
 				760947702EAA66CC0010F54D /* ThemeManager.swift in Sources */,
 				76EB83922ECCE43900D92E67 /* PageView.swift in Sources */,
 				76EB83682EC3C37600D92E67 /* DayChangeTracker.swift in Sources */,

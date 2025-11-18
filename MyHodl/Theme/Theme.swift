@@ -69,6 +69,8 @@ extension Theme {
     var card: Color { Color.card }
     var accent: Color { Color.accent }
     var accentPressed: Color { Color.accentPressed }
+    var searchBarBackground: Color { Color.background.opacity(0.7) }
+    var searchBarSearchIcon: Color { Color.textSecondary.opacity(0.8) }
     func color(change: Decimal?) -> Color {
         let direction = change?.priceDirection ?? .neutral
         switch direction {

@@ -24,6 +24,8 @@ public enum L10n {
   public static let holdings = L10n.tr("Localizable", "Holdings", fallback: "Holdings")
   /// My Holdings
   public static let myHoldings = L10n.tr("Localizable", "My Holdings", fallback: "My Holdings")
+  /// Search Coins
+  public static let searchCoins = L10n.tr("Localizable", "Search Coins", fallback: "Search Coins")
   /// Localizable.strings
   ///   MyHodl
   /// 
