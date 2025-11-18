@@ -166,9 +166,7 @@
 			children = (
 				76EB83622EC37C4A00D92E67 /* DashboardView.swift */,
 				76EB83752EC4B72E00D92E67 /* DashboardViewModel.swift */,
-				76EB83772EC5120B00D92E67 /* BalanceView.swift */,
-				76EB83792EC5123300D92E67 /* AssetAllocationView.swift */,
-				76EB837B2EC5124800D92E67 /* TopHoldingsView.swift */,
+				76EB838D2ECCD8B900D92E67 /* Section Views  */,
 				76EB837D2EC64A6500D92E67 /* DashboardCard.swift */,
 				76EB83672EC3C37600D92E67 /* DayChangeTracker.swift */,
 				76EB83732EC4B4D300D92E67 /* StubDataModel.swift */,
@@ -204,6 +202,16 @@
 				76EB83712EC4AC9100D92E67 /* TitleView.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		76EB838D2ECCD8B900D92E67 /* Section Views  */ = {
+			isa = PBXGroup;
+			children = (
+				76EB83772EC5120B00D92E67 /* BalanceView.swift */,
+				76EB83792EC5123300D92E67 /* AssetAllocationView.swift */,
+				76EB837B2EC5124800D92E67 /* TopHoldingsView.swift */,
+			);
+			path = "Section Views ";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
