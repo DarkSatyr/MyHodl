@@ -1,5 +1,5 @@
 //
-//  MyHoldingsView.swift
+//  HoldingsView.swift
 //  MyHodl
 //
 //  Created by DarkSatyr on 11.11.2025.
@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct MyHoldingsView: View {
+struct HoldingsView: View {
     @Environment(ThemeManager.self) private var themeManager
-    @StateObject private var viewModel = MyHoldingsViewModel()
+    @StateObject private var viewModel = HoldingsViewModel()
     
     var body: some View {
         PageView {
@@ -36,6 +36,6 @@ struct MyHoldingsView: View {
 }
 
 #Preview {
-    MyHoldingsView()
+    HoldingsView()
         .environment(ThemeManager())
 }

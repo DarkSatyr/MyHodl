@@ -1,5 +1,5 @@
 //
-//  MyHodlView.swift
+//  MainTabView.swift
 //  MyHodl
 //
 //  Created by DarkSatyr on 13.08.2025.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MyHodlView: View {
+struct MainTabView: View {
     @Environment(ThemeManager.self) private var themeManager
     
     var body: some View {
@@ -17,7 +17,7 @@ struct MyHodlView: View {
                     Label(L10n.dashboard, systemImage: "chart.line.uptrend.xyaxis")
                 }
             
-            MyHoldingsView()
+            HoldingsView()
                 .tabItem {
                     Label(L10n.holdings, systemImage: "bitcoinsign.circle")
                 }
@@ -32,6 +32,6 @@ struct MyHodlView: View {
 }
 
 #Preview {
-    MyHodlView()
+    MainTabView()
         .environment(ThemeManager())
 }

@@ -12,7 +12,7 @@ struct RootView: View {
     @Environment(ThemeManager.self) private var themeManager
 
     var body: some View {
-        MyHodlView()
+        MainTabView()
             .background(themeManager.currentTheme.background)
             .onAppear {
                 themeManager.updateSystemScheme(systemScheme)

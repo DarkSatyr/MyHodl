@@ -1,5 +1,5 @@
 //
-//  MyHoldingsViewModel.swift
+//  HoldingsViewModel.swift
 //  MyHodl
 //
 //  Created by DarkSatyr on 18.11.2025.
@@ -8,7 +8,7 @@
 import SwiftUI
 import Combine
 
-final class MyHoldingsViewModel: ObservableObject {
+final class HoldingsViewModel: ObservableObject {
     
     @Published var assets = [DashboardAsset]()
     @Published var filteredAssets = [DashboardAsset]()
