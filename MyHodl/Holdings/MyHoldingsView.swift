@@ -28,7 +28,9 @@ struct MyHoldingsView: View {
         } title: {
             TitleView {
                 Text(L10n.myHoldings)
-            } right: {}
+            } right: {
+                Button("Add Coin", systemImage: "plus") {} // TODO: Add loc
+            }
         }
     }
 }

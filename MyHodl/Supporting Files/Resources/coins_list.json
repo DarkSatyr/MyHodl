@@ -1,0 +1,4952 @@
+[
+  {
+    "code": "btc",
+    "name": "Bitcoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "bitcoin",
+    "id": "bitcoin",
+    "rank": 1
+  },
+  {
+    "code": "eth",
+    "name": "Ethereum",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "ethereum",
+    "id": "ethereum",
+    "rank": 2
+  },
+  {
+    "code": "usdt",
+    "name": "Tether",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "tether",
+    "id": "tether",
+    "rank": 3
+  },
+  {
+    "code": "xrp",
+    "name": "XRP",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "ripple",
+    "id": "ripple",
+    "rank": 4
+  },
+  {
+    "code": "bnb",
+    "name": "BNB",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "binancecoin",
+    "id": "binancecoin",
+    "rank": 5
+  },
+  {
+    "code": "sol",
+    "name": "Solana",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "solana",
+    "id": "solana",
+    "rank": 6
+  },
+  {
+    "code": "usdc",
+    "name": "USDC",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "usd-coin",
+    "id": "usd-coin",
+    "rank": 7
+  },
+  {
+    "code": "trx",
+    "name": "TRON",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "tron",
+    "id": "tron",
+    "rank": 8
+  },
+  {
+    "code": "steth",
+    "name": "Lido Staked Ether",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "staked-ether",
+    "id": "staked-ether",
+    "rank": 9
+  },
+  {
+    "code": "doge",
+    "name": "Dogecoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "dogecoin",
+    "id": "dogecoin",
+    "rank": 10
+  },
+  {
+    "code": "ada",
+    "name": "Cardano",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "cardano",
+    "id": "cardano",
+    "rank": 11
+  },
+  {
+    "code": "figr_heloc",
+    "name": "Figure Heloc",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "figure-heloc",
+    "id": "figure-heloc",
+    "rank": 12
+  },
+  {
+    "code": "wbt",
+    "name": "WhiteBIT Coin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "whitebit",
+    "id": "whitebit",
+    "rank": 13
+  },
+  {
+    "code": "wsteth",
+    "name": "Wrapped stETH",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "wrapped-steth",
+    "id": "wrapped-steth",
+    "rank": 14
+  },
+  {
+    "code": "wbtc",
+    "name": "Wrapped Bitcoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "wrapped-bitcoin",
+    "id": "wrapped-bitcoin",
+    "rank": 15
+  },
+  {
+    "code": "bch",
+    "name": "Bitcoin Cash",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "bitcoin-cash",
+    "id": "bitcoin-cash",
+    "rank": 16
+  },
+  {
+    "code": "wbeth",
+    "name": "Wrapped Beacon ETH",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "wrapped-beacon-eth",
+    "id": "wrapped-beacon-eth",
+    "rank": 17
+  },
+  {
+    "code": "usds",
+    "name": "USDS",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "usds",
+    "id": "usds",
+    "rank": 18
+  },
+  {
+    "code": "bsc-usd",
+    "name": "Binance Bridged USDT (BNB Smart Chain)",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "binance-bridged-usdt-bnb-smart-chain",
+    "id": "binance-bridged-usdt-bnb-smart-chain",
+    "rank": 19
+  },
+  {
+    "code": "link",
+    "name": "Chainlink",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "chainlink",
+    "id": "chainlink",
+    "rank": 20
+  },
+  {
+    "code": "leo",
+    "name": "LEO Token",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "leo-token",
+    "id": "leo-token",
+    "rank": 21
+  },
+  {
+    "code": "hype",
+    "name": "Hyperliquid",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "hyperliquid",
+    "id": "hyperliquid",
+    "rank": 22
+  },
+  {
+    "code": "zec",
+    "name": "Zcash",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "zcash",
+    "id": "zcash",
+    "rank": 23
+  },
+  {
+    "code": "xlm",
+    "name": "Stellar",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "stellar",
+    "id": "stellar",
+    "rank": 24
+  },
+  {
+    "code": "weth",
+    "name": "WETH",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "weth",
+    "id": "weth",
+    "rank": 25
+  },
+  {
+    "code": "weeth",
+    "name": "Wrapped eETH",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "wrapped-eeth",
+    "id": "wrapped-eeth",
+    "rank": 26
+  },
+  {
+    "code": "usde",
+    "name": "Ethena USDe",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "ethena-usde",
+    "id": "ethena-usde",
+    "rank": 27
+  },
+  {
+    "code": "xmr",
+    "name": "Monero",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "monero",
+    "id": "monero",
+    "rank": 28
+  },
+  {
+    "code": "cbbtc",
+    "name": "Coinbase Wrapped BTC",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "coinbase-wrapped-btc",
+    "id": "coinbase-wrapped-btc",
+    "rank": 29
+  },
+  {
+    "code": "ltc",
+    "name": "Litecoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "litecoin",
+    "id": "litecoin",
+    "rank": 30
+  },
+  {
+    "code": "hbar",
+    "name": "Hedera",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "hedera-hashgraph",
+    "id": "hedera-hashgraph",
+    "rank": 31
+  },
+  {
+    "code": "avax",
+    "name": "Avalanche",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "avalanche-2",
+    "id": "avalanche-2",
+    "rank": 32
+  },
+  {
+    "code": "sui",
+    "name": "Sui",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "sui",
+    "id": "sui",
+    "rank": 33
+  },
+  {
+    "code": "shib",
+    "name": "Shiba Inu",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "shiba-inu",
+    "id": "shiba-inu",
+    "rank": 34
+  },
+  {
+    "code": "dai",
+    "name": "Dai",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "dai",
+    "id": "dai",
+    "rank": 35
+  },
+  {
+    "code": "wlfi",
+    "name": "World Liberty Financial",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "world-liberty-financial",
+    "id": "world-liberty-financial",
+    "rank": 36
+  },
+  {
+    "code": "susde",
+    "name": "Ethena Staked USDe",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "ethena-staked-usde",
+    "id": "ethena-staked-usde",
+    "rank": 37
+  },
+  {
+    "code": "cro",
+    "name": "Cronos",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "crypto-com-chain",
+    "id": "crypto-com-chain",
+    "rank": 38
+  },
+  {
+    "code": "usdt0",
+    "name": "USDT0",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "usdt0",
+    "id": "usdt0",
+    "rank": 39
+  },
+  {
+    "code": "uni",
+    "name": "Uniswap",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "uniswap",
+    "id": "uniswap",
+    "rank": 40
+  },
+  {
+    "code": "susds",
+    "name": "sUSDS",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "susds",
+    "id": "susds",
+    "rank": 41
+  },
+  {
+    "code": "ton",
+    "name": "Toncoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "the-open-network",
+    "id": "the-open-network",
+    "rank": 42
+  },
+  {
+    "code": "pyusd",
+    "name": "PayPal USD",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "paypal-usd",
+    "id": "paypal-usd",
+    "rank": 43
+  },
+  {
+    "code": "dot",
+    "name": "Polkadot",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "polkadot",
+    "id": "polkadot",
+    "rank": 44
+  },
+  {
+    "code": "mnt",
+    "name": "Mantle",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "mantle",
+    "id": "mantle",
+    "rank": 45
+  },
+  {
+    "code": "cc",
+    "name": "Canton",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "canton-network",
+    "id": "canton-network",
+    "rank": 46
+  },
+  {
+    "code": "m",
+    "name": "MemeCore",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "memecore",
+    "id": "memecore",
+    "rank": 47
+  },
+  {
+    "code": "tao",
+    "name": "Bittensor",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "bittensor",
+    "id": "bittensor",
+    "rank": 48
+  },
+  {
+    "code": "aave",
+    "name": "Aave",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "aave",
+    "id": "aave",
+    "rank": 49
+  },
+  {
+    "code": "usd1",
+    "name": "USD1",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "usd1-wlfi",
+    "id": "usd1-wlfi",
+    "rank": 50
+  },
+  {
+    "code": "bgb",
+    "name": "Bitget Token",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "bitget-token",
+    "id": "bitget-token",
+    "rank": 51
+  },
+  {
+    "code": "near",
+    "name": "NEAR Protocol",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "near",
+    "id": "near",
+    "rank": 52
+  },
+  {
+    "code": "aster",
+    "name": "Aster",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "aster-2",
+    "id": "aster-2",
+    "rank": 53
+  },
+  {
+    "code": "buidl",
+    "name": "BlackRock USD Institutional Digital Liquidity Fund",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "blackrock-usd-institutional-digital-liquidity-fund",
+    "id": "blackrock-usd-institutional-digital-liquidity-fund",
+    "rank": 54
+  },
+  {
+    "code": "okb",
+    "name": "OKB",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "okb",
+    "id": "okb",
+    "rank": 55
+  },
+  {
+    "code": "usdf",
+    "name": "Falcon USD",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "falcon-finance",
+    "id": "falcon-finance",
+    "rank": 56
+  },
+  {
+    "code": "icp",
+    "name": "Internet Computer",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "internet-computer",
+    "id": "internet-computer",
+    "rank": 57
+  },
+  {
+    "code": "xaut",
+    "name": "Tether Gold",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "tether-gold",
+    "id": "tether-gold",
+    "rank": 58
+  },
+  {
+    "code": "etc",
+    "name": "Ethereum Classic",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "ethereum-classic",
+    "id": "ethereum-classic",
+    "rank": 59
+  },
+  {
+    "code": "ena",
+    "name": "Ethena",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "ethena",
+    "id": "ethena",
+    "rank": 60
+  },
+  {
+    "code": "pi",
+    "name": "Pi Network",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "pi-network",
+    "id": "pi-network",
+    "rank": 61
+  },
+  {
+    "code": "jitosol",
+    "name": "Jito Staked SOL",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "jito-staked-sol",
+    "id": "jito-staked-sol",
+    "rank": 62
+  },
+  {
+    "code": "pepe",
+    "name": "Pepe",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "pepe",
+    "id": "pepe",
+    "rank": 63
+  },
+  {
+    "code": "jlp",
+    "name": "Jupiter Perpetuals Liquidity Provider Token",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "jupiter-perpetuals-liquidity-provider-token",
+    "id": "jupiter-perpetuals-liquidity-provider-token",
+    "rank": 64
+  },
+  {
+    "code": "rain",
+    "name": "Rain",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "rain",
+    "id": "rain",
+    "rank": 65
+  },
+  {
+    "code": "weth",
+    "name": "Binance-Peg WETH",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "binance-peg-weth",
+    "id": "binance-peg-weth",
+    "rank": 66
+  },
+  {
+    "code": "sol",
+    "name": "Wrapped SOL",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "wrapped-solana",
+    "id": "wrapped-solana",
+    "rank": 67
+  },
+  {
+    "code": "apt",
+    "name": "Aptos",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "aptos",
+    "id": "aptos",
+    "rank": 68
+  },
+  {
+    "code": "pump",
+    "name": "Pump.fun",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "pump-fun",
+    "id": "pump-fun",
+    "rank": 69
+  },
+  {
+    "code": "htx",
+    "name": "HTX DAO",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "htx-dao",
+    "id": "htx-dao",
+    "rank": 70
+  },
+  {
+    "code": "ondo",
+    "name": "Ondo",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "ondo-finance",
+    "id": "ondo-finance",
+    "rank": 71
+  },
+  {
+    "code": "kcs",
+    "name": "KuCoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "kucoin-shares",
+    "id": "kucoin-shares",
+    "rank": 72
+  },
+  {
+    "code": "wld",
+    "name": "Worldcoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "worldcoin-wld",
+    "id": "worldcoin-wld",
+    "rank": 73
+  },
+  {
+    "code": "pol",
+    "name": "POL (ex-MATIC)",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "polygon-ecosystem-token",
+    "id": "polygon-ecosystem-token",
+    "rank": 74
+  },
+  {
+    "code": "paxg",
+    "name": "PAX Gold",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "pax-gold",
+    "id": "pax-gold",
+    "rank": 75
+  },
+  {
+    "code": "kas",
+    "name": "Kaspa",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "kaspa",
+    "id": "kaspa",
+    "rank": 76
+  },
+  {
+    "code": "usdtb",
+    "name": "USDtb",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "usdtb",
+    "id": "usdtb",
+    "rank": 77
+  },
+  {
+    "code": "syrupusdc",
+    "name": "syrupUSDC",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "syrupusdc",
+    "id": "syrupusdc",
+    "rank": 78
+  },
+  {
+    "code": "bfusd",
+    "name": "BFUSD",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "bfusd",
+    "id": "bfusd",
+    "rank": 79
+  },
+  {
+    "code": "usdc",
+    "name": "Binance Bridged USDC (BNB Smart Chain)",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "binance-bridged-usdc-bnb-smart-chain",
+    "id": "binance-bridged-usdc-bnb-smart-chain",
+    "rank": 80
+  },
+  {
+    "code": "hash",
+    "name": "Provenance Blockchain",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "hash-2",
+    "id": "hash-2",
+    "rank": 81
+  },
+  {
+    "code": "algo",
+    "name": "Algorand",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "algorand",
+    "id": "algorand",
+    "rank": 82
+  },
+  {
+    "code": "trump",
+    "name": "Official Trump",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "official-trump",
+    "id": "official-trump",
+    "rank": 83
+  },
+  {
+    "code": "reth",
+    "name": "Rocket Pool ETH",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "rocket-pool-eth",
+    "id": "rocket-pool-eth",
+    "rank": 84
+  },
+  {
+    "code": "rlusd",
+    "name": "Ripple USD",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "ripple-usd",
+    "id": "ripple-usd",
+    "rank": 85
+  },
+  {
+    "code": "usdg",
+    "name": "Global Dollar",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "global-dollar",
+    "id": "global-dollar",
+    "rank": 86
+  },
+  {
+    "code": "arb",
+    "name": "Arbitrum",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "arbitrum",
+    "id": "arbitrum",
+    "rank": 87
+  },
+  {
+    "code": "qnt",
+    "name": "Quant",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "quant-network",
+    "id": "quant-network",
+    "rank": 88
+  },
+  {
+    "code": "atom",
+    "name": "Cosmos Hub",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "cosmos",
+    "id": "cosmos",
+    "rank": 89
+  },
+  {
+    "code": "usyc",
+    "name": "Circle USYC",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "hashnote-usyc",
+    "id": "hashnote-usyc",
+    "rank": 90
+  },
+  {
+    "code": "gt",
+    "name": "Gate",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "gatechain-token",
+    "id": "gatechain-token",
+    "rank": 91
+  },
+  {
+    "code": "wbnb",
+    "name": "Wrapped BNB",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "wbnb",
+    "id": "wbnb",
+    "rank": 92
+  },
+  {
+    "code": "bnsol",
+    "name": "Binance Staked SOL",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "binance-staked-sol",
+    "id": "binance-staked-sol",
+    "rank": 93
+  },
+  {
+    "code": "fil",
+    "name": "Filecoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "filecoin",
+    "id": "filecoin",
+    "rank": 94
+  },
+  {
+    "code": "vet",
+    "name": "VeChain",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "vechain",
+    "id": "vechain",
+    "rank": 95
+  },
+  {
+    "code": "flr",
+    "name": "Flare",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "flare-networks",
+    "id": "flare-networks",
+    "rank": 96
+  },
+  {
+    "code": "fbtc",
+    "name": "Function FBTC",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "ignition-fbtc",
+    "id": "ignition-fbtc",
+    "rank": 97
+  },
+  {
+    "code": "rseth",
+    "name": "Kelp DAO Restaked ETH",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "kelp-dao-restaked-eth",
+    "id": "kelp-dao-restaked-eth",
+    "rank": 98
+  },
+  {
+    "code": "xdc",
+    "name": "XDC Network",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "xdce-crowd-sale",
+    "id": "xdce-crowd-sale",
+    "rank": 99
+  },
+  {
+    "code": "khype",
+    "name": "Kinetiq Staked HYPE",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "kinetic-staked-hype",
+    "id": "kinetic-staked-hype",
+    "rank": 100
+  },
+  {
+    "code": "$pac",
+    "name": "PAC Protocol",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_pac",
+    "rank": null
+  },
+  {
+    "code": "0xbtc",
+    "name": "0xBitcoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "oxbitcoin",
+    "id": "oxbitcoin",
+    "rank": null
+  },
+  {
+    "code": "1inch",
+    "name": "1inch",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "1inch",
+    "id": "1inch",
+    "rank": null
+  },
+  {
+    "code": "2give",
+    "name": "2GIVE",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_2give",
+    "rank": null
+  },
+  {
+    "code": "abt",
+    "name": "Arcblock",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "arcblock",
+    "id": "arcblock",
+    "rank": null
+  },
+  {
+    "code": "act",
+    "name": "Achain",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "achain",
+    "id": "achain",
+    "rank": null
+  },
+  {
+    "code": "actn",
+    "name": "Action Coin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_actn",
+    "rank": null
+  },
+  {
+    "code": "add",
+    "name": null,
+    "type": "crypto",
+    "isDead": true,
+    "coingeckoId": "add-finance",
+    "id": "add-finance",
+    "rank": null
+  },
+  {
+    "code": "adx",
+    "name": "AdEx",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "adex",
+    "id": "adex",
+    "rank": null
+  },
+  {
+    "code": "ae",
+    "name": "Aeternity",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "aeternity",
+    "id": "aeternity",
+    "rank": null
+  },
+  {
+    "code": "aeon",
+    "name": "Aeon",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "project-aeon",
+    "id": "project-aeon",
+    "rank": null
+  },
+  {
+    "code": "aeur",
+    "name": "Augmint Euro",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "anchored-coins-eur",
+    "id": "anchored-coins-eur",
+    "rank": null
+  },
+  {
+    "code": "agi",
+    "name": "SingularityNET",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "agently",
+    "id": "agently",
+    "rank": null
+  },
+  {
+    "code": "agrs",
+    "name": "Agoras: Currency of Tau",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "agoras-currency-of-tau",
+    "id": "agoras-currency-of-tau",
+    "rank": null
+  },
+  {
+    "code": "aion",
+    "name": "Aion",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "aion",
+    "id": "aion",
+    "rank": null
+  },
+  {
+    "code": "amb",
+    "name": "Ambrosus",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "amber",
+    "id": "amber",
+    "rank": null
+  },
+  {
+    "code": "amp",
+    "name": "Amp",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "amp-token",
+    "id": "amp-token",
+    "rank": null
+  },
+  {
+    "code": "ampl",
+    "name": "Ampleforth",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "ampleforth",
+    "id": "ampleforth",
+    "rank": null
+  },
+  {
+    "code": "ankr",
+    "name": "Ankr",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "ankr",
+    "id": "ankr",
+    "rank": null
+  },
+  {
+    "code": "ant",
+    "name": "Aragon",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "aragon",
+    "id": "aragon",
+    "rank": null
+  },
+  {
+    "code": "ape",
+    "name": "ApeCoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "apecoin",
+    "id": "apecoin",
+    "rank": null
+  },
+  {
+    "code": "apex",
+    "name": "ApeX Protocol",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_apex",
+    "rank": null
+  },
+  {
+    "code": "appc",
+    "name": "AppCoins",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_appc",
+    "rank": null
+  },
+  {
+    "code": "ardr",
+    "name": "Ardor",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "ardor",
+    "id": "ardor",
+    "rank": null
+  },
+  {
+    "code": "arg",
+    "name": "Argentum",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_arg",
+    "rank": null
+  },
+  {
+    "code": "ark",
+    "name": "Ark",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "ark",
+    "id": "ark",
+    "rank": null
+  },
+  {
+    "code": "arn",
+    "name": "Aeron",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_arn",
+    "rank": null
+  },
+  {
+    "code": "arnx",
+    "name": null,
+    "type": "crypto",
+    "isDead": true,
+    "coingeckoId": "aeron",
+    "id": "aeron",
+    "rank": null
+  },
+  {
+    "code": "ary",
+    "name": "Block Array",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "aryoshin",
+    "id": "aryoshin",
+    "rank": null
+  },
+  {
+    "code": "ast",
+    "name": "AirSwap",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "airswap",
+    "id": "airswap",
+    "rank": null
+  },
+  {
+    "code": "atlas",
+    "name": "Star Atlas",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "star-atlas",
+    "id": "star-atlas",
+    "rank": null
+  },
+  {
+    "code": "atm",
+    "name": null,
+    "type": "crypto",
+    "isDead": true,
+    "coingeckoId": null,
+    "id": "unknown_atm",
+    "rank": null
+  },
+  {
+    "code": "audr",
+    "name": null,
+    "type": "crypto",
+    "isDead": true,
+    "coingeckoId": null,
+    "id": "unknown_audr",
+    "rank": null
+  },
+  {
+    "code": "aury",
+    "name": "Aurory",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "aurory",
+    "id": "aurory",
+    "rank": null
+  },
+  {
+    "code": "auto",
+    "name": "Auto",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "auto",
+    "id": "auto",
+    "rank": null
+  },
+  {
+    "code": "aywa",
+    "name": "Aywa",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_aywa",
+    "rank": null
+  },
+  {
+    "code": "bab",
+    "name": "Binance Account Bound Token",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_bab",
+    "rank": null
+  },
+  {
+    "code": "bal",
+    "name": "Balancer",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "balancer",
+    "id": "balancer",
+    "rank": null
+  },
+  {
+    "code": "band",
+    "name": "Band Protocol",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "band-protocol",
+    "id": "band-protocol",
+    "rank": null
+  },
+  {
+    "code": "bat",
+    "name": "Basic Attention Token",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "basic-attention-token",
+    "id": "basic-attention-token",
+    "rank": null
+  },
+  {
+    "code": "bay",
+    "name": "BitBay",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "marina-protocol",
+    "id": "marina-protocol",
+    "rank": null
+  },
+  {
+    "code": "bcbc",
+    "name": null,
+    "type": "crypto",
+    "isDead": true,
+    "coingeckoId": null,
+    "id": "unknown_bcbc",
+    "rank": null
+  },
+  {
+    "code": "bcc",
+    "name": "BitConnect",
+    "type": "crypto",
+    "isDead": true,
+    "coingeckoId": null,
+    "id": "unknown_bcc",
+    "rank": null
+  },
+  {
+    "code": "bcd",
+    "name": "Bitcoin Diamond",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "bitcoin-diamond",
+    "id": "bitcoin-diamond",
+    "rank": null
+  },
+  {
+    "code": "bcio",
+    "name": "Blockchain.io",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_bcio",
+    "rank": null
+  },
+  {
+    "code": "bcn",
+    "name": "Bytecoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "bytecoin",
+    "id": "bytecoin",
+    "rank": null
+  },
+  {
+    "code": "bco",
+    "name": "BridgeCoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_bco",
+    "rank": null
+  },
+  {
+    "code": "bcpt",
+    "name": "BlockMason Credit Protocol",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_bcpt",
+    "rank": null
+  },
+  {
+    "code": "bdl",
+    "name": "Bitdeal",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_bdl",
+    "rank": null
+  },
+  {
+    "code": "beam",
+    "name": "Beam",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "beam",
+    "id": "beam",
+    "rank": null
+  },
+  {
+    "code": "bela",
+    "name": "Belacoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_bela",
+    "rank": null
+  },
+  {
+    "code": "bix",
+    "name": "Bibox Token",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_bix",
+    "rank": null
+  },
+  {
+    "code": "blcn",
+    "name": null,
+    "type": "crypto",
+    "isDead": true,
+    "coingeckoId": null,
+    "id": "unknown_blcn",
+    "rank": null
+  },
+  {
+    "code": "blk",
+    "name": "BlackCoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "blackcoin",
+    "id": "blackcoin",
+    "rank": null
+  },
+  {
+    "code": "block",
+    "name": "Blocknet",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "blocknet",
+    "id": "blocknet",
+    "rank": null
+  },
+  {
+    "code": "blz",
+    "name": "Bluzelle",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "bluzelle",
+    "id": "bluzelle",
+    "rank": null
+  },
+  {
+    "code": "bnt",
+    "name": "Bancor",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "bancor",
+    "id": "bancor",
+    "rank": null
+  },
+  {
+    "code": "bnty",
+    "name": "Bounty0x",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "bounty-3",
+    "id": "bounty-3",
+    "rank": null
+  },
+  {
+    "code": "booty",
+    "name": "Booty",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "booty",
+    "id": "booty",
+    "rank": null
+  },
+  {
+    "code": "bos",
+    "name": "BOScoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "bitcoinos",
+    "id": "bitcoinos",
+    "rank": null
+  },
+  {
+    "code": "bpt",
+    "name": "Blockport",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_bpt",
+    "rank": null
+  },
+  {
+    "code": "bq",
+    "name": "bitqy",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_bq",
+    "rank": null
+  },
+  {
+    "code": "brd",
+    "name": "Bread",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_brd",
+    "rank": null
+  },
+  {
+    "code": "bsd",
+    "name": "BitSend",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_bsd",
+    "rank": null
+  },
+  {
+    "code": "bsv",
+    "name": "Bitcoin SV",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "bitcoin-cash-sv",
+    "id": "bitcoin-cash-sv",
+    "rank": null
+  },
+  {
+    "code": "btcd",
+    "name": "BitcoinDark",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_btcd",
+    "rank": null
+  },
+  {
+    "code": "btch",
+    "name": "Bitcoin Hush",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_btch",
+    "rank": null
+  },
+  {
+    "code": "btcp",
+    "name": "Bitcoin Private",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "bitcoin-pro",
+    "id": "bitcoin-pro",
+    "rank": null
+  },
+  {
+    "code": "btcz",
+    "name": "BitcoinZ",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "bitcoinz",
+    "id": "bitcoinz",
+    "rank": null
+  },
+  {
+    "code": "btdx",
+    "name": "Bitcloud",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_btdx",
+    "rank": null
+  },
+  {
+    "code": "btg",
+    "name": "Bitcoin Gold",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "bitcoin-gold",
+    "id": "bitcoin-gold",
+    "rank": null
+  },
+  {
+    "code": "btm",
+    "name": "Bytom",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_btm",
+    "rank": null
+  },
+  {
+    "code": "bts",
+    "name": "BitShares",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "bitshares",
+    "id": "bitshares",
+    "rank": null
+  },
+  {
+    "code": "btt",
+    "name": "BitTorrent",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "bittorrent",
+    "id": "bittorrent",
+    "rank": null
+  },
+  {
+    "code": "btx",
+    "name": "Bitcore",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "bitcore",
+    "id": "bitcore",
+    "rank": null
+  },
+  {
+    "code": "burst",
+    "name": "Burst",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_burst",
+    "rank": null
+  },
+  {
+    "code": "bze",
+    "name": "BZEdge",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "bzedge",
+    "id": "bzedge",
+    "rank": null
+  },
+  {
+    "code": "call",
+    "name": null,
+    "type": "crypto",
+    "isDead": true,
+    "coingeckoId": null,
+    "id": "unknown_call",
+    "rank": null
+  },
+  {
+    "code": "cdn",
+    "name": "Canada eCoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "canada-ecoin",
+    "id": "canada-ecoin",
+    "rank": null
+  },
+  {
+    "code": "cdt",
+    "name": "Blox",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_cdt",
+    "rank": null
+  },
+  {
+    "code": "cenz",
+    "name": null,
+    "type": "crypto",
+    "isDead": true,
+    "coingeckoId": null,
+    "id": "unknown_cenz",
+    "rank": null
+  },
+  {
+    "code": "chain",
+    "name": "Chaincoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "chain-games",
+    "id": "chain-games",
+    "rank": null
+  },
+  {
+    "code": "chat",
+    "name": "ChatCoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_chat",
+    "rank": null
+  },
+  {
+    "code": "chips",
+    "name": "CHIPS",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "chips-2",
+    "id": "chips-2",
+    "rank": null
+  },
+  {
+    "code": "chsb",
+    "name": "SwissBorg",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_chsb",
+    "rank": null
+  },
+  {
+    "code": "chz",
+    "name": "Chiliz",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "chiliz",
+    "id": "chiliz",
+    "rank": null
+  },
+  {
+    "code": "cix",
+    "name": "Cryptonetix",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "centurion-invest",
+    "id": "centurion-invest",
+    "rank": null
+  },
+  {
+    "code": "clam",
+    "name": "Clams",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "clams",
+    "id": "clams",
+    "rank": null
+  },
+  {
+    "code": "cloak",
+    "name": "CloakCoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "cloakcoin",
+    "id": "cloakcoin",
+    "rank": null
+  },
+  {
+    "code": "cmm",
+    "name": "Commercium",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_cmm",
+    "rank": null
+  },
+  {
+    "code": "cmt",
+    "name": "CyberMiles",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "cornermarket",
+    "id": "cornermarket",
+    "rank": null
+  },
+  {
+    "code": "cnd",
+    "name": "Cindicator",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "cindicator",
+    "id": "cindicator",
+    "rank": null
+  },
+  {
+    "code": "cnx",
+    "name": "Cryptonex",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "cofinex-2",
+    "id": "cofinex-2",
+    "rank": null
+  },
+  {
+    "code": "cny",
+    "name": "Chinese Yuan",
+    "type": "fiat",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_cny",
+    "rank": null
+  },
+  {
+    "code": "cob",
+    "name": "Cobinhood",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_cob",
+    "rank": null
+  },
+  {
+    "code": "colx",
+    "name": "ColossusXT",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "colossuscoinxt",
+    "id": "colossuscoinxt",
+    "rank": null
+  },
+  {
+    "code": "comp",
+    "name": "Compound",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "compound-governance-token",
+    "id": "compound-governance-token",
+    "rank": null
+  },
+  {
+    "code": "coqui",
+    "name": "Coqui Cash",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_coqui",
+    "rank": null
+  },
+  {
+    "code": "cred",
+    "name": "Cred",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "cred-coin-pay",
+    "id": "cred-coin-pay",
+    "rank": null
+  },
+  {
+    "code": "crpt",
+    "name": "Crypterium",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "crypterium",
+    "id": "crypterium",
+    "rank": null
+  },
+  {
+    "code": "crv",
+    "name": "Curve DAO Token",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "curve-dao-token",
+    "id": "curve-dao-token",
+    "rank": null
+  },
+  {
+    "code": "crw",
+    "name": "Crown",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "crown",
+    "id": "crown",
+    "rank": null
+  },
+  {
+    "code": "cs",
+    "name": "Credits",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_cs",
+    "rank": null
+  },
+  {
+    "code": "ctr",
+    "name": "Centra",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "concentrator",
+    "id": "concentrator",
+    "rank": null
+  },
+  {
+    "code": "ctxc",
+    "name": "Cortex",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "cortex",
+    "id": "cortex",
+    "rank": null
+  },
+  {
+    "code": "cvc",
+    "name": "Civic",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "civic",
+    "id": "civic",
+    "rank": null
+  },
+  {
+    "code": "d",
+    "name": null,
+    "type": "crypto",
+    "isDead": true,
+    "coingeckoId": null,
+    "id": "unknown_d",
+    "rank": null
+  },
+  {
+    "code": "dash",
+    "name": "Dash",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "dash",
+    "id": "dash",
+    "rank": null
+  },
+  {
+    "code": "dat",
+    "name": "Datum",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "digital-asset-treasury",
+    "id": "digital-asset-treasury",
+    "rank": null
+  },
+  {
+    "code": "data",
+    "name": "Streamr DATAcoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_data",
+    "rank": null
+  },
+  {
+    "code": "dbc",
+    "name": "DeepBrain Chain",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "deepbrain-chain",
+    "id": "deepbrain-chain",
+    "rank": null
+  },
+  {
+    "code": "dcn",
+    "name": "Dentacoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "dentacoin",
+    "id": "dentacoin",
+    "rank": null
+  },
+  {
+    "code": "dcr",
+    "name": "Decred",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "decred",
+    "id": "decred",
+    "rank": null
+  },
+  {
+    "code": "deez",
+    "name": null,
+    "type": "crypto",
+    "isDead": true,
+    "coingeckoId": null,
+    "id": "unknown_deez",
+    "rank": null
+  },
+  {
+    "code": "dent",
+    "name": "Dent",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "dent",
+    "id": "dent",
+    "rank": null
+  },
+  {
+    "code": "dew",
+    "name": "DEW",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "dew-2",
+    "id": "dew-2",
+    "rank": null
+  },
+  {
+    "code": "dgb",
+    "name": "DigiByte",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "digibyte",
+    "id": "digibyte",
+    "rank": null
+  },
+  {
+    "code": "dgd",
+    "name": "DigixDAO",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_dgd",
+    "rank": null
+  },
+  {
+    "code": "dlt",
+    "name": "Agrello",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "delta-decentralized",
+    "id": "delta-decentralized",
+    "rank": null
+  },
+  {
+    "code": "dnt",
+    "name": "district0x",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "district0x",
+    "id": "district0x",
+    "rank": null
+  },
+  {
+    "code": "dock",
+    "name": "Dock",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_dock",
+    "rank": null
+  },
+  {
+    "code": "drgn",
+    "name": "Dragonchain",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "dragonchain",
+    "id": "dragonchain",
+    "rank": null
+  },
+  {
+    "code": "drop",
+    "name": "Dropil",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "drop-2",
+    "id": "drop-2",
+    "rank": null
+  },
+  {
+    "code": "dta",
+    "name": "Data Transaction Token",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_dta",
+    "rank": null
+  },
+  {
+    "code": "dth",
+    "name": "Dether",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_dth",
+    "rank": null
+  },
+  {
+    "code": "dtr",
+    "name": "Dynamic Trading Rights",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_dtr",
+    "rank": null
+  },
+  {
+    "code": "ebst",
+    "name": "eBoost",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_ebst",
+    "rank": null
+  },
+  {
+    "code": "eca",
+    "name": "Electra",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_eca",
+    "rank": null
+  },
+  {
+    "code": "edg",
+    "name": "Edgeless",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_edg",
+    "rank": null
+  },
+  {
+    "code": "edo",
+    "name": "Eidoo",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_edo",
+    "rank": null
+  },
+  {
+    "code": "edoge",
+    "name": null,
+    "type": "crypto",
+    "isDead": true,
+    "coingeckoId": null,
+    "id": "unknown_edoge",
+    "rank": null
+  },
+  {
+    "code": "ela",
+    "name": "Elastos",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "elastos",
+    "id": "elastos",
+    "rank": null
+  },
+  {
+    "code": "elec",
+    "name": "Electrify.Asia",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_elec",
+    "rank": null
+  },
+  {
+    "code": "elf",
+    "name": "aelf",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "aelf",
+    "id": "aelf",
+    "rank": null
+  },
+  {
+    "code": "elix",
+    "name": "Elixir",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "elixir-token",
+    "id": "elixir-token",
+    "rank": null
+  },
+  {
+    "code": "ella",
+    "name": "Ellaism",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "ella",
+    "id": "ella",
+    "rank": null
+  },
+  {
+    "code": "emb",
+    "name": "EmberCoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_emb",
+    "rank": null
+  },
+  {
+    "code": "emc",
+    "name": "Emercoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "emercoin",
+    "id": "emercoin",
+    "rank": null
+  },
+  {
+    "code": "emc2",
+    "name": "Einsteinium",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "einsteinium",
+    "id": "einsteinium",
+    "rank": null
+  },
+  {
+    "code": "eng",
+    "name": "Enigma",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_eng",
+    "rank": null
+  },
+  {
+    "code": "enj",
+    "name": "Enjin Coin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "enjincoin",
+    "id": "enjincoin",
+    "rank": null
+  },
+  {
+    "code": "entrp",
+    "name": "Hut34 Entropy",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_entrp",
+    "rank": null
+  },
+  {
+    "code": "eon",
+    "name": null,
+    "type": "crypto",
+    "isDead": true,
+    "coingeckoId": null,
+    "id": "unknown_eon",
+    "rank": null
+  },
+  {
+    "code": "eop",
+    "name": null,
+    "type": "crypto",
+    "isDead": true,
+    "coingeckoId": null,
+    "id": "unknown_eop",
+    "rank": null
+  },
+  {
+    "code": "eos",
+    "name": "EOS",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "eos",
+    "id": "eos",
+    "rank": null
+  },
+  {
+    "code": "eqli",
+    "name": null,
+    "type": "crypto",
+    "isDead": true,
+    "coingeckoId": null,
+    "id": "unknown_eqli",
+    "rank": null
+  },
+  {
+    "code": "equa",
+    "name": "EquaCoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_equa",
+    "rank": null
+  },
+  {
+    "code": "ethos",
+    "name": "Ethos",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "ethos-3",
+    "id": "ethos-3",
+    "rank": null
+  },
+  {
+    "code": "etn",
+    "name": "Electroneum",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "electroneum",
+    "id": "electroneum",
+    "rank": null
+  },
+  {
+    "code": "etp",
+    "name": "Metaverse ETP",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_etp",
+    "rank": null
+  },
+  {
+    "code": "eur",
+    "name": "Euro",
+    "type": "fiat",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_eur",
+    "rank": null
+  },
+  {
+    "code": "evx",
+    "name": "Everex",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_evx",
+    "rank": null
+  },
+  {
+    "code": "exmo",
+    "name": "EXMO Coin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_exmo",
+    "rank": null
+  },
+  {
+    "code": "exp",
+    "name": "Expanse",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_exp",
+    "rank": null
+  },
+  {
+    "code": "fair",
+    "name": "FairCoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_fair",
+    "rank": null
+  },
+  {
+    "code": "fct",
+    "name": "Factom",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "firmachain",
+    "id": "firmachain",
+    "rank": null
+  },
+  {
+    "code": "fida",
+    "name": "Bonfida",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "bonfida",
+    "id": "bonfida",
+    "rank": null
+  },
+  {
+    "code": "fjc",
+    "name": "Fujicoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "fujicoin",
+    "id": "fujicoin",
+    "rank": null
+  },
+  {
+    "code": "fldc",
+    "name": "Florincoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_fldc",
+    "rank": null
+  },
+  {
+    "code": "flo",
+    "name": "FLO",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "flo",
+    "id": "flo",
+    "rank": null
+  },
+  {
+    "code": "flux",
+    "name": "Flux",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "flux",
+    "id": "flux",
+    "rank": null
+  },
+  {
+    "code": "fsn",
+    "name": "Fusion",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "fsn",
+    "id": "fsn",
+    "rank": null
+  },
+  {
+    "code": "ftc",
+    "name": "Feathercoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "feathercoin",
+    "id": "feathercoin",
+    "rank": null
+  },
+  {
+    "code": "fuel",
+    "name": "Etherparty",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "fuel-network",
+    "id": "fuel-network",
+    "rank": null
+  },
+  {
+    "code": "fun",
+    "name": "FunFair",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "funfair",
+    "id": "funfair",
+    "rank": null
+  },
+  {
+    "code": "game",
+    "name": "GameCredits",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "gamecredits",
+    "id": "gamecredits",
+    "rank": null
+  },
+  {
+    "code": "gas",
+    "name": "Gas",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "gas",
+    "id": "gas",
+    "rank": null
+  },
+  {
+    "code": "gbp",
+    "name": "British Pound",
+    "type": "fiat",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_gbp",
+    "rank": null
+  },
+  {
+    "code": "gbx",
+    "name": "GoByte",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_gbx",
+    "rank": null
+  },
+  {
+    "code": "gbyte",
+    "name": "Byteball Bytes",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "byteball",
+    "id": "byteball",
+    "rank": null
+  },
+  {
+    "code": "generic",
+    "name": null,
+    "type": "crypto",
+    "isDead": true,
+    "coingeckoId": null,
+    "id": "unknown_generic",
+    "rank": null
+  },
+  {
+    "code": "gin",
+    "name": "GINcoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_gin",
+    "rank": null
+  },
+  {
+    "code": "glxt",
+    "name": null,
+    "type": "crypto",
+    "isDead": true,
+    "coingeckoId": null,
+    "id": "unknown_glxt",
+    "rank": null
+  },
+  {
+    "code": "gmr",
+    "name": null,
+    "type": "crypto",
+    "isDead": true,
+    "coingeckoId": "gamer",
+    "id": "gamer",
+    "rank": null
+  },
+  {
+    "code": "gmt",
+    "name": "STEPN",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "stepn",
+    "id": "stepn",
+    "rank": null
+  },
+  {
+    "code": "gno",
+    "name": "Gnosis",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "gnosis",
+    "id": "gnosis",
+    "rank": null
+  },
+  {
+    "code": "gnt",
+    "name": "Golem",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "greentrust",
+    "id": "greentrust",
+    "rank": null
+  },
+  {
+    "code": "gold",
+    "name": "GoldCoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_gold",
+    "rank": null
+  },
+  {
+    "code": "grc",
+    "name": "Gridcoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "gridcoin-research",
+    "id": "gridcoin-research",
+    "rank": null
+  },
+  {
+    "code": "grin",
+    "name": "Grin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "grin",
+    "id": "grin",
+    "rank": null
+  },
+  {
+    "code": "grs",
+    "name": "Groestlcoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "groestlcoin",
+    "id": "groestlcoin",
+    "rank": null
+  },
+  {
+    "code": "grt",
+    "name": "The Graph",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "the-graph",
+    "id": "the-graph",
+    "rank": null
+  },
+  {
+    "code": "gsc",
+    "name": "Global Social Chain",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "girls-smoking-cigs",
+    "id": "girls-smoking-cigs",
+    "rank": null
+  },
+  {
+    "code": "gto",
+    "name": "Gifto",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_gto",
+    "rank": null
+  },
+  {
+    "code": "gup",
+    "name": "Guppy",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "gearup",
+    "id": "gearup",
+    "rank": null
+  },
+  {
+    "code": "gusd",
+    "name": "Gemini Dollar",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "gemini-dollar",
+    "id": "gemini-dollar",
+    "rank": null
+  },
+  {
+    "code": "gvt",
+    "name": "Genesis Vision",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_gvt",
+    "rank": null
+  },
+  {
+    "code": "gxs",
+    "name": "GXChain",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_gxs",
+    "rank": null
+  },
+  {
+    "code": "gzr",
+    "name": "Gizer",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_gzr",
+    "rank": null
+  },
+  {
+    "code": "hight",
+    "name": "Highgain",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_hight",
+    "rank": null
+  },
+  {
+    "code": "hns",
+    "name": "Handshake",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "handshake",
+    "id": "handshake",
+    "rank": null
+  },
+  {
+    "code": "hodl",
+    "name": "HOdlcoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "hodl-coin",
+    "id": "hodl-coin",
+    "rank": null
+  },
+  {
+    "code": "hot",
+    "name": "Holo",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "holotoken",
+    "id": "holotoken",
+    "rank": null
+  },
+  {
+    "code": "hpb",
+    "name": "High Performance Blockchain",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_hpb",
+    "rank": null
+  },
+  {
+    "code": "hsr",
+    "name": "Hshare",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_hsr",
+    "rank": null
+  },
+  {
+    "code": "ht",
+    "name": "Huobi Token",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "huobi-token",
+    "id": "huobi-token",
+    "rank": null
+  },
+  {
+    "code": "html",
+    "name": "HTMLCOIN",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_html",
+    "rank": null
+  },
+  {
+    "code": "huc",
+    "name": "Huntercoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_huc",
+    "rank": null
+  },
+  {
+    "code": "husd",
+    "name": "HUSD",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "husd",
+    "id": "husd",
+    "rank": null
+  },
+  {
+    "code": "hush",
+    "name": "Hush",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "hush",
+    "id": "hush",
+    "rank": null
+  },
+  {
+    "code": "icn",
+    "name": "Iconomi",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_icn",
+    "rank": null
+  },
+  {
+    "code": "icx",
+    "name": "ICON",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "icon",
+    "id": "icon",
+    "rank": null
+  },
+  {
+    "code": "ignis",
+    "name": "Ignis",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "ignis",
+    "id": "ignis",
+    "rank": null
+  },
+  {
+    "code": "ilk",
+    "name": null,
+    "type": "crypto",
+    "isDead": true,
+    "coingeckoId": null,
+    "id": "unknown_ilk",
+    "rank": null
+  },
+  {
+    "code": "ink",
+    "name": "Ink",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "ink",
+    "id": "ink",
+    "rank": null
+  },
+  {
+    "code": "ins",
+    "name": "INS Ecosystem",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "inscribe",
+    "id": "inscribe",
+    "rank": null
+  },
+  {
+    "code": "ion",
+    "name": "ION",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "ion",
+    "id": "ion",
+    "rank": null
+  },
+  {
+    "code": "iop",
+    "name": "Internet of People",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_iop",
+    "rank": null
+  },
+  {
+    "code": "iost",
+    "name": "IOST",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "iostoken",
+    "id": "iostoken",
+    "rank": null
+  },
+  {
+    "code": "iotx",
+    "name": "IoTeX",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "binance-peg-iotex",
+    "id": "binance-peg-iotex",
+    "rank": null
+  },
+  {
+    "code": "iq",
+    "name": "Everipedia",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "everipedia",
+    "id": "everipedia",
+    "rank": null
+  },
+  {
+    "code": "itc",
+    "name": "IoT Chain",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "itc",
+    "id": "itc",
+    "rank": null
+  },
+  {
+    "code": "jnt",
+    "name": "Jibrel Network",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_jnt",
+    "rank": null
+  },
+  {
+    "code": "jpy",
+    "name": "Japanese Yen",
+    "type": "fiat",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_jpy",
+    "rank": null
+  },
+  {
+    "code": "kin",
+    "name": "Kin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "kin",
+    "id": "kin",
+    "rank": null
+  },
+  {
+    "code": "klown",
+    "name": "Klown",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_klown",
+    "rank": null
+  },
+  {
+    "code": "kmd",
+    "name": "Komodo",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "komodo",
+    "id": "komodo",
+    "rank": null
+  },
+  {
+    "code": "knc",
+    "name": "Kyber Network",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "kyber-network-crystal",
+    "id": "kyber-network-crystal",
+    "rank": null
+  },
+  {
+    "code": "krb",
+    "name": "Karbo",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "karbo",
+    "id": "karbo",
+    "rank": null
+  },
+  {
+    "code": "ksm",
+    "name": "Kusama",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "kusama",
+    "id": "kusama",
+    "rank": null
+  },
+  {
+    "code": "lbc",
+    "name": "LBRY Credits",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "lbry-credits",
+    "id": "lbry-credits",
+    "rank": null
+  },
+  {
+    "code": "lend",
+    "name": "Lend",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "ethlend",
+    "id": "ethlend",
+    "rank": null
+  },
+  {
+    "code": "lkk",
+    "name": "Lykke",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_lkk",
+    "rank": null
+  },
+  {
+    "code": "loom",
+    "name": "Loom Network",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "loom-network-new",
+    "id": "loom-network-new",
+    "rank": null
+  },
+  {
+    "code": "lpt",
+    "name": "Livepeer",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "livepeer",
+    "id": "livepeer",
+    "rank": null
+  },
+  {
+    "code": "lrc",
+    "name": "Loopring",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "loopring",
+    "id": "loopring",
+    "rank": null
+  },
+  {
+    "code": "lsk",
+    "name": "Lisk",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "lisk",
+    "id": "lisk",
+    "rank": null
+  },
+  {
+    "code": "lun",
+    "name": "Lunyr",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_lun",
+    "rank": null
+  },
+  {
+    "code": "maid",
+    "name": "MaidSafeCoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_maid",
+    "rank": null
+  },
+  {
+    "code": "mana",
+    "name": "Decentraland",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "decentraland",
+    "id": "decentraland",
+    "rank": null
+  },
+  {
+    "code": "matic",
+    "name": "Polygon",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "matic-network",
+    "id": "matic-network",
+    "rank": null
+  },
+  {
+    "code": "max",
+    "name": "MAXCoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_max",
+    "rank": null
+  },
+  {
+    "code": "mcap",
+    "name": "MCAP",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "market-cap",
+    "id": "market-cap",
+    "rank": null
+  },
+  {
+    "code": "mco",
+    "name": "Crypto.com",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_mco",
+    "rank": null
+  },
+  {
+    "code": "mda",
+    "name": "Moeda Loyalty Points",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_mda",
+    "rank": null
+  },
+  {
+    "code": "mds",
+    "name": "MediShares",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_mds",
+    "rank": null
+  },
+  {
+    "code": "med",
+    "name": "MediBloc",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "medibloc",
+    "id": "medibloc",
+    "rank": null
+  },
+  {
+    "code": "meetone",
+    "name": "MEET.ONE",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_meetone",
+    "rank": null
+  },
+  {
+    "code": "mft",
+    "name": "Mainframe",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "mainframe",
+    "id": "mainframe",
+    "rank": null
+  },
+  {
+    "code": "miota",
+    "name": "IOTA",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "iota",
+    "id": "iota",
+    "rank": null
+  },
+  {
+    "code": "mith",
+    "name": "Mithril",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "mithril",
+    "id": "mithril",
+    "rank": null
+  },
+  {
+    "code": "mkr",
+    "name": "Maker",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "maker",
+    "id": "maker",
+    "rank": null
+  },
+  {
+    "code": "mln",
+    "name": "Enzyme",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "melon",
+    "id": "melon",
+    "rank": null
+  },
+  {
+    "code": "mnx",
+    "name": "MinexCoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_mnx",
+    "rank": null
+  },
+  {
+    "code": "mnz",
+    "name": "Monaize",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_mnz",
+    "rank": null
+  },
+  {
+    "code": "moac",
+    "name": "MOAC",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_moac",
+    "rank": null
+  },
+  {
+    "code": "mod",
+    "name": "Modum",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_mod",
+    "rank": null
+  },
+  {
+    "code": "mona",
+    "name": "MonaCoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "monacoin",
+    "id": "monacoin",
+    "rank": null
+  },
+  {
+    "code": "msr",
+    "name": "Masari",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_msr",
+    "rank": null
+  },
+  {
+    "code": "mth",
+    "name": "Monetha",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "monetha",
+    "id": "monetha",
+    "rank": null
+  },
+  {
+    "code": "mtl",
+    "name": "Metal",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "metal",
+    "id": "metal",
+    "rank": null
+  },
+  {
+    "code": "music",
+    "name": "Musicoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_music",
+    "rank": null
+  },
+  {
+    "code": "mzc",
+    "name": "Mazacoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_mzc",
+    "rank": null
+  },
+  {
+    "code": "nano",
+    "name": "Nano",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "nano",
+    "id": "nano",
+    "rank": null
+  },
+  {
+    "code": "nas",
+    "name": "Nebulas",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "not-a-security",
+    "id": "not-a-security",
+    "rank": null
+  },
+  {
+    "code": "nav",
+    "name": "NavCoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "nav-coin",
+    "id": "nav-coin",
+    "rank": null
+  },
+  {
+    "code": "ncash",
+    "name": "Nucleus Vision",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "nucleus-vision",
+    "id": "nucleus-vision",
+    "rank": null
+  },
+  {
+    "code": "ndz",
+    "name": null,
+    "type": "crypto",
+    "isDead": true,
+    "coingeckoId": null,
+    "id": "unknown_ndz",
+    "rank": null
+  },
+  {
+    "code": "nebl",
+    "name": "Neblio",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_nebl",
+    "rank": null
+  },
+  {
+    "code": "neo",
+    "name": "Neo",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "neo",
+    "id": "neo",
+    "rank": null
+  },
+  {
+    "code": "neos",
+    "name": "NeosCoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "neos-ai",
+    "id": "neos-ai",
+    "rank": null
+  },
+  {
+    "code": "neu",
+    "name": "Neumark",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "neutra-finance",
+    "id": "neutra-finance",
+    "rank": null
+  },
+  {
+    "code": "nexo",
+    "name": "Nexo",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "nexo",
+    "id": "nexo",
+    "rank": null
+  },
+  {
+    "code": "ngc",
+    "name": "NAGA",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "naga",
+    "id": "naga",
+    "rank": null
+  },
+  {
+    "code": "nio",
+    "name": null,
+    "type": "crypto",
+    "isDead": true,
+    "coingeckoId": null,
+    "id": "unknown_nio",
+    "rank": null
+  },
+  {
+    "code": "nkn",
+    "name": "NKN",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "nkn",
+    "id": "nkn",
+    "rank": null
+  },
+  {
+    "code": "nlc2",
+    "name": "NoLimitCoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_nlc2",
+    "rank": null
+  },
+  {
+    "code": "nlg",
+    "name": "Gulden",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_nlg",
+    "rank": null
+  },
+  {
+    "code": "nmc",
+    "name": "Namecoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "namecoin",
+    "id": "namecoin",
+    "rank": null
+  },
+  {
+    "code": "nmr",
+    "name": "Numeraire",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "numeraire",
+    "id": "numeraire",
+    "rank": null
+  },
+  {
+    "code": "npxs",
+    "name": "Pundi X",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "pundi-x",
+    "id": "pundi-x",
+    "rank": null
+  },
+  {
+    "code": "ntbc",
+    "name": "Note Blockchain",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_ntbc",
+    "rank": null
+  },
+  {
+    "code": "nuls",
+    "name": "NULS",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "nuls",
+    "id": "nuls",
+    "rank": null
+  },
+  {
+    "code": "nxs",
+    "name": "Nexus",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_nxs",
+    "rank": null
+  },
+  {
+    "code": "nxt",
+    "name": "Nxt",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_nxt",
+    "rank": null
+  },
+  {
+    "code": "oax",
+    "name": "OAX",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "openanx",
+    "id": "openanx",
+    "rank": null
+  },
+  {
+    "code": "ok",
+    "name": "OKCash",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "okcash",
+    "id": "okcash",
+    "rank": null
+  },
+  {
+    "code": "omg",
+    "name": "OMG Network",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "omisego",
+    "id": "omisego",
+    "rank": null
+  },
+  {
+    "code": "omni",
+    "name": "Omni",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "omni",
+    "id": "omni",
+    "rank": null
+  },
+  {
+    "code": "one",
+    "name": "Harmony",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "harmony",
+    "id": "harmony",
+    "rank": null
+  },
+  {
+    "code": "ong",
+    "name": "Ontology Gas",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "ong",
+    "id": "ong",
+    "rank": null
+  },
+  {
+    "code": "ont",
+    "name": "Ontology",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "binance-peg-ontology",
+    "id": "binance-peg-ontology",
+    "rank": null
+  },
+  {
+    "code": "oot",
+    "name": "Utrum",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_oot",
+    "rank": null
+  },
+  {
+    "code": "ost",
+    "name": "OST",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "oreswap-2",
+    "id": "oreswap-2",
+    "rank": null
+  },
+  {
+    "code": "ox",
+    "name": null,
+    "type": "crypto",
+    "isDead": true,
+    "coingeckoId": "ox-fun",
+    "id": "ox-fun",
+    "rank": null
+  },
+  {
+    "code": "oxt",
+    "name": "Orchid",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "orchid-protocol",
+    "id": "orchid-protocol",
+    "rank": null
+  },
+  {
+    "code": "oxy",
+    "name": "Oxygen",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "oxygen",
+    "id": "oxygen",
+    "rank": null
+  },
+  {
+    "code": "part",
+    "name": "Particl",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "particl",
+    "id": "particl",
+    "rank": null
+  },
+  {
+    "code": "pasc",
+    "name": "PascalCoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_pasc",
+    "rank": null
+  },
+  {
+    "code": "pasl",
+    "name": "Pascal Lite",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_pasl",
+    "rank": null
+  },
+  {
+    "code": "pax",
+    "name": "Paxos Standard",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "paxos-standard-token",
+    "id": "paxos-standard-token",
+    "rank": null
+  },
+  {
+    "code": "pay",
+    "name": "TenX",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "tenx",
+    "id": "tenx",
+    "rank": null
+  },
+  {
+    "code": "payx",
+    "name": "Paypex",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "payx",
+    "id": "payx",
+    "rank": null
+  },
+  {
+    "code": "pink",
+    "name": "Pinkcoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_pink",
+    "rank": null
+  },
+  {
+    "code": "pirl",
+    "name": "Pirl",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_pirl",
+    "rank": null
+  },
+  {
+    "code": "pivx",
+    "name": "PIVX",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "pivx",
+    "id": "pivx",
+    "rank": null
+  },
+  {
+    "code": "plr",
+    "name": "Pillar",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "pillar",
+    "id": "pillar",
+    "rank": null
+  },
+  {
+    "code": "poa",
+    "name": "POA Network",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_poa",
+    "rank": null
+  },
+  {
+    "code": "poe",
+    "name": "Po.et",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "portal-network-token",
+    "id": "portal-network-token",
+    "rank": null
+  },
+  {
+    "code": "polis",
+    "name": "Polis",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "polis",
+    "id": "polis",
+    "rank": null
+  },
+  {
+    "code": "poly",
+    "name": "Polymath",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "polymath",
+    "id": "polymath",
+    "rank": null
+  },
+  {
+    "code": "pot",
+    "name": "PotCoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "potcoin",
+    "id": "potcoin",
+    "rank": null
+  },
+  {
+    "code": "powr",
+    "name": "Power Ledger",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "power-ledger",
+    "id": "power-ledger",
+    "rank": null
+  },
+  {
+    "code": "ppc",
+    "name": "Peercoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "peercoin",
+    "id": "peercoin",
+    "rank": null
+  },
+  {
+    "code": "ppp",
+    "name": "PayPie",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "porky-pig-party",
+    "id": "porky-pig-party",
+    "rank": null
+  },
+  {
+    "code": "ppt",
+    "name": "Populous",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "populous",
+    "id": "populous",
+    "rank": null
+  },
+  {
+    "code": "pre",
+    "name": "Presearch",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "presearch",
+    "id": "presearch",
+    "rank": null
+  },
+  {
+    "code": "prl",
+    "name": "Oyster",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "mimo-parallel-governance-token",
+    "id": "mimo-parallel-governance-token",
+    "rank": null
+  },
+  {
+    "code": "pungo",
+    "name": "Pungo Token",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_pungo",
+    "rank": null
+  },
+  {
+    "code": "pura",
+    "name": "Pura",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_pura",
+    "rank": null
+  },
+  {
+    "code": "qash",
+    "name": "QASH",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_qash",
+    "rank": null
+  },
+  {
+    "code": "qiwi",
+    "name": "QIWI",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_qiwi",
+    "rank": null
+  },
+  {
+    "code": "qlc",
+    "name": "QLC Chain",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_qlc",
+    "rank": null
+  },
+  {
+    "code": "qrl",
+    "name": "Quantum Resistant Ledger",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "quantum-resistant-ledger",
+    "id": "quantum-resistant-ledger",
+    "rank": null
+  },
+  {
+    "code": "qsp",
+    "name": "Quantstamp",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_qsp",
+    "rank": null
+  },
+  {
+    "code": "qtum",
+    "name": "Qtum",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "qtum",
+    "id": "qtum",
+    "rank": null
+  },
+  {
+    "code": "r",
+    "name": null,
+    "type": "crypto",
+    "isDead": true,
+    "coingeckoId": null,
+    "id": "unknown_r",
+    "rank": null
+  },
+  {
+    "code": "rads",
+    "name": "Radium",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_rads",
+    "rank": null
+  },
+  {
+    "code": "rap",
+    "name": null,
+    "type": "crypto",
+    "isDead": true,
+    "coingeckoId": null,
+    "id": "unknown_rap",
+    "rank": null
+  },
+  {
+    "code": "ray",
+    "name": "Raydium",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "raydium",
+    "id": "raydium",
+    "rank": null
+  },
+  {
+    "code": "rcn",
+    "name": "Ripio Credit Network",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "ripio-credit-network",
+    "id": "ripio-credit-network",
+    "rank": null
+  },
+  {
+    "code": "rdd",
+    "name": "ReddCoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "reddcoin",
+    "id": "reddcoin",
+    "rank": null
+  },
+  {
+    "code": "rdn",
+    "name": "Raiden Network Token",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_rdn",
+    "rank": null
+  },
+  {
+    "code": "ren",
+    "name": "Ren",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "republic-protocol",
+    "id": "republic-protocol",
+    "rank": null
+  },
+  {
+    "code": "rep",
+    "name": "Augur",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "augur",
+    "id": "augur",
+    "rank": null
+  },
+  {
+    "code": "repv2",
+    "name": "Augur v2",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_repv2",
+    "rank": null
+  },
+  {
+    "code": "req",
+    "name": "Request",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "request-network",
+    "id": "request-network",
+    "rank": null
+  },
+  {
+    "code": "rhoc",
+    "name": "RChain",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_rhoc",
+    "rank": null
+  },
+  {
+    "code": "ric",
+    "name": "Riecoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "riecoin",
+    "id": "riecoin",
+    "rank": null
+  },
+  {
+    "code": "rise",
+    "name": "Rise",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "everrise",
+    "id": "everrise",
+    "rank": null
+  },
+  {
+    "code": "rlc",
+    "name": "iExec RLC",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "iexec-rlc",
+    "id": "iexec-rlc",
+    "rank": null
+  },
+  {
+    "code": "rpx",
+    "name": "Red Pulse Phoenix",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_rpx",
+    "rank": null
+  },
+  {
+    "code": "rvn",
+    "name": "Ravencoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "ravencoin",
+    "id": "ravencoin",
+    "rank": null
+  },
+  {
+    "code": "ryo",
+    "name": "Ryo Currency",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_ryo",
+    "rank": null
+  },
+  {
+    "code": "safe",
+    "name": "SafeCoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "safecoin",
+    "id": "safecoin",
+    "rank": null
+  },
+  {
+    "code": "safemoon",
+    "name": "SafeMoon",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_safemoon",
+    "rank": null
+  },
+  {
+    "code": "sai",
+    "name": "Sai",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "sai",
+    "id": "sai",
+    "rank": null
+  },
+  {
+    "code": "salt",
+    "name": "SALT",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "salt",
+    "id": "salt",
+    "rank": null
+  },
+  {
+    "code": "san",
+    "name": "Santiment Network Token",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "santiment-network-token",
+    "id": "santiment-network-token",
+    "rank": null
+  },
+  {
+    "code": "sand",
+    "name": "The Sandbox",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "the-sandbox",
+    "id": "the-sandbox",
+    "rank": null
+  },
+  {
+    "code": "sbd",
+    "name": "Steem Dollars",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "steem-dollars",
+    "id": "steem-dollars",
+    "rank": null
+  },
+  {
+    "code": "sberbank",
+    "name": "Sberbank",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_sberbank",
+    "rank": null
+  },
+  {
+    "code": "sc",
+    "name": "Siacoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "siacoin",
+    "id": "siacoin",
+    "rank": null
+  },
+  {
+    "code": "ser",
+    "name": null,
+    "type": "crypto",
+    "isDead": true,
+    "coingeckoId": null,
+    "id": "unknown_ser",
+    "rank": null
+  },
+  {
+    "code": "shift",
+    "name": "Shift",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "shift-3",
+    "id": "shift-3",
+    "rank": null
+  },
+  {
+    "code": "sib",
+    "name": "SIBCoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_sib",
+    "rank": null
+  },
+  {
+    "code": "sin",
+    "name": "SINOVATE",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_sin",
+    "rank": null
+  },
+  {
+    "code": "skl",
+    "name": "SKALE Network",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "skale",
+    "id": "skale",
+    "rank": null
+  },
+  {
+    "code": "sky",
+    "name": "Skycoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "skycoin",
+    "id": "skycoin",
+    "rank": null
+  },
+  {
+    "code": "slr",
+    "name": "SolarCoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "solarcoin",
+    "id": "solarcoin",
+    "rank": null
+  },
+  {
+    "code": "sls",
+    "name": "SaluS",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_sls",
+    "rank": null
+  },
+  {
+    "code": "smart",
+    "name": "SmartCash",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "smartcash",
+    "id": "smartcash",
+    "rank": null
+  },
+  {
+    "code": "sngls",
+    "name": "SingularDTV",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_sngls",
+    "rank": null
+  },
+  {
+    "code": "snm",
+    "name": "SONM",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "snailmoon",
+    "id": "snailmoon",
+    "rank": null
+  },
+  {
+    "code": "snt",
+    "name": "Status",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "status",
+    "id": "status",
+    "rank": null
+  },
+  {
+    "code": "snx",
+    "name": "Synthetix",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "synthetix-network-token",
+    "id": "synthetix-network-token",
+    "rank": null
+  },
+  {
+    "code": "soc",
+    "name": "All Sports",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_soc",
+    "rank": null
+  },
+  {
+    "code": "spacehbit",
+    "name": "SpaceHBIT",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_spacehbit",
+    "rank": null
+  },
+  {
+    "code": "spank",
+    "name": "SpankChain",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_spank",
+    "rank": null
+  },
+  {
+    "code": "sphtx",
+    "name": "SophiaTX",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_sphtx",
+    "rank": null
+  },
+  {
+    "code": "srn",
+    "name": "SIRIN LABS Token",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "sirin-labs-token",
+    "id": "sirin-labs-token",
+    "rank": null
+  },
+  {
+    "code": "stak",
+    "name": "STRAKS",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_stak",
+    "rank": null
+  },
+  {
+    "code": "start",
+    "name": "Startcoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "bscstarter",
+    "id": "bscstarter",
+    "rank": null
+  },
+  {
+    "code": "steem",
+    "name": "Steem",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "steem",
+    "id": "steem",
+    "rank": null
+  },
+  {
+    "code": "storj",
+    "name": "Storj",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "storj",
+    "id": "storj",
+    "rank": null
+  },
+  {
+    "code": "storm",
+    "name": "Storm",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "solstorm",
+    "id": "solstorm",
+    "rank": null
+  },
+  {
+    "code": "stox",
+    "name": "Stox",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_stox",
+    "rank": null
+  },
+  {
+    "code": "stq",
+    "name": "Storiqa",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_stq",
+    "rank": null
+  },
+  {
+    "code": "strat",
+    "name": "Stratis",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "eth-strategy",
+    "id": "eth-strategy",
+    "rank": null
+  },
+  {
+    "code": "stx",
+    "name": "Stacks",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "blockstack",
+    "id": "blockstack",
+    "rank": null
+  },
+  {
+    "code": "sub",
+    "name": "Substratum",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "subsocial",
+    "id": "subsocial",
+    "rank": null
+  },
+  {
+    "code": "sumo",
+    "name": "Sumokoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_sumo",
+    "rank": null
+  },
+  {
+    "code": "sushi",
+    "name": "SushiSwap",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "sushi",
+    "id": "sushi",
+    "rank": null
+  },
+  {
+    "code": "sys",
+    "name": "Syscoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "syscoin",
+    "id": "syscoin",
+    "rank": null
+  },
+  {
+    "code": "taas",
+    "name": "TaaS",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_taas",
+    "rank": null
+  },
+  {
+    "code": "tau",
+    "name": "Lamden",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_tau",
+    "rank": null
+  },
+  {
+    "code": "tbx",
+    "name": "Tokenbox",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "turbox",
+    "id": "turbox",
+    "rank": null
+  },
+  {
+    "code": "tel",
+    "name": "Telcoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "telcoin",
+    "id": "telcoin",
+    "rank": null
+  },
+  {
+    "code": "ten",
+    "name": "Tokenomy",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "tokenomy",
+    "id": "tokenomy",
+    "rank": null
+  },
+  {
+    "code": "tern",
+    "name": "Ternio",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "ternio",
+    "id": "ternio",
+    "rank": null
+  },
+  {
+    "code": "tgch",
+    "name": null,
+    "type": "crypto",
+    "isDead": true,
+    "coingeckoId": null,
+    "id": "unknown_tgch",
+    "rank": null
+  },
+  {
+    "code": "theta",
+    "name": "Theta Network",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "theta-token",
+    "id": "theta-token",
+    "rank": null
+  },
+  {
+    "code": "tix",
+    "name": "Blocktix",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "timeworx",
+    "id": "timeworx",
+    "rank": null
+  },
+  {
+    "code": "tkn",
+    "name": "TokenCard",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "tokencard",
+    "id": "tokencard",
+    "rank": null
+  },
+  {
+    "code": "tks",
+    "name": "Tokes",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_tks",
+    "rank": null
+  },
+  {
+    "code": "tnb",
+    "name": "Time New Bank",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_tnb",
+    "rank": null
+  },
+  {
+    "code": "tnc",
+    "name": "Trinity Network Credit",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_tnc",
+    "rank": null
+  },
+  {
+    "code": "tnt",
+    "name": "Tierion",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_tnt",
+    "rank": null
+  },
+  {
+    "code": "tomo",
+    "name": "TomoChain",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "tomo-cat",
+    "id": "tomo-cat",
+    "rank": null
+  },
+  {
+    "code": "tpay",
+    "name": "TokenPay",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_tpay",
+    "rank": null
+  },
+  {
+    "code": "trig",
+    "name": "Trigger",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_trig",
+    "rank": null
+  },
+  {
+    "code": "trtl",
+    "name": "TurtleCoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_trtl",
+    "rank": null
+  },
+  {
+    "code": "tusd",
+    "name": "TrueUSD",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "true-usd",
+    "id": "true-usd",
+    "rank": null
+  },
+  {
+    "code": "tzc",
+    "name": "TrezarCoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_tzc",
+    "rank": null
+  },
+  {
+    "code": "uah",
+    "name": "Ukrainian Hryvnia",
+    "type": "fiat",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_uah",
+    "rank": null
+  },
+  {
+    "code": "ubq",
+    "name": "Ubiq",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_ubq",
+    "rank": null
+  },
+  {
+    "code": "uma",
+    "name": "UMA",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "uma",
+    "id": "uma",
+    "rank": null
+  },
+  {
+    "code": "unity",
+    "name": "SuperNET",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_unity",
+    "rank": null
+  },
+  {
+    "code": "usd",
+    "name": "US Dollar",
+    "type": "fiat",
+    "isDead": false,
+    "coingeckoId": "unstable-states-dollar",
+    "id": "unstable-states-dollar",
+    "rank": null
+  },
+  {
+    "code": "utk",
+    "name": "UTRUST",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "utrust",
+    "id": "utrust",
+    "rank": null
+  },
+  {
+    "code": "veri",
+    "name": "Veritaseum",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "veritaseum",
+    "id": "veritaseum",
+    "rank": null
+  },
+  {
+    "code": "via",
+    "name": "Viacoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "octavia",
+    "id": "octavia",
+    "rank": null
+  },
+  {
+    "code": "vib",
+    "name": "Viberate",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "viberate",
+    "id": "viberate",
+    "rank": null
+  },
+  {
+    "code": "vibe",
+    "name": "VIBE",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "vibe",
+    "id": "vibe",
+    "rank": null
+  },
+  {
+    "code": "vivo",
+    "name": "VIVO",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_vivo",
+    "rank": null
+  },
+  {
+    "code": "vrc",
+    "name": "VeriCoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_vrc",
+    "rank": null
+  },
+  {
+    "code": "vrsc",
+    "name": "Verus Coin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "verus-coin",
+    "id": "verus-coin",
+    "rank": null
+  },
+  {
+    "code": "vtc",
+    "name": "Vertcoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "vertcoin",
+    "id": "vertcoin",
+    "rank": null
+  },
+  {
+    "code": "vtho",
+    "name": "VeThor Token",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "vethor-token",
+    "id": "vethor-token",
+    "rank": null
+  },
+  {
+    "code": "wabi",
+    "name": "Tael",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_wabi",
+    "rank": null
+  },
+  {
+    "code": "wan",
+    "name": "Wanchain",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "wanchain",
+    "id": "wanchain",
+    "rank": null
+  },
+  {
+    "code": "waves",
+    "name": "Waves",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "waves",
+    "id": "waves",
+    "rank": null
+  },
+  {
+    "code": "wax",
+    "name": "WAX",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_wax",
+    "rank": null
+  },
+  {
+    "code": "wgr",
+    "name": "Wagerr",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "wagerr",
+    "id": "wagerr",
+    "rank": null
+  },
+  {
+    "code": "wicc",
+    "name": "WaykiChain",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_wicc",
+    "rank": null
+  },
+  {
+    "code": "wings",
+    "name": "Wings",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_wings",
+    "rank": null
+  },
+  {
+    "code": "wpr",
+    "name": "WePower",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "wepower",
+    "id": "wepower",
+    "rank": null
+  },
+  {
+    "code": "wtc",
+    "name": "Waltonchain",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_wtc",
+    "rank": null
+  },
+  {
+    "code": "x",
+    "name": null,
+    "type": "crypto",
+    "isDead": true,
+    "coingeckoId": null,
+    "id": "unknown_x",
+    "rank": null
+  },
+  {
+    "code": "xas",
+    "name": "Asch",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_xas",
+    "rank": null
+  },
+  {
+    "code": "xbc",
+    "name": "BitcoinPlus",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "bitcoin-plus",
+    "id": "bitcoin-plus",
+    "rank": null
+  },
+  {
+    "code": "xbp",
+    "name": "BlitzPredict",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_xbp",
+    "rank": null
+  },
+  {
+    "code": "xby",
+    "name": "XTRABYTES",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_xby",
+    "rank": null
+  },
+  {
+    "code": "xcp",
+    "name": "Counterparty",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "counterparty",
+    "id": "counterparty",
+    "rank": null
+  },
+  {
+    "code": "xdn",
+    "name": "DigitalNote",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_xdn",
+    "rank": null
+  },
+  {
+    "code": "xem",
+    "name": "NEM",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "nem",
+    "id": "nem",
+    "rank": null
+  },
+  {
+    "code": "xin",
+    "name": "Mixin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "mixin",
+    "id": "mixin",
+    "rank": null
+  },
+  {
+    "code": "xmcc",
+    "name": "Monoeci",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_xmcc",
+    "rank": null
+  },
+  {
+    "code": "xmg",
+    "name": "Magi",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_xmg",
+    "rank": null
+  },
+  {
+    "code": "xmo",
+    "name": null,
+    "type": "crypto",
+    "isDead": true,
+    "coingeckoId": null,
+    "id": "unknown_xmo",
+    "rank": null
+  },
+  {
+    "code": "xmy",
+    "name": "Myriad",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "myriadcoin",
+    "id": "myriadcoin",
+    "rank": null
+  },
+  {
+    "code": "xp",
+    "name": "XP",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "xp",
+    "id": "xp",
+    "rank": null
+  },
+  {
+    "code": "xpa",
+    "name": "XPA",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_xpa",
+    "rank": null
+  },
+  {
+    "code": "xpm",
+    "name": "Primecoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "primecoin",
+    "id": "primecoin",
+    "rank": null
+  },
+  {
+    "code": "xpr",
+    "name": "Proton",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "proton",
+    "id": "proton",
+    "rank": null
+  },
+  {
+    "code": "xsg",
+    "name": "SnowGem",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_xsg",
+    "rank": null
+  },
+  {
+    "code": "xtz",
+    "name": "Tezos",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "tezos",
+    "id": "tezos",
+    "rank": null
+  },
+  {
+    "code": "xuc",
+    "name": "Exchange Union",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_xuc",
+    "rank": null
+  },
+  {
+    "code": "xvc",
+    "name": "Vcash",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "vcash",
+    "id": "vcash",
+    "rank": null
+  },
+  {
+    "code": "xvg",
+    "name": "Verge",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "verge",
+    "id": "verge",
+    "rank": null
+  },
+  {
+    "code": "xzc",
+    "name": "Zcoin",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_xzc",
+    "rank": null
+  },
+  {
+    "code": "yfi",
+    "name": "yearn.finance",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "yearn-finance",
+    "id": "yearn-finance",
+    "rank": null
+  },
+  {
+    "code": "yoyow",
+    "name": "YOYOW",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_yoyow",
+    "rank": null
+  },
+  {
+    "code": "zcl",
+    "name": "ZClassic",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "zclassic",
+    "id": "zclassic",
+    "rank": null
+  },
+  {
+    "code": "zel",
+    "name": "ZelCash",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_zel",
+    "rank": null
+  },
+  {
+    "code": "zen",
+    "name": "Horizen",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "zencash",
+    "id": "zencash",
+    "rank": null
+  },
+  {
+    "code": "zest",
+    "name": "Zest",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_zest",
+    "rank": null
+  },
+  {
+    "code": "zil",
+    "name": "Zilliqa",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "zilliqa",
+    "id": "zilliqa",
+    "rank": null
+  },
+  {
+    "code": "zilla",
+    "name": "ChainZilla",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": null,
+    "id": "unknown_zilla",
+    "rank": null
+  },
+  {
+    "code": "zrx",
+    "name": "0x",
+    "type": "crypto",
+    "isDead": false,
+    "coingeckoId": "0x",
+    "id": "0x",
+    "rank": null
+  }
+]
