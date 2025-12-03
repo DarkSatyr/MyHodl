@@ -8,9 +8,14 @@
 import SwiftUI
 
 struct DashboardView: View {
-    @StateObject private var viewModel = DashboardViewModel()
+    @StateObject private var viewModel: DashboardViewModel
+    @Environment(AppContainer.self) private var appContainer
     @Environment(ThemeManager.self) private var themeManager
     @StateObject private var dayChangeTracker = DayChangeTracker()
+    
+    init(viewModel: DashboardViewModel) {
+        _viewModel = StateObject(wrappedValue: viewModel)
+    }
     
     var body: some View {
         PageView {
@@ -42,6 +47,6 @@ struct DashboardView: View {
 }
 
 #Preview {
-    DashboardView()
+    DashboardView(viewModel: AppContainer().makeDashboardViewModel())
         .environment(ThemeManager())
 }

@@ -9,15 +9,16 @@ import SwiftUI
 
 struct MainTabView: View {
     @Environment(ThemeManager.self) private var themeManager
+    @Environment(AppContainer.self) private var appContainer
     
     var body: some View {
         TabView {
-            DashboardView()
+            DashboardView(viewModel: appContainer.makeDashboardViewModel())
                 .tabItem {
                     Label(L10n.dashboard, systemImage: "chart.line.uptrend.xyaxis")
                 }
             
-            HoldingsView()
+            HoldingsView(viewModel: appContainer.makeHoldingsViewModel())
                 .tabItem {
                     Label(L10n.holdings, systemImage: "bitcoinsign.circle")
                 }

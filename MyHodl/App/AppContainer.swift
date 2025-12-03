@@ -7,6 +7,7 @@
 
 import Foundation
 import Swinject
+import SwinjectAutoregistration
 
 @MainActor
 @Observable
@@ -31,33 +32,33 @@ final class AppContainer {
         container.resolve(AddCoinViewModel.self)!
     }
     
+    func makeDashboardViewModel() -> DashboardViewModel {
+        container.resolve(DashboardViewModel.self)!
+    }
+    
+    func makeHoldingsViewModel() -> HoldingsViewModel {
+        container.resolve(HoldingsViewModel.self)!
+    }
+    
     // Private
     
     private func registerRepositories() {
-        container.register(AssetRepository.self) { r in
-            BundleAssetRepository(loader: r.resolve(AssetFileLoader.self)!)
-        }
-        .inObjectScope(.container)
+        container.autoregister(AssetRepository.self, initializer: BundleAssetRepository.init)
+            .inObjectScope(.container)
     }
     
     private func registerUseCases() {
-        container.register(FetchAssetsUseCase.self) { r in
-            FetchAssetsUseCase(repository: r.resolve(AssetRepository.self)!)
-        }
+        container.autoregister(FetchAssetsUseCase.self, initializer: FetchAssetsUseCase.init)
     }
     
     private func registerViewModels() {
-        container.register(AddCoinViewModel.self) { r in
-            AddCoinViewModel(fetchAssetsUseCase: r.resolve(FetchAssetsUseCase.self)!)
-        }
+        container.autoregister(AddCoinViewModel.self, initializer: AddCoinViewModel.init)
+        container.autoregister(DashboardViewModel.self, initializer: DashboardViewModel.init)
+        container.autoregister(HoldingsViewModel.self, initializer: HoldingsViewModel.init)
     }
     
     private func registerServices() {
-        container.register(AssetFileLoader.self) { _ in
-            AssetFileLoader()
-        }
-        container.register(ThemeManager.self) { _ in
-            ThemeManager()
-        }
+        container.autoregister(AssetFileLoader.self, initializer: AssetFileLoader.init)
+        container.autoregister(ThemeManager.self, initializer: ThemeManager.init)
     }
 }

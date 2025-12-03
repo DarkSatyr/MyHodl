@@ -10,8 +10,12 @@ import SwiftUI
 struct HoldingsView: View {
     @Environment(ThemeManager.self) private var themeManager
     @Environment(AppContainer.self) private var appContainer
-    @StateObject private var viewModel = HoldingsViewModel()
+    @StateObject private var viewModel: HoldingsViewModel
     @State private var showAddCoin = false
+    
+    init(viewModel: HoldingsViewModel) {
+        _viewModel = StateObject(wrappedValue: viewModel)
+    }
     
     var body: some View {
         PageView {
@@ -43,6 +47,6 @@ struct HoldingsView: View {
 }
 
 #Preview {
-    HoldingsView()
+    HoldingsView(viewModel: AppContainer().makeHoldingsViewModel())
         .environment(ThemeManager())
 }
