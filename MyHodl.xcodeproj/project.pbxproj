@@ -24,6 +24,7 @@
 		76670F282ED5D71C0004A139 /* coins_list.json in Resources */ = {isa = PBXBuildFile; fileRef = 76670F272ED5D71C0004A139 /* coins_list.json */; };
 		7668D2202EB34ADE00131EB5 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7668D21F2EB34ADE00131EB5 /* SettingsView.swift */; };
 		7668D22B2EB5264200131EB5 /* ThemeSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7668D22A2EB5264200131EB5 /* ThemeSettingsView.swift */; };
+		767120952EE0619F00215ED7 /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767120942EE0619F00215ED7 /* AppContainer.swift */; };
 		769999322ECCF67600F1C3AA /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769999312ECCF67600F1C3AA /* SearchBar.swift */; };
 		769999352ECD06DD00F1C3AA /* AllAssetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769999342ECD06DD00F1C3AA /* AllAssetsView.swift */; };
 		76E104F92EC1D8BC006C1E83 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 76E104F72EC1D8BC006C1E83 /* Localizable.strings */; };
@@ -70,6 +71,7 @@
 		76670F272ED5D71C0004A139 /* coins_list.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = coins_list.json; sourceTree = "<group>"; };
 		7668D21F2EB34ADE00131EB5 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		7668D22A2EB5264200131EB5 /* ThemeSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSettingsView.swift; sourceTree = "<group>"; };
+		767120942EE0619F00215ED7 /* AppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
 		769999312ECCF67600F1C3AA /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		769999342ECD06DD00F1C3AA /* AllAssetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllAssetsView.swift; sourceTree = "<group>"; };
 		76E104F82EC1D8BC006C1E83 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -114,7 +116,6 @@
 			isa = PBXGroup;
 			children = (
 				7609476D2EAA66C30010F54D /* Theme.swift */,
-				7609476F2EAA66CC0010F54D /* ThemeManager.swift */,
 			);
 			path = Theme;
 			sourceTree = "<group>";
@@ -122,7 +123,7 @@
 		760947682EAA66A70010F54D /* MyHodl */ = {
 			isa = PBXGroup;
 			children = (
-				760947672EAA66A70010F54D /* MyHodlApp.swift */,
+				767120932EE0617400215ED7 /* App */,
 				765332142ED71774002FE36B /* Domain */,
 				765332152ED7177C002FE36B /* Data */,
 				765332162ED71791002FE36B /* Presentation */,
@@ -341,6 +342,16 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		767120932EE0617400215ED7 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				760947672EAA66A70010F54D /* MyHodlApp.swift */,
+				767120942EE0619F00215ED7 /* AppContainer.swift */,
+				7609476F2EAA66CC0010F54D /* ThemeManager.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		769999332ECD02AC00F1C3AA /* Sections */ = {
 			isa = PBXGroup;
 			children = (
@@ -541,6 +552,7 @@
 				76EB83662EC37D6300D92E67 /* HoldingsView.swift in Sources */,
 				760947692EAA66A70010F54D /* MainTabView.swift in Sources */,
 				76EB837C2EC5124800D92E67 /* TopAssetsView.swift in Sources */,
+				767120952EE0619F00215ED7 /* AppContainer.swift in Sources */,
 				76EB837A2EC5123300D92E67 /* AssetAllocationView.swift in Sources */,
 				76EB838A2ECBA6E300D92E67 /* Decimal+Hodl.swift in Sources */,
 				7609476A2EAA66A70010F54D /* MyHodlApp.swift in Sources */,
