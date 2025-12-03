@@ -9,13 +9,34 @@ import SwiftUI
 
 struct AddCoinView: View {
     
-    @StateObject private var viewModel = AddCoinViewModel()
+    @Environment(ThemeManager.self) private var themeManager
+    @Environment(\.dismiss) private var dismiss
+    
+    init(viewModel: AddCoinViewModel) {
+        _viewModel = StateObject(wrappedValue: viewModel)
+    }
+    
+    @StateObject private var viewModel: AddCoinViewModel
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            BackgroundSurface()
+                .navigationTitle("Add asset") // TODO: Add loc
+                .toolbarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .cancellationAction) {
+                        Button("Cancel") { // TODO: Add loc
+                            dismiss()
+                        }
+                        .foregroundStyle(themeManager.currentTheme.text)
+                    }
+                }
+        }
+        
+        
     }
 }
 
 #Preview {
-    AddCoinView()
+    AddCoinView(viewModel: AppContainer().makeAddCoinViewModel())
 }

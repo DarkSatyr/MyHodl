@@ -8,5 +8,7 @@
 import Foundation
 
 class AddCoinViewModel: ObservableObject {
-    
+    init(fetchAssetsUseCase: FetchAssetsUseCase) {
+        
+    }
 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 @MainActor
 @Observable
-class ThemeManager {
+final class ThemeManager {
     
     var currentTheme: Theme
     var type: ThemeType

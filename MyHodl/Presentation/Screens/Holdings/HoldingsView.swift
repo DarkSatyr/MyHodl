@@ -9,7 +9,9 @@ import SwiftUI
 
 struct HoldingsView: View {
     @Environment(ThemeManager.self) private var themeManager
+    @Environment(AppContainer.self) private var appContainer
     @StateObject private var viewModel = HoldingsViewModel()
+    @State private var showAddCoin = false
     
     var body: some View {
         PageView {
@@ -29,8 +31,13 @@ struct HoldingsView: View {
             TitleView {
                 Text(L10n.myHoldings)
             } right: {
-                Button("Add Coin", systemImage: "plus") {} // TODO: Add loc
+                Button("Add Coin", systemImage: "plus") {  // TODO: Add loc
+                    showAddCoin = true
+                }
             }
+        }
+        .sheet(isPresented: $showAddCoin) {
+            AddCoinView(viewModel: appContainer.makeAddCoinViewModel())
         }
     }
 }
