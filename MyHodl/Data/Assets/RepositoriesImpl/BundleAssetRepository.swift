@@ -10,18 +10,18 @@ import Foundation
 final class BundleAssetRepository: AssetRepository {
 
     private let loader: AssetFileLoader
-
-    private lazy var cachedAssets: [Asset] = {
-        do {
-            return try loader.loadAssetsList()
-        } catch {
-            assertionFailure("Failed to load coins_list.json: \(error)")
-            return []
-        }
-    }()
+    private let cachedAssets: [Asset]
 
     init(loader: AssetFileLoader = AssetFileLoader()) {
         self.loader = loader
+        
+        do {
+            self.cachedAssets = try loader.loadAssetsList()
+                .sorted { $0.sortRank < $1.sortRank }
+        } catch {
+            assertionFailure("Failed to load coins_list.json: \(error)")
+            self.cachedAssets = []
+        }
     }
 
     // MARK: - AssetRepository
@@ -47,5 +47,9 @@ final class BundleAssetRepository: AssetRepository {
             || asset.code.lowercased().contains(lowercased)
             || asset.coingeckoId?.lowercased().contains(lowercased) == true
         }
+    }
+
+    func topAssets(count: Int) async -> [Asset] {
+        Array(cachedAssets.prefix(count))
     }
 }

@@ -7,7 +7,8 @@
 
 import Foundation
 
-protocol AssetRepository {
+protocol AssetRepository: Sendable {
     func getAllAssets() async -> [Asset]
     func searchAssets(text: String) async -> [Asset]
+    func topAssets(count: Int) async -> [Asset] 
 }

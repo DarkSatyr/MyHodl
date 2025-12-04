@@ -28,4 +28,8 @@ struct FetchAssetsUseCase {
             await repository.searchAssets(text: text)
         }
     }
+    
+    func topAssets(count: Int = 6) async -> [Asset] {
+        await repository.topAssets(count: count)
+    }
 }

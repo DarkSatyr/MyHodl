@@ -963,15 +963,6 @@
     "rank": null
   },
   {
-    "code": "add",
-    "name": null,
-    "type": "crypto",
-    "isDead": true,
-    "coingeckoId": "add-finance",
-    "id": "add-finance",
-    "rank": null
-  },
-  {
     "code": "adx",
     "name": "AdEx",
     "type": "crypto",
@@ -1143,15 +1134,6 @@
     "rank": null
   },
   {
-    "code": "arnx",
-    "name": null,
-    "type": "crypto",
-    "isDead": true,
-    "coingeckoId": "aeron",
-    "id": "aeron",
-    "rank": null
-  },
-  {
     "code": "ary",
     "name": "Block Array",
     "type": "crypto",
@@ -1176,24 +1158,6 @@
     "isDead": false,
     "coingeckoId": "star-atlas",
     "id": "star-atlas",
-    "rank": null
-  },
-  {
-    "code": "atm",
-    "name": null,
-    "type": "crypto",
-    "isDead": true,
-    "coingeckoId": null,
-    "id": "unknown_atm",
-    "rank": null
-  },
-  {
-    "code": "audr",
-    "name": null,
-    "type": "crypto",
-    "isDead": true,
-    "coingeckoId": null,
-    "id": "unknown_audr",
     "rank": null
   },
   {
@@ -1266,15 +1230,6 @@
     "isDead": false,
     "coingeckoId": "marina-protocol",
     "id": "marina-protocol",
-    "rank": null
-  },
-  {
-    "code": "bcbc",
-    "name": null,
-    "type": "crypto",
-    "isDead": true,
-    "coingeckoId": null,
-    "id": "unknown_bcbc",
     "rank": null
   },
   {
@@ -1365,15 +1320,6 @@
     "isDead": false,
     "coingeckoId": null,
     "id": "unknown_bix",
-    "rank": null
-  },
-  {
-    "code": "blcn",
-    "name": null,
-    "type": "crypto",
-    "isDead": true,
-    "coingeckoId": null,
-    "id": "unknown_blcn",
     "rank": null
   },
   {
@@ -1593,15 +1539,6 @@
     "rank": null
   },
   {
-    "code": "call",
-    "name": null,
-    "type": "crypto",
-    "isDead": true,
-    "coingeckoId": null,
-    "id": "unknown_call",
-    "rank": null
-  },
-  {
     "code": "cdn",
     "name": "Canada eCoin",
     "type": "crypto",
@@ -1617,15 +1554,6 @@
     "isDead": false,
     "coingeckoId": null,
     "id": "unknown_cdt",
-    "rank": null
-  },
-  {
-    "code": "cenz",
-    "name": null,
-    "type": "crypto",
-    "isDead": true,
-    "coingeckoId": null,
-    "id": "unknown_cenz",
     "rank": null
   },
   {
@@ -1854,15 +1782,6 @@
     "rank": null
   },
   {
-    "code": "d",
-    "name": null,
-    "type": "crypto",
-    "isDead": true,
-    "coingeckoId": null,
-    "id": "unknown_d",
-    "rank": null
-  },
-  {
     "code": "dash",
     "name": "Dash",
     "type": "crypto",
@@ -1914,15 +1833,6 @@
     "isDead": false,
     "coingeckoId": "decred",
     "id": "decred",
-    "rank": null
-  },
-  {
-    "code": "deez",
-    "name": null,
-    "type": "crypto",
-    "isDead": true,
-    "coingeckoId": null,
-    "id": "unknown_deez",
     "rank": null
   },
   {
@@ -2070,15 +1980,6 @@
     "rank": null
   },
   {
-    "code": "edoge",
-    "name": null,
-    "type": "crypto",
-    "isDead": true,
-    "coingeckoId": null,
-    "id": "unknown_edoge",
-    "rank": null
-  },
-  {
     "code": "ela",
     "name": "Elastos",
     "type": "crypto",
@@ -2178,39 +2079,12 @@
     "rank": null
   },
   {
-    "code": "eon",
-    "name": null,
-    "type": "crypto",
-    "isDead": true,
-    "coingeckoId": null,
-    "id": "unknown_eon",
-    "rank": null
-  },
-  {
-    "code": "eop",
-    "name": null,
-    "type": "crypto",
-    "isDead": true,
-    "coingeckoId": null,
-    "id": "unknown_eop",
-    "rank": null
-  },
-  {
     "code": "eos",
     "name": "EOS",
     "type": "crypto",
     "isDead": false,
     "coingeckoId": "eos",
     "id": "eos",
-    "rank": null
-  },
-  {
-    "code": "eqli",
-    "name": null,
-    "type": "crypto",
-    "isDead": true,
-    "coingeckoId": null,
-    "id": "unknown_eqli",
     "rank": null
   },
   {
@@ -2430,39 +2304,12 @@
     "rank": null
   },
   {
-    "code": "generic",
-    "name": null,
-    "type": "crypto",
-    "isDead": true,
-    "coingeckoId": null,
-    "id": "unknown_generic",
-    "rank": null
-  },
-  {
     "code": "gin",
     "name": "GINcoin",
     "type": "crypto",
     "isDead": false,
     "coingeckoId": null,
     "id": "unknown_gin",
-    "rank": null
-  },
-  {
-    "code": "glxt",
-    "name": null,
-    "type": "crypto",
-    "isDead": true,
-    "coingeckoId": null,
-    "id": "unknown_glxt",
-    "rank": null
-  },
-  {
-    "code": "gmr",
-    "name": null,
-    "type": "crypto",
-    "isDead": true,
-    "coingeckoId": "gamer",
-    "id": "gamer",
     "rank": null
   },
   {
@@ -2724,15 +2571,6 @@
     "isDead": false,
     "coingeckoId": "ignis",
     "id": "ignis",
-    "rank": null
-  },
-  {
-    "code": "ilk",
-    "name": null,
-    "type": "crypto",
-    "isDead": true,
-    "coingeckoId": null,
-    "id": "unknown_ilk",
     "rank": null
   },
   {
@@ -3213,15 +3051,6 @@
     "rank": null
   },
   {
-    "code": "ndz",
-    "name": null,
-    "type": "crypto",
-    "isDead": true,
-    "coingeckoId": null,
-    "id": "unknown_ndz",
-    "rank": null
-  },
-  {
     "code": "nebl",
     "name": "Neblio",
     "type": "crypto",
@@ -3273,15 +3102,6 @@
     "isDead": false,
     "coingeckoId": "naga",
     "id": "naga",
-    "rank": null
-  },
-  {
-    "code": "nio",
-    "name": null,
-    "type": "crypto",
-    "isDead": true,
-    "coingeckoId": null,
-    "id": "unknown_nio",
     "rank": null
   },
   {
@@ -3453,15 +3273,6 @@
     "isDead": false,
     "coingeckoId": "oreswap-2",
     "id": "oreswap-2",
-    "rank": null
-  },
-  {
-    "code": "ox",
-    "name": null,
-    "type": "crypto",
-    "isDead": true,
-    "coingeckoId": "ox-fun",
-    "id": "ox-fun",
     "rank": null
   },
   {
@@ -3744,30 +3555,12 @@
     "rank": null
   },
   {
-    "code": "r",
-    "name": null,
-    "type": "crypto",
-    "isDead": true,
-    "coingeckoId": null,
-    "id": "unknown_r",
-    "rank": null
-  },
-  {
     "code": "rads",
     "name": "Radium",
     "type": "crypto",
     "isDead": false,
     "coingeckoId": null,
     "id": "unknown_rads",
-    "rank": null
-  },
-  {
-    "code": "rap",
-    "name": null,
-    "type": "crypto",
-    "isDead": true,
-    "coingeckoId": null,
-    "id": "unknown_rap",
     "rank": null
   },
   {
@@ -3984,15 +3777,6 @@
     "isDead": false,
     "coingeckoId": "siacoin",
     "id": "siacoin",
-    "rank": null
-  },
-  {
-    "code": "ser",
-    "name": null,
-    "type": "crypto",
-    "isDead": true,
-    "coingeckoId": null,
-    "id": "unknown_ser",
     "rank": null
   },
   {
@@ -4317,15 +4101,6 @@
     "isDead": false,
     "coingeckoId": "ternio",
     "id": "ternio",
-    "rank": null
-  },
-  {
-    "code": "tgch",
-    "name": null,
-    "type": "crypto",
-    "isDead": true,
-    "coingeckoId": null,
-    "id": "unknown_tgch",
     "rank": null
   },
   {
@@ -4662,15 +4437,6 @@
     "rank": null
   },
   {
-    "code": "x",
-    "name": null,
-    "type": "crypto",
-    "isDead": true,
-    "coingeckoId": null,
-    "id": "unknown_x",
-    "rank": null
-  },
-  {
     "code": "xas",
     "name": "Asch",
     "type": "crypto",
@@ -4758,15 +4524,6 @@
     "isDead": false,
     "coingeckoId": null,
     "id": "unknown_xmg",
-    "rank": null
-  },
-  {
-    "code": "xmo",
-    "name": null,
-    "type": "crypto",
-    "isDead": true,
-    "coingeckoId": null,
-    "id": "unknown_xmo",
     "rank": null
   },
   {

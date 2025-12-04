@@ -23,7 +23,15 @@ public struct Asset: Identifiable, Hashable, Sendable {
     let rank: Int?
 }
 
-extension Asset: Decodable {}
+extension Asset: Decodable {
+    var sortRank: Int {
+        rank ?? .max
+    }
+    
+    var icon: ImageSource {
+        .local(name: code)
+    }
+}
 
 extension AssetType: Decodable {
     public init(from decoder: Decoder) throws {
