@@ -11,6 +11,7 @@ struct SelectCoinView: View {
     
     @Environment(ThemeManager.self) private var themeManager
     @Environment(\.dismiss) private var dismiss
+    @Environment(AppContainer.self) private var appContainer
 
     init(viewModel: SelectCoinViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
@@ -19,7 +20,7 @@ struct SelectCoinView: View {
     @StateObject private var viewModel: SelectCoinViewModel
     
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $viewModel.path) {
             ScrollView(showsIndicators: false) {
                 SearchBar(text: $viewModel.searchedText, placeholder: "Search Coins") // TODO: Add Loc
                     .padding(.bottom)
@@ -50,11 +51,14 @@ struct SelectCoinView: View {
                         }
                         .padding(.leading)
                         .padding(.trailing, 20)
+                        .onTapGesture {
+                            viewModel.showAddCoin(asset: asset.assetID)
+                        }
                     }
                 }
                 
                 Button {
-                    
+                    viewModel.showAddCoin(asset: nil)
                 } label: {
                     Text("Custom Token") // TODO SI: Add loc
                         .foregroundStyle(themeManager.currentTheme.accent)
@@ -74,6 +78,12 @@ struct SelectCoinView: View {
                         dismiss()
                     }
                     .foregroundStyle(themeManager.currentTheme.text)
+                }
+            }
+            .navigationDestination(for: SelectCoinViewModel.Route.self) { route in
+                switch route {
+                case .assetSelected(let asset):
+                    AddCoinView(viewModel: appContainer.makeAddCoinViewModel(asset: asset))
                 }
             }
         }

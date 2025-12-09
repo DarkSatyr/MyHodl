@@ -7,6 +7,11 @@
 
 import Foundation
 
+struct AssetID: Hashable {
+    let code: String
+    let name: String
+}
+
 public enum AssetType: String, Sendable {
     case crypto
     case fiat
@@ -30,6 +35,10 @@ extension Asset: Decodable {
     
     var icon: ImageSource {
         .local(name: code)
+    }
+    
+    var assetID: AssetID {
+        AssetID(code: code, name: name)
     }
 }
 
