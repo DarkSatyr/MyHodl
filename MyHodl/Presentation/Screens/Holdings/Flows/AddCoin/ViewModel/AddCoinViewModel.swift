@@ -24,7 +24,7 @@ final class AddCoinViewModel: ObservableObject {
         self.fetchAssetsUseCase = fetchAssetsUseCase
         $searchedText
             .removeDuplicates()
-            .debounce(for: .milliseconds(300), scheduler: DispatchQueue.main)
+            .debounce(for: .milliseconds(300), scheduler: RunLoop.main)
             .prepend("")
             .flatMapAsync { [weak self] text in
                 guard let self else { return SearchResult(assets: [], sectionName: "Popular assets") }

@@ -71,6 +71,7 @@ extension Theme {
     var accentPressed: Color { Color.accentPressed }
     var searchBarBackground: Color { Color.background.opacity(0.7) }
     var searchBarSearchIcon: Color { Color.textSecondary.opacity(0.8) }
+    var buttonBackground: Color { Color.background.opacity(0.7) }
     func color(change: Decimal?) -> Color {
         let direction = change?.priceDirection ?? .neutral
         switch direction {
@@ -82,4 +83,6 @@ extension Theme {
             return .accent
         }
     }
+    // Radius
+    var buttonCornerRadius: CGFloat { 24 }
 }

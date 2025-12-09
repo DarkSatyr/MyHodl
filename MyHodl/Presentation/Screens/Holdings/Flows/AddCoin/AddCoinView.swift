@@ -52,6 +52,19 @@ struct AddCoinView: View {
                         .padding(.trailing, 20)
                     }
                 }
+                
+                Button {
+                    
+                } label: {
+                    Text("Custom Token") // TODO SI: Add loc
+                        .foregroundStyle(themeManager.currentTheme.accent)
+                        .frame(maxWidth: .infinity, minHeight: 48)
+                        .background(themeManager.currentTheme.buttonBackground)
+                        .clipShape(RoundedRectangle(cornerRadius: themeManager.currentTheme.buttonCornerRadius, style: .continuous))
+                }
+                .padding(.horizontal, 16)
+                .padding(.top, 10)
+
             }
             .navigationTitle("Add asset") // TODO: Add loc
             .toolbarTitleDisplayMode(.inline)
