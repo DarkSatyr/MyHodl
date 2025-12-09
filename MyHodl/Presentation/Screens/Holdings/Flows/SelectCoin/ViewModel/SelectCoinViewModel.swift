@@ -1,5 +1,5 @@
 //
-//  AddCoinViewModel.swift
+//  SelectCoinViewModel.swift
 //  MyHodl
 //
 //  Created by DarkSatyr on 26.11.2025.
@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 @MainActor
-final class AddCoinViewModel: ObservableObject {
+final class SelectCoinViewModel: ObservableObject {
     
     struct SearchResult {
         let assets: [Asset]
