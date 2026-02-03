@@ -38,6 +38,7 @@ struct HoldingsView: View {
                 Button("Add Coin", systemImage: "plus") {  // TODO: Add loc
                     showAddCoin = true
                 }
+                .foregroundStyle(.accent)
             }
         }
         .sheet(isPresented: $showAddCoin) {
