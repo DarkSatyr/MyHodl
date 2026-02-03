@@ -10,6 +10,8 @@ import SwiftUI
 struct DashboardEmptyView: View {
     
     @Environment(ThemeManager.self) private var themeManager
+    @Environment(AppContainer.self) private var appContainer
+    @State private var showAddCoin = false
     
     var body: some View {
         VStack(spacing: 20) {
@@ -28,6 +30,7 @@ struct DashboardEmptyView: View {
             }
             HStack {
                 GradientPillButton(title: "Add your first asset") {
+                    showAddCoin = true
                 }
             }
             .padding(.horizontal, 50)
@@ -47,6 +50,10 @@ struct DashboardEmptyView: View {
                 }
             }
             .padding(.bottom, 30)
+        }
+        .sheet(isPresented: $showAddCoin) {
+            AddCoinView(viewModel: appContainer.makeAddCoinViewModel())
+                .interactiveDismissDisabled()
         }
     }
 }
