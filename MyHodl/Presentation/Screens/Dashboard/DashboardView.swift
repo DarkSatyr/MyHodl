@@ -18,30 +18,34 @@ struct DashboardView: View {
     }
     
     var body: some View {
-        PageView {
-            ScrollView(showsIndicators: false) {
-                VStack(spacing: 20) {
-                    BalanceView(total: viewModel.totalBalance,
-                                changePercent: viewModel.totalBalanceChange)
-                    if let assetAllocation = viewModel.assetAllocation {
-                        AssetAllocationView(assetAllocation: assetAllocation)
+        if viewModel.isEmpty {
+            DashboardEmptyView()
+        } else {
+            PageView {
+                ScrollView(showsIndicators: false) {
+                    VStack(spacing: 20) {
+                        BalanceView(total: viewModel.totalBalance,
+                                    changePercent: viewModel.totalBalanceChange)
+                        if let assetAllocation = viewModel.assetAllocation {
+                            AssetAllocationView(assetAllocation: assetAllocation)
+                        }
+                        TopAssetsView(assets: viewModel.assets)
                     }
-                    TopAssetsView(assets: viewModel.assets)
+                    .padding(.horizontal, 16)
+                    .padding(.top, 16)
+                    .padding(.bottom, 20)
                 }
-                .padding(.horizontal, 16)
-                .padding(.top, 16)
-                .padding(.bottom, 20)
+            } title: {
+                TitleView {
+                    Text(L10n.dashboard)
+                } right: {
+                    Text(dayChangeTracker.currentDay.formatted(date: .abbreviated,
+                                                               time: .omitted))
+                }
             }
-        } title: {
-            TitleView {
-                Text(L10n.dashboard)
-            } right: {
-                Text(dayChangeTracker.currentDay.formatted(date: .abbreviated,
-                                                           time: .omitted))
+            .onAppear {
+                dayChangeTracker.start()
             }
-        }
-        .onAppear {
-            dayChangeTracker.start()
         }
     }
 }

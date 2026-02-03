@@ -21,6 +21,10 @@
 		7653322B2ED885C7002FE36B /* AssetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7653322A2ED885C7002FE36B /* AssetRepository.swift */; };
 		765332302ED8929B002FE36B /* AssetFileLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7653322F2ED8929B002FE36B /* AssetFileLoader.swift */; };
 		765332322ED8932D002FE36B /* BundleAssetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765332312ED8932D002FE36B /* BundleAssetRepository.swift */; };
+		76601E8C2F3240C000D12490 /* DashboardEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76601E8B2F3240C000D12490 /* DashboardEmptyView.swift */; };
+		76601E8E2F3292EF00D12490 /* GradientPillButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76601E8D2F3292EF00D12490 /* GradientPillButton.swift */; };
+		76601E912F32936A00D12490 /* FadedSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76601E902F32936A00D12490 /* FadedSeparator.swift */; };
+		76601E932F32938600D12490 /* GlowSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76601E922F32938600D12490 /* GlowSeparator.swift */; };
 		76670F282ED5D71C0004A139 /* coins_list.json in Resources */ = {isa = PBXBuildFile; fileRef = 76670F272ED5D71C0004A139 /* coins_list.json */; };
 		7668D2202EB34ADE00131EB5 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7668D21F2EB34ADE00131EB5 /* SettingsView.swift */; };
 		7668D22B2EB5264200131EB5 /* ThemeSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7668D22A2EB5264200131EB5 /* ThemeSettingsView.swift */; };
@@ -73,6 +77,10 @@
 		7653322A2ED885C7002FE36B /* AssetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetRepository.swift; sourceTree = "<group>"; };
 		7653322F2ED8929B002FE36B /* AssetFileLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetFileLoader.swift; sourceTree = "<group>"; };
 		765332312ED8932D002FE36B /* BundleAssetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleAssetRepository.swift; sourceTree = "<group>"; };
+		76601E8B2F3240C000D12490 /* DashboardEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardEmptyView.swift; sourceTree = "<group>"; };
+		76601E8D2F3292EF00D12490 /* GradientPillButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientPillButton.swift; sourceTree = "<group>"; };
+		76601E902F32936A00D12490 /* FadedSeparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadedSeparator.swift; sourceTree = "<group>"; };
+		76601E922F32938600D12490 /* GlowSeparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlowSeparator.swift; sourceTree = "<group>"; };
 		76670F272ED5D71C0004A139 /* coins_list.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = coins_list.json; sourceTree = "<group>"; };
 		7668D21F2EB34ADE00131EB5 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		7668D22A2EB5264200131EB5 /* ThemeSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSettingsView.swift; sourceTree = "<group>"; };
@@ -210,6 +218,8 @@
 				769999312ECCF67600F1C3AA /* SearchBar.swift */,
 				76EB83912ECCE43900D92E67 /* PageView.swift */,
 				76EB838E2ECCD91B00D92E67 /* BackgroundSurface.swift */,
+				76601E8D2F3292EF00D12490 /* GradientPillButton.swift */,
+				76601E8F2F32936300D12490 /* Separators */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -218,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				76EB83612EC37C2000D92E67 /* Dashboard */,
+				76601E8A2F323F6700D12490 /* DashboardEmpty */,
 				76EB83642EC37C7A00D92E67 /* Holdings */,
 				7668D2292EB5262A00131EB5 /* Settings */,
 			);
@@ -335,6 +346,23 @@
 				7653322F2ED8929B002FE36B /* AssetFileLoader.swift */,
 			);
 			path = Loaders;
+			sourceTree = "<group>";
+		};
+		76601E8A2F323F6700D12490 /* DashboardEmpty */ = {
+			isa = PBXGroup;
+			children = (
+				76601E8B2F3240C000D12490 /* DashboardEmptyView.swift */,
+			);
+			path = DashboardEmpty;
+			sourceTree = "<group>";
+		};
+		76601E8F2F32936300D12490 /* Separators */ = {
+			isa = PBXGroup;
+			children = (
+				76601E902F32936A00D12490 /* FadedSeparator.swift */,
+				76601E922F32938600D12490 /* GlowSeparator.swift */,
+			);
+			path = Separators;
 			sourceTree = "<group>";
 		};
 		76670F242ED5D51D0004A139 /* Resources */ = {
@@ -577,13 +605,16 @@
 				7668D22B2EB5264200131EB5 /* ThemeSettingsView.swift in Sources */,
 				76EB83942ECCEB9A00D92E67 /* HoldingsViewModel.swift in Sources */,
 				767120A52EE1CF8F00215ED7 /* Publisher+Hodl.swift in Sources */,
+				76601E8C2F3240C000D12490 /* DashboardEmptyView.swift in Sources */,
 				76EB83662EC37D6300D92E67 /* HoldingsView.swift in Sources */,
 				760947692EAA66A70010F54D /* MainTabView.swift in Sources */,
 				76EB837C2EC5124800D92E67 /* TopAssetsView.swift in Sources */,
 				767120952EE0619F00215ED7 /* AppContainer.swift in Sources */,
 				76EB837A2EC5123300D92E67 /* AssetAllocationView.swift in Sources */,
 				76EB838A2ECBA6E300D92E67 /* Decimal+Hodl.swift in Sources */,
+				76601E8E2F3292EF00D12490 /* GradientPillButton.swift in Sources */,
 				7609476A2EAA66A70010F54D /* MyHodlApp.swift in Sources */,
+				76601E912F32936A00D12490 /* FadedSeparator.swift in Sources */,
 				76EB83782EC5120B00D92E67 /* BalanceView.swift in Sources */,
 				76EB83832EC73F2B00D92E67 /* ImageResource.swift in Sources */,
 				76EB83632EC37C4A00D92E67 /* DashboardView.swift in Sources */,
@@ -591,6 +622,7 @@
 				7653320E2ED70C7B002FE36B /* AddCoinViewModel.swift in Sources */,
 				765332292ED86F05002FE36B /* FetchAssetsUseCase.swift in Sources */,
 				76EB83962ECCEC2200D92E67 /* DashboardAsset.swift in Sources */,
+				76601E932F32938600D12490 /* GlowSeparator.swift in Sources */,
 				76EB838F2ECCD91B00D92E67 /* BackgroundSurface.swift in Sources */,
 				7668D2202EB34ADE00131EB5 /* SettingsView.swift in Sources */,
 				769999322ECCF67600F1C3AA /* SearchBar.swift in Sources */,

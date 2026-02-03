@@ -36,6 +36,10 @@ final class DashboardViewModel: ObservableObject {
         assetAllocation = AssetAllocation(fiat: totalCurrentFiat / totalCurrent)
     }
     
+    var isEmpty: Bool {
+        assetsStubs.isEmpty
+    }
+    
     private static func totalBalanceChangePercent(current: Decimal, entry: Decimal) -> Decimal? {
         guard entry > 0 else { return nil }
         return (current - entry) / entry
