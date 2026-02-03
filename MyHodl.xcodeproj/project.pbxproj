@@ -14,8 +14,8 @@
 		7609476E2EAA66C30010F54D /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7609476D2EAA66C30010F54D /* Theme.swift */; };
 		760947702EAA66CC0010F54D /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7609476F2EAA66CC0010F54D /* ThemeManager.swift */; };
 		76412F742EAB6590005E5A9A /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76412F732EAB6590005E5A9A /* RootView.swift */; };
-		7653320C2ED70C70002FE36B /* SelectCoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7653320B2ED70C70002FE36B /* SelectCoinView.swift */; };
-		7653320E2ED70C7B002FE36B /* SelectCoinViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7653320D2ED70C7B002FE36B /* SelectCoinViewModel.swift */; };
+		7653320C2ED70C70002FE36B /* AddCoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7653320B2ED70C70002FE36B /* AddCoinView.swift */; };
+		7653320E2ED70C7B002FE36B /* AddCoinViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7653320D2ED70C7B002FE36B /* AddCoinViewModel.swift */; };
 		765332272ED865F9002FE36B /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765332262ED865F9002FE36B /* Asset.swift */; };
 		765332292ED86F05002FE36B /* FetchAssetsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765332282ED86F05002FE36B /* FetchAssetsUseCase.swift */; };
 		7653322B2ED885C7002FE36B /* AssetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7653322A2ED885C7002FE36B /* AssetRepository.swift */; };
@@ -66,8 +66,8 @@
 		7609476D2EAA66C30010F54D /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		7609476F2EAA66CC0010F54D /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		76412F732EAB6590005E5A9A /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
-		7653320B2ED70C70002FE36B /* SelectCoinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCoinView.swift; sourceTree = "<group>"; };
-		7653320D2ED70C7B002FE36B /* SelectCoinViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCoinViewModel.swift; sourceTree = "<group>"; };
+		7653320B2ED70C70002FE36B /* AddCoinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoinView.swift; sourceTree = "<group>"; };
+		7653320D2ED70C7B002FE36B /* AddCoinViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoinViewModel.swift; sourceTree = "<group>"; };
 		765332262ED865F9002FE36B /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
 		765332282ED86F05002FE36B /* FetchAssetsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchAssetsUseCase.swift; sourceTree = "<group>"; };
 		7653322A2ED885C7002FE36B /* AssetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetRepository.swift; sourceTree = "<group>"; };
@@ -148,13 +148,13 @@
 			path = MyHodl;
 			sourceTree = "<group>";
 		};
-		7653320A2ED70C58002FE36B /* SelectCoin */ = {
+		7653320A2ED70C58002FE36B /* AddCoin */ = {
 			isa = PBXGroup;
 			children = (
-				7653320B2ED70C70002FE36B /* SelectCoinView.swift */,
-				7653320D2ED70C7B002FE36B /* SelectCoinViewModel.swift */,
+				7653320B2ED70C70002FE36B /* AddCoinView.swift */,
+				7653320D2ED70C7B002FE36B /* AddCoinViewModel.swift */,
 			);
-			path = SelectCoin;
+			path = AddCoin;
 			sourceTree = "<group>";
 		};
 		765332142ED71774002FE36B /* Domain */ = {
@@ -289,8 +289,8 @@
 		765332232ED71F4E002FE36B /* Flows */ = {
 			isa = PBXGroup;
 			children = (
-				7653320A2ED70C58002FE36B /* SelectCoin */,
-				767120A62EE8596000215ED7 /* AddCoin */,
+				7653320A2ED70C58002FE36B /* AddCoin */,
+				767120A62EE8596000215ED7 /* EditCoin */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -364,13 +364,13 @@
 			path = App;
 			sourceTree = "<group>";
 		};
-		767120A62EE8596000215ED7 /* AddCoin */ = {
+		767120A62EE8596000215ED7 /* EditCoin */ = {
 			isa = PBXGroup;
 			children = (
 				767120A72EE8597800215ED7 /* EditCoinView.swift */,
 				767120AA2EE859A000215ED7 /* EditCoinViewModel.swift */,
 			);
-			path = AddCoin;
+			path = EditCoin;
 			sourceTree = "<group>";
 		};
 		769999332ECD02AC00F1C3AA /* Sections */ = {
@@ -588,7 +588,7 @@
 				76EB83832EC73F2B00D92E67 /* ImageResource.swift in Sources */,
 				76EB83632EC37C4A00D92E67 /* DashboardView.swift in Sources */,
 				76EB838C2ECC734400D92E67 /* FiatSymbol.swift in Sources */,
-				7653320E2ED70C7B002FE36B /* SelectCoinViewModel.swift in Sources */,
+				7653320E2ED70C7B002FE36B /* AddCoinViewModel.swift in Sources */,
 				765332292ED86F05002FE36B /* FetchAssetsUseCase.swift in Sources */,
 				76EB83962ECCEC2200D92E67 /* DashboardAsset.swift in Sources */,
 				76EB838F2ECCD91B00D92E67 /* BackgroundSurface.swift in Sources */,
@@ -610,7 +610,7 @@
 				76EB83722EC4AC9100D92E67 /* TitleView.swift in Sources */,
 				76EB83762EC4B72E00D92E67 /* DashboardViewModel.swift in Sources */,
 				769999352ECD06DD00F1C3AA /* AllAssetsView.swift in Sources */,
-				7653320C2ED70C70002FE36B /* SelectCoinView.swift in Sources */,
+				7653320C2ED70C70002FE36B /* AddCoinView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

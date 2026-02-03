@@ -42,7 +42,7 @@ struct HoldingsView: View {
             }
         }
         .sheet(isPresented: $showAddCoin) {
-            SelectCoinView(viewModel: appContainer.makeSelectCoinViewModel())
+            AddCoinView(viewModel: appContainer.makeAddCoinViewModel())
                 .interactiveDismissDisabled()
         }
     }
