@@ -40,8 +40,8 @@ final class AppContainer {
         container.resolve(HoldingsViewModel.self)!
     }
     
-    func makeAddCoinViewModel(asset: AssetID?) -> AddCoinViewModel {
-        container.resolve(AddCoinViewModel.self, argument: asset)!
+    func makeEditCoinViewModel(asset: AssetID?) -> EditCoinViewModel {
+        container.resolve(EditCoinViewModel.self, argument: asset)!
     }
     
     // Private
@@ -57,7 +57,7 @@ final class AppContainer {
     
     private func registerViewModels() {
         container.autoregister(SelectCoinViewModel.self, initializer: SelectCoinViewModel.init)
-        container.autoregister(AddCoinViewModel.self, argument: Optional<AssetID>.self, initializer: AddCoinViewModel.init)
+        container.autoregister(EditCoinViewModel.self, argument: Optional<AssetID>.self, initializer: EditCoinViewModel.init)
         container.autoregister(DashboardViewModel.self, initializer: DashboardViewModel.init)
         container.autoregister(HoldingsViewModel.self, initializer: HoldingsViewModel.init)
     }

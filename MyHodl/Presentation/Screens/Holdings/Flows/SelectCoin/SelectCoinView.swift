@@ -83,7 +83,7 @@ struct SelectCoinView: View {
             .navigationDestination(for: SelectCoinViewModel.Route.self) { route in
                 switch route {
                 case .assetSelected(let asset):
-                    AddCoinView(viewModel: appContainer.makeAddCoinViewModel(asset: asset))
+                    EditCoinView(viewModel: appContainer.makeEditCoinViewModel(asset: asset))
                 }
             }
         }

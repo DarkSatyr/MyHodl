@@ -1,5 +1,5 @@
 //
-//  AddCoinView.swift
+//  EditCoinView.swift
 //  MyHodl
 //
 //  Created by DarkSatyr on 09.12.2025.
@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct AddCoinView: View {
+struct EditCoinView: View {
     
-    @StateObject private var viewModel: AddCoinViewModel
-    init(viewModel: AddCoinViewModel) {
+    @StateObject private var viewModel: EditCoinViewModel
+    init(viewModel: EditCoinViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
     }
     
@@ -20,5 +20,5 @@ struct AddCoinView: View {
 }
 
 #Preview {
-//    AddCoinView()
+//    EditCoinView()
 }
