@@ -11,6 +11,8 @@ import Combine
 @MainActor
 final class EditCoinViewModel: ObservableObject {
     
+    var amount: String = ""
+    
     init(asset: AssetID?) {
         
     }

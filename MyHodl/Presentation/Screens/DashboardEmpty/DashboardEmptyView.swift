@@ -55,6 +55,7 @@ struct DashboardEmptyView: View {
             AddCoinView(viewModel: appContainer.makeAddCoinViewModel())
                 .interactiveDismissDisabled()
         }
+        .background(BackgroundSurface().ignoresSafeArea())
     }
 }
 

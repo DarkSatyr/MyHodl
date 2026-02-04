@@ -45,9 +45,7 @@ struct AddCoinView: View {
                                     .font(themeManager.currentTheme.sectionTextFont)
                             }
                             Spacer()
-                            IconView(source: .system(symbol: "chevron.forward"))
-                                .foregroundStyle(themeManager.currentTheme.accent)
-                                .frame(width: 16, height: 16)
+                            ChevronView()
                         }
                         .padding(.leading)
                         .padding(.trailing, 20)
@@ -57,20 +55,14 @@ struct AddCoinView: View {
                     }
                 }
                 
-                Button {
+                BaseButton(title: "Custom Token", action: {
                     viewModel.showAddCoin(asset: nil)
-                } label: {
-                    Text("Custom Token") // TODO SI: Add loc
-                        .foregroundStyle(themeManager.currentTheme.accent)
-                        .frame(maxWidth: .infinity, minHeight: 48)
-                        .background(themeManager.currentTheme.buttonBackground)
-                        .clipShape(RoundedRectangle(cornerRadius: themeManager.currentTheme.buttonCornerRadius, style: .continuous))
-                }
+                })
                 .padding(.horizontal, 16)
                 .padding(.top, 10)
 
             }
-            .navigationTitle("Add asset") // TODO: Add loc
+            .navigationTitle("Select asset to Add") // TODO: Add loc
             .toolbarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
@@ -93,4 +85,6 @@ struct AddCoinView: View {
 
 #Preview {
     AddCoinView(viewModel: AppContainer().makeAddCoinViewModel())
+        .environment(ThemeManager())
+        .environment(AppContainer())
 }
