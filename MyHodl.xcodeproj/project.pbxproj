@@ -25,6 +25,7 @@
 		765CEBFE2F33D95C0015DB79 /* ChevronView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765CEBFD2F33D95C0015DB79 /* ChevronView.swift */; };
 		765CEC002F351B830015DB79 /* ErrorSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765CEBFF2F351B830015DB79 /* ErrorSeparator.swift */; };
 		765CEC022F35228F0015DB79 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765CEC012F35228F0015DB79 /* CalendarView.swift */; };
+		765CEC042F3524F20015DB79 /* String+Hodl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765CEC032F3524F20015DB79 /* String+Hodl.swift */; };
 		76601E8C2F3240C000D12490 /* DashboardEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76601E8B2F3240C000D12490 /* DashboardEmptyView.swift */; };
 		76601E8E2F3292EF00D12490 /* GradientPillButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76601E8D2F3292EF00D12490 /* GradientPillButton.swift */; };
 		76601E912F32936A00D12490 /* FadedSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76601E902F32936A00D12490 /* FadedSeparator.swift */; };
@@ -85,6 +86,7 @@
 		765CEBFD2F33D95C0015DB79 /* ChevronView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChevronView.swift; sourceTree = "<group>"; };
 		765CEBFF2F351B830015DB79 /* ErrorSeparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorSeparator.swift; sourceTree = "<group>"; };
 		765CEC012F35228F0015DB79 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		765CEC032F3524F20015DB79 /* String+Hodl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Hodl.swift"; sourceTree = "<group>"; };
 		76601E8B2F3240C000D12490 /* DashboardEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardEmptyView.swift; sourceTree = "<group>"; };
 		76601E8D2F3292EF00D12490 /* GradientPillButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientPillButton.swift; sourceTree = "<group>"; };
 		76601E902F32936A00D12490 /* FadedSeparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadedSeparator.swift; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 			children = (
 				76EB83892ECBA6E300D92E67 /* Decimal+Hodl.swift */,
 				767120A42EE1CF8F00215ED7 /* Publisher+Hodl.swift */,
+				765CEC032F3524F20015DB79 /* String+Hodl.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -661,6 +664,7 @@
 				765332322ED8932D002FE36B /* BundleAssetRepository.swift in Sources */,
 				767120A82EE8597800215ED7 /* EditCoinView.swift in Sources */,
 				76EB837E2EC64A6500D92E67 /* DashboardCard.swift in Sources */,
+				765CEC042F3524F20015DB79 /* String+Hodl.swift in Sources */,
 				765CEC022F35228F0015DB79 /* CalendarView.swift in Sources */,
 				76E105052EC1DF87006C1E83 /* LocalizationStrings.swift in Sources */,
 				76EB83722EC4AC9100D92E67 /* TitleView.swift in Sources */,

@@ -35,7 +35,7 @@ final class BundleAssetRepository: AssetRepository {
     }
 
     func searchAssets(text: String) async -> [Asset] {
-        let query = text.trimmingCharacters(in: .whitespacesAndNewlines)
+        let query = text.trimmed()
         guard query.isEmpty == false else {
             return cachedAssets
         }

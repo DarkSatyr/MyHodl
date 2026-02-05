@@ -20,7 +20,7 @@ struct EditCoinView: View {
     }
     
     var body: some View {
-        ScrollView {
+        ScrollView(showsIndicators: false) {
             VStack {
                 VStack(alignment: .leading, spacing: 0) {
                     HStack(spacing: 10) {
@@ -31,7 +31,7 @@ struct EditCoinView: View {
                             TextField("Name", text: Binding {
                                 viewModel.name
                             } set: {
-                                viewModel.name = $0.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+                                viewModel.name = $0.trimmed()
                             })
                             .foregroundStyle(themeManager.currentTheme.text)
                             .allowsHitTesting(viewModel.coinNameIsEditable)
@@ -40,7 +40,7 @@ struct EditCoinView: View {
                             TextField("Code", text: Binding {
                                 viewModel.code
                             } set: {
-                                viewModel.code = $0.uppercased().trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+                                viewModel.code = $0.uppercased().trimmed()
                             })
                             .foregroundStyle(themeManager.currentTheme.textSecondary)
                             .allowsHitTesting(viewModel.coinNameIsEditable)
@@ -50,19 +50,9 @@ struct EditCoinView: View {
                     }
                     .frame(maxWidth: .infinity)
                     .padding(.horizontal)
-
-                    Text(viewModel.nameAndCodeError)
-                        .font(.caption)
-                        .foregroundStyle(.red)
-                        .opacity(viewModel.showNameAndCodeError ? 1 : 0)
-                        .padding(.bottom, 6)
-                        .padding(.horizontal)
                     
-                    if viewModel.showNameAndCodeError {
-                        ErrorSeparator()
-                    } else {
-                        FadedSeparator()
-                    }
+                    FieldErrorRow(text: viewModel.nameAndCodeError,
+                                  show: viewModel.showNameAndCodeError)
                     
                     HStack {
                         VStack {
@@ -72,8 +62,9 @@ struct EditCoinView: View {
                                 Spacer()
                             }
                             HStack {
-                                TextField(initialAmountFormatted(),
-                                          text: $viewModel.amount)
+                                TextField("",
+                                          text: $viewModel.amount,
+                                          prompt: initialAmountFormatted())
                                     .keyboardType(.decimalPad)
                                     .foregroundStyle(themeManager.currentTheme.text)
                                     .focused($isFocused)
@@ -86,18 +77,8 @@ struct EditCoinView: View {
                     .padding(.vertical, 4)
                     .padding(.horizontal)
 
-                    Text(viewModel.amountError)
-                        .font(.caption)
-                        .foregroundStyle(.red)
-                        .opacity(viewModel.showAmountError ? 1 : 0)
-                        .padding(.bottom, 6)
-                        .padding(.horizontal)
-                    
-                    if viewModel.showAmountError {
-                        ErrorSeparator()
-                    } else {
-                        FadedSeparator()
-                    }
+                    FieldErrorRow(text: viewModel.amountError,
+                                  show: viewModel.showAmountError)
                     
                     VStack {
                         HStack {
@@ -114,8 +95,9 @@ struct EditCoinView: View {
                                     .foregroundStyle(themeManager.currentTheme.textSecondary)
                                 Spacer()
                             }
-                            TextField(initialAmountFormatted(),
-                                      text: $viewModel.price)
+                            TextField("",
+                                      text: $viewModel.price,
+                                      prompt: initialAmountFormatted())
                             .keyboardType(.decimalPad)
                             .foregroundStyle(themeManager.currentTheme.text)
                             .focused($isFocused)
@@ -187,8 +169,26 @@ struct EditCoinView: View {
         .background(BackgroundSurface().ignoresSafeArea())
     }
     
-    private func initialAmountFormatted() -> String {
-        Decimal.decimalWithCurrentLocale(string: "0.0", fallback: 0).stringValue
+    private func initialAmountFormatted() -> Text {
+        Text(Decimal.decimalWithCurrentLocale(string: "0.0", fallback: 0).stringValue)
+    }
+}
+
+struct FieldErrorRow: View {
+    let text: String
+    let show: Bool
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            Text(text)
+                .font(.caption)
+                .foregroundStyle(.red)
+                .opacity(show ? 1 : 0)
+                .padding(.bottom, 6)
+            if show { ErrorSeparator() }
+            else { FadedSeparator() }
+        }
+        .padding(.horizontal)
     }
 }
 

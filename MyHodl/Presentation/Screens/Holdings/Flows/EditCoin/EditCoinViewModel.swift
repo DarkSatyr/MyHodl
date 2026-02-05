@@ -40,7 +40,6 @@ final class EditCoinViewModel: ObservableObject {
             .map { code in
                 ImageSource.local(name: code)
             }
-            .receive(on: RunLoop.main)
             .assign(to: &$image)
         
         $amount
