@@ -16,7 +16,7 @@ struct BaseButton: View {
         Button {
             action()
         } label: {
-            Text(title) // TODO SI: Add loc
+            Text(title)
                 .foregroundStyle(themeManager.currentTheme.accent)
                 .frame(maxWidth: .infinity, minHeight: 48)
                 .background(themeManager.currentTheme.buttonBackground)

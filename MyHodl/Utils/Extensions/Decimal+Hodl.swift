@@ -17,4 +17,14 @@ extension Decimal {
     var priceDirection: PriceDirection {
         self > 0 ? .up : (self < 0 ? .down : .neutral)
     }
+    
+    static func decimalWithCurrentLocale(string: String) -> Decimal? {
+        Decimal(string: string, locale: Locale.current)
+    }
+    
+    static func decimalWithCurrentLocale(string: String, fallback: Decimal) -> Decimal {
+        decimalWithCurrentLocale(string: string) ?? fallback
+    }
+    
+    var stringValue: String { "\(self)" }
 }

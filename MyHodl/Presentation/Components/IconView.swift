@@ -18,7 +18,7 @@ struct IconView: View {
     var body: some View {
         switch source {
         case .local(let name):
-            Image(safe: name, placeholder: placeholder)
+            Image(safe: name?.lowercased(), placeholder: placeholder)
                 .resizable()
                 .scaledToFit()
                 .foregroundStyle(themeManager.currentTheme.text)
@@ -50,7 +50,7 @@ struct IconView: View {
 
 extension Image {
     init(safe name: String?, placeholder: Image) {
-        if let name, let uiImage = UIImage(named: name) {
+        if let name, name.isEmpty == false, let uiImage = UIImage(named: name) {
             self = Image(uiImage: uiImage)
         } else {
             self = placeholder

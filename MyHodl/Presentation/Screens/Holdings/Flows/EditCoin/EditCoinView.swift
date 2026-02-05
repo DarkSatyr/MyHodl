@@ -11,8 +11,10 @@ import SwiftUI
 struct EditCoinView: View {
     
     @Environment(ThemeManager.self) private var themeManager
-    
     @StateObject private var viewModel: EditCoinViewModel
+    @State private var showDatePicker = false
+    @FocusState private var isFocused: Bool
+    
     init(viewModel: EditCoinViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
     }
@@ -21,17 +23,29 @@ struct EditCoinView: View {
         ScrollView {
             VStack {
                 ZStack {
-//                    RoundedRectangle(cornerRadius: 22)
-//                        .fill(.backgroundSecondary)
                     VStack(alignment: .leading) {
                         HStack(spacing: 10) {
-                            IconView(source: .placeholder)
+                            IconView(source: viewModel.image)
                                 .frame(width: 40, height: 40)
+
                             VStack(alignment: .leading) {
-                                Text("Bitcoin")
-                                    .foregroundStyle(themeManager.currentTheme.text)
-                                Text("BTC")
-                                    .foregroundStyle(themeManager.currentTheme.textSecondary)
+                                TextField("Name", text: Binding {
+                                    viewModel.name
+                                } set: {
+                                    viewModel.name = $0.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+                                })
+                                .foregroundStyle(themeManager.currentTheme.text)
+                                .allowsHitTesting(viewModel.coinNameIsEditable)
+                                .focused($isFocused)
+                                
+                                TextField("Code", text: Binding {
+                                    viewModel.code
+                                } set: {
+                                    viewModel.code = $0.uppercased().trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+                                })
+                                .foregroundStyle(themeManager.currentTheme.textSecondary)
+                                .allowsHitTesting(viewModel.coinNameIsEditable)
+                                .focused($isFocused)
                             }
                             Spacer()
                         }
@@ -49,10 +63,13 @@ struct EditCoinView: View {
                                     Spacer()
                                 }
                                 HStack {
-                                    TextField("0.0", text: $viewModel.amount)
+                                    TextField(initialAmountFormatted(),
+                                              text: $viewModel.amount)
+                                        .keyboardType(.decimalPad)
                                         .foregroundStyle(themeManager.currentTheme.text)
+                                        .focused($isFocused)
                                     Spacer()
-                                    Text("BTC")
+                                    Text(viewModel.code.uppercased())
                                         .foregroundStyle(themeManager.currentTheme.textSecondary)
                                 }
                             }
@@ -66,7 +83,7 @@ struct EditCoinView: View {
                             HStack {
                                 Text("≈")
                                     .foregroundStyle(themeManager.currentTheme.textSecondary)
-                                Text("$0.0")
+                                Text(FiatSymbol.usd.rawValue + AmountFormat.amount(viewModel.total, currency: viewModel.code))
                                     .foregroundStyle(themeManager.currentTheme.textSecondary)
                                 Spacer()
                             }
@@ -77,7 +94,11 @@ struct EditCoinView: View {
                                         .foregroundStyle(themeManager.currentTheme.textSecondary)
                                     Spacer()
                                 }
-                                TextField("0.0", text: $viewModel.amount)
+                                TextField(initialAmountFormatted(),
+                                          text: $viewModel.price)
+                                .keyboardType(.decimalPad)
+                                .foregroundStyle(themeManager.currentTheme.text)
+                                .focused($isFocused)
                             }
                         }
                         .frame(maxWidth: .infinity)
@@ -93,11 +114,14 @@ struct EditCoinView: View {
                                 Spacer()
                             }
                             HStack {
-                                Text("May 22, 2023")
+                                Text(DateFormat.date(viewModel.date))
                                     .foregroundStyle(themeManager.currentTheme.text)
                                 Spacer()
                                 ChevronView()
                             }
+                        }
+                        .onTapGesture {
+                            showDatePicker = true
                         }
                         .frame(maxWidth: .infinity)
                         .padding()
@@ -119,16 +143,54 @@ struct EditCoinView: View {
                 
                 Spacer()
             }
-            
-            
+        }
+        .sheet(isPresented: $showDatePicker) {
+            NavigationStack {
+                CalendarView(selectedDate: $viewModel.date, datesRange: ...Date())
+                    .navigationTitle("Select date")
+                    .navigationBarTitleDisplayMode(.inline)
+                    .toolbar {
+                        ToolbarItem(placement: .confirmationAction) {
+                            Button("Done") {
+                                showDatePicker = false
+                            }
+                            .foregroundStyle(.text)
+                        }
+                    }
+            }
+            .presentationDetents([.medium])
+        }
+        .onTapGesture {
+            isFocused = false
         }
         .navigationTitle("Add asset") // TODO: Add loc
         .toolbarTitleDisplayMode(.inline)
         .background(BackgroundSurface().ignoresSafeArea())
+    }
+    
+    private func initialAmountFormatted() -> String {
+        Decimal.decimalWithCurrentLocale(string: "0.0", fallback: 0).stringValue
     }
 }
 
 #Preview {
     EditCoinView(viewModel: EditCoinViewModel(asset: nil))
         .environment(ThemeManager())
+}
+
+
+struct CalendarView: View {
+    @Binding var selectedDate: Date
+    let datesRange: PartialRangeThrough<Date>
+    
+    var body: some View {
+        DatePicker(
+            "Select date",
+            selection: $selectedDate,
+            in: datesRange,
+            displayedComponents: [.date]
+        )
+        .datePickerStyle(.graphical)
+        .padding()
+    }
 }

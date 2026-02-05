@@ -69,12 +69,29 @@ enum CryptoFormat {
     }()
 
     static func amount(_ value: Decimal, currency: String) -> String {
-        formatter.maximumFractionDigits = CryptoPrecision.amountDigits(for: currency)
+        formatter.maximumFractionDigits = CryptoPrecision.amountDigits(for: currency.lowercased())
         return formatter.string(for: value) ?? "0"
     }
     
     static func price(_ value: Decimal, currency: String) -> String {
-        formatter.maximumFractionDigits = CryptoPrecision.priceDigits(for: currency, and: value)
+        formatter.maximumFractionDigits = CryptoPrecision.priceDigits(for: currency.lowercased(), and: value)
         return formatter.string(for: value) ?? "0"
+    }
+}
+
+@MainActor
+enum DateFormat {
+    private static let formatter: DateFormatter = {
+        let f = DateFormatter()
+        f.dateFormat = "MMMM dd, yyyy"
+        return f
+    }()
+    
+    static func date(_ value: Date) -> String {
+        formatter.string(from: value)
+    }
+    
+    static func today() -> String {
+        date(Date())
     }
 }

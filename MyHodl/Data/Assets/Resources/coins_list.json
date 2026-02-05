@@ -28,7 +28,7 @@
   },
   {
     "code": "xrp",
-    "name": "XRP",
+    "name": "Ripple",
     "type": "crypto",
     "isDead": false,
     "coingeckoId": "ripple",
@@ -37,7 +37,7 @@
   },
   {
     "code": "bnb",
-    "name": "BNB",
+    "name": "Binance Coin",
     "type": "crypto",
     "isDead": false,
     "coingeckoId": "binancecoin",
