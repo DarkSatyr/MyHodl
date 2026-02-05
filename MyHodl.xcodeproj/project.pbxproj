@@ -23,6 +23,8 @@
 		765332322ED8932D002FE36B /* BundleAssetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765332312ED8932D002FE36B /* BundleAssetRepository.swift */; };
 		765CEBFC2F3386000015DB79 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765CEBFB2F3386000015DB79 /* BaseButton.swift */; };
 		765CEBFE2F33D95C0015DB79 /* ChevronView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765CEBFD2F33D95C0015DB79 /* ChevronView.swift */; };
+		765CEC002F351B830015DB79 /* ErrorSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765CEBFF2F351B830015DB79 /* ErrorSeparator.swift */; };
+		765CEC022F35228F0015DB79 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765CEC012F35228F0015DB79 /* CalendarView.swift */; };
 		76601E8C2F3240C000D12490 /* DashboardEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76601E8B2F3240C000D12490 /* DashboardEmptyView.swift */; };
 		76601E8E2F3292EF00D12490 /* GradientPillButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76601E8D2F3292EF00D12490 /* GradientPillButton.swift */; };
 		76601E912F32936A00D12490 /* FadedSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76601E902F32936A00D12490 /* FadedSeparator.swift */; };
@@ -81,6 +83,8 @@
 		765332312ED8932D002FE36B /* BundleAssetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleAssetRepository.swift; sourceTree = "<group>"; };
 		765CEBFB2F3386000015DB79 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		765CEBFD2F33D95C0015DB79 /* ChevronView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChevronView.swift; sourceTree = "<group>"; };
+		765CEBFF2F351B830015DB79 /* ErrorSeparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorSeparator.swift; sourceTree = "<group>"; };
+		765CEC012F35228F0015DB79 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		76601E8B2F3240C000D12490 /* DashboardEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardEmptyView.swift; sourceTree = "<group>"; };
 		76601E8D2F3292EF00D12490 /* GradientPillButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientPillButton.swift; sourceTree = "<group>"; };
 		76601E902F32936A00D12490 /* FadedSeparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadedSeparator.swift; sourceTree = "<group>"; };
@@ -223,6 +227,7 @@
 				76EB83912ECCE43900D92E67 /* PageView.swift */,
 				76EB838E2ECCD91B00D92E67 /* BackgroundSurface.swift */,
 				765CEBFD2F33D95C0015DB79 /* ChevronView.swift */,
+				765CEC012F35228F0015DB79 /* CalendarView.swift */,
 				765CEBFA2F3385EE0015DB79 /* Buttons */,
 				76601E8F2F32936300D12490 /* Separators */,
 			);
@@ -375,6 +380,7 @@
 			children = (
 				76601E902F32936A00D12490 /* FadedSeparator.swift */,
 				76601E922F32938600D12490 /* GlowSeparator.swift */,
+				765CEBFF2F351B830015DB79 /* ErrorSeparator.swift */,
 			);
 			path = Separators;
 			sourceTree = "<group>";
@@ -638,6 +644,7 @@
 				765332292ED86F05002FE36B /* FetchAssetsUseCase.swift in Sources */,
 				76EB83962ECCEC2200D92E67 /* DashboardAsset.swift in Sources */,
 				76601E932F32938600D12490 /* GlowSeparator.swift in Sources */,
+				765CEC002F351B830015DB79 /* ErrorSeparator.swift in Sources */,
 				76EB838F2ECCD91B00D92E67 /* BackgroundSurface.swift in Sources */,
 				7668D2202EB34ADE00131EB5 /* SettingsView.swift in Sources */,
 				769999322ECCF67600F1C3AA /* SearchBar.swift in Sources */,
@@ -654,6 +661,7 @@
 				765332322ED8932D002FE36B /* BundleAssetRepository.swift in Sources */,
 				767120A82EE8597800215ED7 /* EditCoinView.swift in Sources */,
 				76EB837E2EC64A6500D92E67 /* DashboardCard.swift in Sources */,
+				765CEC022F35228F0015DB79 /* CalendarView.swift in Sources */,
 				76E105052EC1DF87006C1E83 /* LocalizationStrings.swift in Sources */,
 				76EB83722EC4AC9100D92E67 /* TitleView.swift in Sources */,
 				76EB83762EC4B72E00D92E67 /* DashboardViewModel.swift in Sources */,

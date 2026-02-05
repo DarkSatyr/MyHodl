@@ -21,6 +21,10 @@ final class EditCoinViewModel: ObservableObject {
     @Published var coinNameIsEditable = true
     @Published var amountDecimal: Decimal = 0
     @Published var priceDecimal: Decimal = 0
+    @Published var nameAndCodeError = ""
+    @Published var showNameAndCodeError = false
+    @Published var amountError = ""
+    @Published var showAmountError = false
     
     private var cancellables = Set<AnyCancellable>()
     
@@ -54,11 +58,31 @@ final class EditCoinViewModel: ObservableObject {
                 amount * price
             }
             .assign(to: &$total)
+    }
+    
+    
+    func save() {
+        showAmountError = false
+        showNameAndCodeError = false
         
-        $amountDecimal
-            .sink { amount in
-                print("___AMOUNT: \(amount)")
-            }
-            .store(in: &cancellables)
+        if name.isEmpty && code.isEmpty {
+            nameAndCodeError = "Name and Code are required"
+            showNameAndCodeError = true
+        } else if name.isEmpty {
+            nameAndCodeError = "Name is required"
+            showNameAndCodeError = true
+        } else if code.isEmpty {
+            nameAndCodeError = "Code is required"
+            showNameAndCodeError = true
+        }
+        
+        if amountDecimal <= 0 {
+            amountError = "Quantity must be greater than 0"
+            showAmountError = true
+        }
+        
+        guard showNameAndCodeError || showAmountError else {
+            return
+        }
     }
 }
