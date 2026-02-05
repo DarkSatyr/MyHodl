@@ -59,8 +59,7 @@ final class EditCoinViewModel: ObservableObject {
             .assign(to: &$total)
     }
     
-    
-    func save() {
+    func save() -> Bool {
         showAmountError = false
         showNameAndCodeError = false
         
@@ -80,8 +79,18 @@ final class EditCoinViewModel: ObservableObject {
             showAmountError = true
         }
         
-        guard showNameAndCodeError || showAmountError else {
-            return
+        guard !showNameAndCodeError && !showAmountError else {
+            return false
         }
+        
+        let asset = Asset1(code: code,
+                           fullName: name,
+                           startingPrice: priceDecimal,
+                           currentPrice: priceDecimal,
+                           amount: amountDecimal,
+                           icon: image)
+        
+        StubDataModel.shared.addAsset(asset)
+        return true
     }
 }

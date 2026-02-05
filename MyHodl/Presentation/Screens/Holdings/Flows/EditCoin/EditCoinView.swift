@@ -14,9 +14,13 @@ struct EditCoinView: View {
     @StateObject private var viewModel: EditCoinViewModel
     @State private var showDatePicker = false
     @FocusState private var isFocused: Bool
+    @Environment(\.dismiss) private var dismiss
     
-    init(viewModel: EditCoinViewModel) {
+    var onSave: () -> ()
+    
+    init(viewModel: EditCoinViewModel, onSave: @escaping () -> ()) {
         _viewModel = StateObject(wrappedValue: viewModel)
+        self.onSave = onSave
     }
     
     var body: some View {
@@ -137,7 +141,9 @@ struct EditCoinView: View {
                 .padding(.bottom, 10)
                 
                 BaseButton(title: "Save", action: {
-                    viewModel.save()
+                    if viewModel.save() {
+                        onSave()
+                    }
                 })
                 .padding(.horizontal, 16)
                 
@@ -193,6 +199,6 @@ struct FieldErrorRow: View {
 }
 
 #Preview {
-    EditCoinView(viewModel: EditCoinViewModel(asset: nil))
+    EditCoinView(viewModel: EditCoinViewModel(asset: nil), onSave: {})
         .environment(ThemeManager())
 }

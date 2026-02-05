@@ -15,31 +15,36 @@ final class DashboardViewModel: ObservableObject {
     @Published var totalBalance: Decimal?
     @Published var totalBalanceChange: Decimal?
     @Published var assetAllocation: AssetAllocation?
-    
-    private let assetsStubs = StubDataModel().assets
+    @Published var isEmpty = false
+    private let assetsStubs = StubDataModel.shared.assets
     
     init() {
-        assets = assetsStubs
-            .map { asset in
-                DashboardAsset(code: asset.code,
-                               fullName: asset.fullName,
-                               icon: ImageSource.local(name: asset.icon),
-                               currentPrice: asset.currentPrice,
-                               previousPrice: asset.startingPrice,
-                               amount: asset.amount)
+        assetsStubs
+            .map { assets in
+                assets
+                    .map { asset in
+                        DashboardAsset(code: asset.code,
+                                       fullName: asset.fullName,
+                                       icon: asset.icon,
+                                       currentPrice: asset.currentPrice,
+                                       previousPrice: asset.startingPrice,
+                                       amount: asset.amount)
+                    }
             }
+            .assign(to: &$assets)
+        
         let totalCurrent = Self.totalCurrent(for: assets)
         totalBalance = totalCurrent
         let totalEntry = Self.totalEntry(for: assets)
         totalBalanceChange = Self.totalBalanceChangePercent(current: totalCurrent, entry: totalEntry)
         let totalCurrentFiat = Self.totalFiatAllocation(for: assets)
         assetAllocation = AssetAllocation(fiat: totalCurrentFiat / totalCurrent)
+        
+        $assets
+            .map { $0.isEmpty }
+            .assign(to: &$isEmpty)
     }
-    
-    var isEmpty: Bool {
-        assetsStubs.isEmpty
-    }
-    
+
     private static func totalBalanceChangePercent(current: Decimal, entry: Decimal) -> Decimal? {
         guard entry > 0 else { return nil }
         return (current - entry) / entry

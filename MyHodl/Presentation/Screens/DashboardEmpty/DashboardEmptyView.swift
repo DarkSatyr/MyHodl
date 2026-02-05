@@ -9,9 +9,9 @@ import SwiftUI
 // TODO: Add loc
 struct DashboardEmptyView: View {
     
+    @Binding var showAddCoin: Bool
     @Environment(ThemeManager.self) private var themeManager
     @Environment(AppContainer.self) private var appContainer
-    @State private var showAddCoin = false
     
     var body: some View {
         VStack(spacing: 20) {
@@ -51,15 +51,15 @@ struct DashboardEmptyView: View {
             }
             .padding(.bottom, 30)
         }
-        .sheet(isPresented: $showAddCoin) {
-            AddCoinView(viewModel: appContainer.makeAddCoinViewModel())
-                .interactiveDismissDisabled()
-        }
         .background(BackgroundSurface().ignoresSafeArea())
     }
 }
 
 #Preview {
-    DashboardEmptyView()
-        .environment(ThemeManager())
+    DashboardEmptyView(showAddCoin: Binding(get: {
+        false
+    }, set: { _ in
+        
+    }))
+    .environment(ThemeManager())
 }

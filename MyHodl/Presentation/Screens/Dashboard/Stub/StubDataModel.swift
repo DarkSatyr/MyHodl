@@ -6,6 +6,7 @@
 //
 
 import Foundation
+@preconcurrency import Combine
 
 struct Asset1 {
     let code: String
@@ -13,12 +14,21 @@ struct Asset1 {
     let startingPrice: Decimal
     let currentPrice: Decimal
     let amount: Decimal
-    let icon: String?
+    let icon: ImageSource
 }
 
-class StubDataModel {
-    let assets: [Asset1] = []
-    init() {
+final class StubDataModel: Sendable {
+    
+    static let shared = StubDataModel()
+    let assets = CurrentValueSubject<[Asset1], Never>([])
+    
+    func addAsset(_ asset: Asset1) {
+        var currentAssets = assets.value
+        currentAssets.append(asset)
+        assets.send(currentAssets)
+    }
+    
+    private init() {
 //        assets = [
 //            Asset1(code: "BTC",
 //                  fullName: "Bitcoin",

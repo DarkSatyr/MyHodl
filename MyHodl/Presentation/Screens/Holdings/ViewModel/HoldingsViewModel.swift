@@ -17,18 +17,22 @@ final class HoldingsViewModel: ObservableObject {
     @Published var totalBalanceChange: Decimal?
     @Published var searchText = ""
     
-    private let assetsStubs = StubDataModel().assets
+    private let assetsStubs = StubDataModel.shared.assets
     
     init() {
-        assets = assetsStubs
-            .map { asset in
-                DashboardAsset(code: asset.code,
-                               fullName: asset.fullName,
-                               icon: ImageSource.local(name: asset.icon),
-                               currentPrice: asset.currentPrice,
-                               previousPrice: asset.startingPrice,
-                               amount: asset.amount)
+        assetsStubs
+            .map { assets in
+                assets
+                    .map { asset in
+                        DashboardAsset(code: asset.code,
+                                       fullName: asset.fullName,
+                                       icon: asset.icon,
+                                       currentPrice: asset.currentPrice,
+                                       previousPrice: asset.startingPrice,
+                                       amount: asset.amount)
+                    }
             }
+            .assign(to: &$assets)
         let totalCurrent = Self.totalCurrent(for: assets)
         totalBalance = totalCurrent
         let totalEntry = Self.totalEntry(for: assets)
