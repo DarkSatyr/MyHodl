@@ -47,12 +47,12 @@ final class AppContainer {
     // Private
     
     private func registerRepositories() {
-        container.autoregister(AssetRepository.self, initializer: BundleAssetRepository.init)
+        container.autoregister(CryptoAssetsInfoRepository.self, initializer: BundleCryptoAssetsInfoRepository.init)
             .inObjectScope(.container)
     }
     
     private func registerUseCases() {
-        container.autoregister(FetchAssetsUseCase.self, initializer: FetchAssetsUseCase.init)
+        container.autoregister(FetchCryptoAssetsInfoUseCase.self, initializer: FetchCryptoAssetsInfoUseCase.init)
     }
     
     private func registerViewModels() {
@@ -63,7 +63,7 @@ final class AppContainer {
     }
     
     private func registerServices() {
-        container.autoregister(AssetFileLoader.self, initializer: AssetFileLoader.init)
+        container.autoregister(CryptoAssetsFileLoader.self, initializer: CryptoAssetsFileLoader.init)
         container.autoregister(ThemeManager.self, initializer: ThemeManager.init)
     }
 }

@@ -1,5 +1,5 @@
 //
-//  BundleAssetRepository.swift
+//  BundleCryptoAssetsInfoRepository.swift
 //  MyHodl
 //
 //  Created by DarkSatyr on 27.11.2025.
@@ -7,34 +7,34 @@
 
 import Foundation
 
-final class BundleAssetRepository: AssetRepository {
+final class BundleCryptoAssetsInfoRepository: CryptoAssetsInfoRepository {
 
-    private let loader: AssetFileLoader
-    private let cachedAssets: [Asset]
+    private let loader: CryptoAssetsFileLoader
+    private let cachedAssets: [CryptoAssetInfo]
 
-    init(loader: AssetFileLoader = AssetFileLoader()) {
+    init(loader: CryptoAssetsFileLoader = CryptoAssetsFileLoader()) {
         self.loader = loader
         
         do {
             self.cachedAssets = try loader.loadAssetsList()
                 .sorted { $0.sortRank < $1.sortRank }
         } catch {
-            assertionFailure("Failed to load coins_list.json: \(error)")
+            assertionFailure("Failed to load crypto_coins_list.json: \(error)")
             self.cachedAssets = []
         }
     }
 
-    // MARK: - AssetRepository
+    // MARK: - CryptoAssetsInfoRepository
 
-    func getAllAssets() async -> [Asset] {
+    func getAllAssets() async -> [CryptoAssetInfo] {
         cachedAssets
     }
 
-    func getAsset(id: String) async throws -> Asset? {
+    func getAsset(id: String) async throws -> CryptoAssetInfo? {
         cachedAssets.first { $0.id == id }
     }
 
-    func searchAssets(text: String) async -> [Asset] {
+    func searchAssets(text: String) async -> [CryptoAssetInfo] {
         let query = text.trimmed()
         guard query.isEmpty == false else {
             return cachedAssets
@@ -49,7 +49,7 @@ final class BundleAssetRepository: AssetRepository {
         }
     }
 
-    func topAssets(count: Int) async -> [Asset] {
+    func topAssets(count: Int) async -> [CryptoAssetInfo] {
         Array(cachedAssets.prefix(count))
     }
 }

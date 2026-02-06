@@ -16,16 +16,16 @@ final class AddCoinViewModel: ObservableObject {
     }
     
     struct SearchResult {
-        let assets: [Asset]
+        let assets: [CryptoAssetInfo]
         let sectionName: String
     }
     
     @Published var searchedText = ""
     @Published var searchResult = SearchResult(assets: [], sectionName: "Popular assets") // TODO: Add loc
     @Published var path = [Route]()
-    private let fetchAssetsUseCase: FetchAssetsUseCase
+    private let fetchAssetsUseCase: FetchCryptoAssetsInfoUseCase
     
-    init(fetchAssetsUseCase: FetchAssetsUseCase) {
+    init(fetchAssetsUseCase: FetchCryptoAssetsInfoUseCase) {
         self.fetchAssetsUseCase = fetchAssetsUseCase
         $searchedText
             .removeDuplicates()

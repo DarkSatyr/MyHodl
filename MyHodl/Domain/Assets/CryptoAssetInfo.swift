@@ -1,5 +1,5 @@
 //
-//  Asset.swift
+//  CryptoAssetInfo.swift
 //  MyHodl
 //
 //  Created by DarkSatyr on 27.11.2025.
@@ -18,7 +18,7 @@ public enum AssetType: String, Sendable {
     case unknown
 }
 
-public struct Asset: Identifiable, Hashable, Sendable {
+public struct CryptoAssetInfo: Identifiable, Hashable, Sendable {
     public let id: String
     let code: String
     let name: String
@@ -28,7 +28,7 @@ public struct Asset: Identifiable, Hashable, Sendable {
     let rank: Int?
 }
 
-extension Asset: Decodable {
+extension CryptoAssetInfo: Decodable {
     var sortRank: Int {
         rank ?? .max
     }
