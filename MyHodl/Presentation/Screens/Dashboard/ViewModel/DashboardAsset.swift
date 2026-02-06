@@ -31,3 +31,16 @@ struct DashboardAsset: Identifiable {
         return currentPrice * amount
     }
 }
+
+extension DashboardAsset {
+    init(_ asset: Asset) {
+        self.init(
+            code: asset.code,
+            fullName: asset.fullName,
+            icon: .local(name: asset.code),
+            currentPrice: asset.currentPrice,
+            previousPrice: asset.startingPrice,
+            amount: asset.amount
+        )
+    }
+}

@@ -21,17 +21,7 @@ final class DashboardViewModel: ObservableObject {
     init(assetsObserveUseCase: AssetsUseCases.Observe) {
         self.assetsObserveUseCase = assetsObserveUseCase
         assetsObserveUseCase()
-            .map { assets in
-                assets
-                    .map { asset in
-                        DashboardAsset(code: asset.code,
-                                       fullName: asset.fullName,
-                                       icon: ImageSource.local(name: asset.code),
-                                       currentPrice: asset.currentPrice,
-                                       previousPrice: asset.startingPrice,
-                                       amount: asset.amount)
-                    }
-            }
+            .map { $0.map(DashboardAsset.init) }
             .assign(to: &$assets)
         
         let totalCurrent = Self.totalCurrent(for: assets)
