@@ -13,7 +13,7 @@ struct TopAssetsView: View {
     
     init(assets: [DashboardAsset]) {
         self.assets = Array(assets.sorted(by: { lhs, rhs in
-            lhs.totalCurrent > rhs.totalCurrent
+            (lhs.totalCurrent ?? 0) > (rhs.totalCurrent ?? 0)
         })
         .prefix(6))
     }

@@ -13,10 +13,7 @@ struct AllAssetsView: View {
     @Environment(ThemeManager.self) private var themeManager
     
     init(assets: [DashboardAsset]) {
-        self.assets = assets
-            .sorted { lhs, rhs in
-                lhs.totalCurrent > rhs.totalCurrent
-            }
+        self.assets = assets.sorted { ($0.totalCurrent ?? 0) > ($1.totalCurrent ?? 0) }
     }
     
     var body: some View {

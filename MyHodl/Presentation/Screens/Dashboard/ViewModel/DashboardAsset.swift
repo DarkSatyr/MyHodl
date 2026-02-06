@@ -11,21 +11,23 @@ struct DashboardAsset: Identifiable {
     let code: String
     let fullName: String
     let icon: ImageSource
-    let currentPrice: Decimal
-    let previousPrice: Decimal
+    let currentPrice: Decimal?
+    let previousPrice: Decimal?
     let amount: Decimal
     var id: String { code }
     
     var changePercent: Decimal? {
-        guard previousPrice != 0 else { return nil }
+        guard let currentPrice, let previousPrice, previousPrice != 0 else { return nil }
         return (currentPrice - previousPrice) / previousPrice
     }
     
-    var totalEntry: Decimal {
-        previousPrice * amount
+    var totalEntry: Decimal? {
+        guard let previousPrice else { return nil }
+        return previousPrice * amount
     }
     
-    var totalCurrent: Decimal {
-        currentPrice * amount
+    var totalCurrent: Decimal? {
+        guard let currentPrice else { return nil }
+        return currentPrice * amount
     }
 }

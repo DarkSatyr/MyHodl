@@ -28,8 +28,8 @@ final class HoldingsViewModel: ObservableObject {
                         DashboardAsset(code: asset.code,
                                        fullName: asset.fullName,
                                        icon: ImageSource.local(name: asset.code),
-                                       currentPrice: asset.currentPrice ?? 0,
-                                       previousPrice: asset.startingPrice ?? 0,
+                                       currentPrice: asset.currentPrice,
+                                       previousPrice: asset.startingPrice,
                                        amount: asset.amount)
                     }
             }
@@ -64,14 +64,14 @@ final class HoldingsViewModel: ObservableObject {
     private static func totalCurrent(for assets: [DashboardAsset]) -> Decimal {
         assets
             .reduce(0, { result, asset in
-                result + asset.totalCurrent
+                result + (asset.totalCurrent ?? 0)
             })
     }
     
     private static func totalEntry(for assets: [DashboardAsset]) -> Decimal {
         assets
             .reduce(0, { result, asset in
-                result + asset.totalEntry
+                result + (asset.totalEntry ?? 0)
             })
     }
 }
