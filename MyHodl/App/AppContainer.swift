@@ -8,14 +8,32 @@
 import Foundation
 import Swinject
 import SwinjectAutoregistration
+import SwiftData
 
 @MainActor
 @Observable
 final class AppContainer {
     
     private let container = Container()
+    private let modelContainer: ModelContainer
+    
+    private static func createModelContainer() -> ModelContainer {
+        do {
+            let schema = Schema([
+                AssetRecord.self
+            ])
+            let config = ModelConfiguration(schema: schema)
+            return try ModelContainer(
+                for: schema,
+                configurations: [config]
+            )
+        } catch {
+            fatalError("🚨 SwiftData ModelContainer init failed: \(error)")
+        }
+    }
     
     init() {
+        modelContainer = Self.createModelContainer()
         registerServices()
         registerRepositories()
         registerUseCases()
@@ -33,15 +51,18 @@ final class AppContainer {
     }
     
     func makeDashboardViewModel() -> DashboardViewModel {
-        container.resolve(DashboardViewModel.self)!
+        let observe = container.resolve(AssetsUseCases.Observe.self)!
+        return container.resolve(DashboardViewModel.self, argument: observe)!
     }
     
     func makeHoldingsViewModel() -> HoldingsViewModel {
-        container.resolve(HoldingsViewModel.self)!
+        let observe = container.resolve(AssetsUseCases.Observe.self)!
+        return container.resolve(HoldingsViewModel.self, argument: observe)!
     }
     
     func makeEditCoinViewModel(asset: AssetID?) -> EditCoinViewModel {
-        container.resolve(EditCoinViewModel.self, argument: asset)!
+        let add = container.resolve(AssetsUseCases.Add.self)!
+        return container.resolve(EditCoinViewModel.self, arguments: asset, add)!
     }
     
     // Private
@@ -49,17 +70,23 @@ final class AppContainer {
     private func registerRepositories() {
         container.autoregister(CryptoAssetsInfoRepository.self, initializer: BundleCryptoAssetsInfoRepository.init)
             .inObjectScope(.container)
+        container.register(AssetsRepository.self) { [modelContainer] r in
+            AssetsRepositoryImpl(modelContainer: modelContainer)
+        }
+        .inObjectScope(.container)
     }
     
     private func registerUseCases() {
         container.autoregister(FetchCryptoAssetsInfoUseCase.self, initializer: FetchCryptoAssetsInfoUseCase.init)
+        container.autoregister(AssetsUseCases.Add.self, initializer: AssetsUseCases.Add.init)
+        container.autoregister(AssetsUseCases.Observe.self, initializer: AssetsUseCases.Observe.init)
     }
     
     private func registerViewModels() {
         container.autoregister(AddCoinViewModel.self, initializer: AddCoinViewModel.init)
-        container.autoregister(EditCoinViewModel.self, argument: Optional<AssetID>.self, initializer: EditCoinViewModel.init)
-        container.autoregister(DashboardViewModel.self, initializer: DashboardViewModel.init)
-        container.autoregister(HoldingsViewModel.self, initializer: HoldingsViewModel.init)
+        container.autoregister(EditCoinViewModel.self, arguments: Optional<AssetID>.self, AssetsUseCases.Add.self, initializer: EditCoinViewModel.init)
+        container.autoregister(DashboardViewModel.self, argument: AssetsUseCases.Observe.self, initializer: DashboardViewModel.init)
+        container.autoregister(HoldingsViewModel.self, argument: AssetsUseCases.Observe.self, initializer: HoldingsViewModel.init)
     }
     
     private func registerServices() {

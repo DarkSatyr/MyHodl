@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 // TODO: Add loc
 struct EditCoinView: View {
@@ -199,6 +200,8 @@ struct FieldErrorRow: View {
 }
 
 #Preview {
-    EditCoinView(viewModel: EditCoinViewModel(asset: nil), onSave: {})
+    EditCoinView(viewModel: EditCoinViewModel(asset: nil,
+                                              assetsAddUseCase:
+                                                AssetsUseCases.Add(repo: AssetsRepositoryImpl(modelContainer: try! ModelContainer()))), onSave: {})
         .environment(ThemeManager())
 }

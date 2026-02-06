@@ -26,14 +26,17 @@ final class EditCoinViewModel: ObservableObject {
     @Published var amountError = ""
     @Published var showAmountError = false
     
+    private let assetsAddUseCase: AssetsUseCases.Add
     private var cancellables = Set<AnyCancellable>()
     
-    init(asset: AssetID?) {
+    init(asset: AssetID?, assetsAddUseCase: AssetsUseCases.Add) {
         if let asset {
             name = asset.name
             code = asset.code.uppercased()
             coinNameIsEditable = false
         }
+        
+        self.assetsAddUseCase = assetsAddUseCase
         
         $code
             .removeDuplicates()
@@ -83,14 +86,18 @@ final class EditCoinViewModel: ObservableObject {
             return false
         }
         
-        let asset = Asset1(code: code,
-                           fullName: name,
-                           startingPrice: priceDecimal,
-                           currentPrice: priceDecimal,
-                           amount: amountDecimal,
-                           icon: image)
+        let asset = Asset(code: code,
+                          fullName: name,
+                          amount: amountDecimal,
+                          startingPrice: priceDecimal,
+                          currentPrice: priceDecimal)
         
-        StubDataModel.shared.addAsset(asset)
+        do {
+            try assetsAddUseCase(asset: asset)
+        } catch {
+            print("Asset storage failed")
+        }
+        
         return true
     }
 }

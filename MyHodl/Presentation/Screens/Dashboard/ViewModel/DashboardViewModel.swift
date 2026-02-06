@@ -16,18 +16,19 @@ final class DashboardViewModel: ObservableObject {
     @Published var totalBalanceChange: Decimal?
     @Published var assetAllocation: AssetAllocation?
     @Published var isEmpty = false
-    private let assetsStubs = StubDataModel.shared.assets
+    private let assetsObserveUseCase: AssetsUseCases.Observe
     
-    init() {
-        assetsStubs
+    init(assetsObserveUseCase: AssetsUseCases.Observe) {
+        self.assetsObserveUseCase = assetsObserveUseCase
+        assetsObserveUseCase()
             .map { assets in
                 assets
                     .map { asset in
                         DashboardAsset(code: asset.code,
                                        fullName: asset.fullName,
-                                       icon: asset.icon,
-                                       currentPrice: asset.currentPrice,
-                                       previousPrice: asset.startingPrice,
+                                       icon: ImageSource.local(name: asset.code),
+                                       currentPrice: asset.currentPrice ?? 0,
+                                       previousPrice: asset.startingPrice ?? 0,
                                        amount: asset.amount)
                     }
             }
