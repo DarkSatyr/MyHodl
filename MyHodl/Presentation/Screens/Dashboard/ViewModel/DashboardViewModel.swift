@@ -17,6 +17,7 @@ final class DashboardViewModel: ObservableObject {
     @Published var assetAllocation: AssetAllocation?
     @Published var isEmpty = false
     private let assetsObserveUseCase: AssetsUseCases.Observe
+    private var cancellables = Set<AnyCancellable>()
     
     init(assetsObserveUseCase: AssetsUseCases.Observe) {
         self.assetsObserveUseCase = assetsObserveUseCase
@@ -24,16 +25,18 @@ final class DashboardViewModel: ObservableObject {
             .map { $0.map(DashboardAsset.init) }
             .assign(to: &$assets)
         
-        let totalCurrent = Self.totalCurrent(for: assets)
-        totalBalance = totalCurrent
-        let totalEntry = Self.totalEntry(for: assets)
-        totalBalanceChange = Self.totalBalanceChangePercent(current: totalCurrent, entry: totalEntry)
-        let totalCurrentFiat = Self.totalFiatAllocation(for: assets)
-        assetAllocation = AssetAllocation(fiat: totalCurrentFiat / totalCurrent)
-        
         $assets
-            .map { $0.isEmpty }
-            .assign(to: &$isEmpty)
+            .sink(receiveValue: { [weak self] assets in
+                guard let self else { return }
+                let totalCurrent = Self.totalCurrent(for: assets)
+                totalBalance = totalCurrent
+                let totalEntry = Self.totalEntry(for: assets)
+                totalBalanceChange = Self.totalBalanceChangePercent(current: totalCurrent, entry: totalEntry)
+                let totalCurrentFiat = Self.totalFiatAllocation(for: assets)
+                assetAllocation = AssetAllocation(fiat: totalCurrentFiat / totalCurrent)
+                isEmpty = assets.isEmpty
+            })
+            .store(in: &cancellables)
     }
 
     private static func totalBalanceChangePercent(current: Decimal, entry: Decimal) -> Decimal? {

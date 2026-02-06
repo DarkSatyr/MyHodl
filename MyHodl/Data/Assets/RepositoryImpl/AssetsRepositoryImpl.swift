@@ -24,9 +24,10 @@ final class AssetsRepositoryImpl: AssetsRepository {
     }
     
     func observeAssets() -> AnyPublisher<[Asset], Never> {
-        let context = ModelContext(modelContainer)
+        let queue = DispatchQueue(label: "assets.observe.queue")
 
-        let fetch: () throws -> [Asset] = {
+        let fetch: () throws -> [Asset] = { [modelContainer] in
+            let context = ModelContext(modelContainer)
             let descriptor = FetchDescriptor<AssetRecord>()
             let records = try context.fetch(descriptor)
             return records.map { $0.toDomain() }
@@ -34,7 +35,9 @@ final class AssetsRepositoryImpl: AssetsRepository {
         return NotificationCenter.default.publisher(for: ModelContext.didSave, object: nil)
             .map { _ in () }
             .prepend(())
+            .receive(on: queue)
             .tryMap { _ in try fetch() }
+            .receive(on: DispatchQueue.main)
             .replaceError(with: [])
             .eraseToAnyPublisher()
     }

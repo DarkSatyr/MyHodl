@@ -18,16 +18,24 @@ final class HoldingsViewModel: ObservableObject {
     @Published var searchText = ""
     
     private let assetsObserveUseCase: AssetsUseCases.Observe
+    private var cancellables = Set<AnyCancellable>()
     
     init(assetsObserveUseCase: AssetsUseCases.Observe) {
         self.assetsObserveUseCase = assetsObserveUseCase
+        
         assetsObserveUseCase()
             .map { $0.map(DashboardAsset.init) }
             .assign(to: &$assets)
-        let totalCurrent = Self.totalCurrent(for: assets)
-        totalBalance = totalCurrent
-        let totalEntry = Self.totalEntry(for: assets)
-        totalBalanceChange = Self.totalBalanceChangePercent(current: totalCurrent, entry: totalEntry)
+        
+        $assets
+            .sink(receiveValue: { [weak self] assets in
+                guard let self else { return }
+                let totalCurrent = Self.totalCurrent(for: assets)
+                totalBalance = totalCurrent
+                let totalEntry = Self.totalEntry(for: assets)
+                totalBalanceChange = Self.totalBalanceChangePercent(current: totalCurrent, entry: totalEntry)
+            })
+            .store(in: &cancellables)
         
         Publishers.CombineLatest($assets, $searchText)
             .debounce(for: .milliseconds(50), scheduler: RunLoop.main)
