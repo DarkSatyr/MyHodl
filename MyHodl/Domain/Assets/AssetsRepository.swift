@@ -11,4 +11,5 @@ import Combine
 protocol AssetsRepository {
     func save(_ asset: Asset) throws
     func observeAssets() -> AnyPublisher<[Asset], Never>
+    func asset(code: String) throws -> Asset?
 }

@@ -22,7 +22,7 @@ class AssetRecord {
          startingPrice: Decimal? = nil,
          currentPrice: Decimal? = nil) {
         
-        self.code = code
+        self.code = code.normalize()
         self.fullName = fullName
         self.amount = amount
         self.startingPrice = startingPrice

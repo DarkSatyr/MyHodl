@@ -10,10 +10,60 @@ import Combine
 
 enum AssetsUseCases {
     
-    struct Add {
+    struct GetAssetByCode {
         let repo: AssetsRepository
-        func callAsFunction(asset: Asset) throws {
-            try repo.save(asset)
+        func callAsFunction(_ code: String) throws -> Asset? {
+            try repo.asset(code: code)
+        }
+    }
+    
+    struct UpsertAsset {
+        
+        enum UpsertResult {
+            case inserted
+            case merged
+        }
+        
+        let repo: AssetsRepository
+        
+        @discardableResult
+        func callAsFunction(_ incoming: Asset) throws -> UpsertResult {
+            if var existing = try repo.asset(code: incoming.code) {
+                var newAmount = existing.amount + incoming.amount
+                let newAvg = mergedAvgCost(
+                    oldAvg: existing.startingPrice,
+                    oldAmount: existing.amount,
+                    addPrice: incoming.startingPrice,   // buy price per coin
+                    addAmount: incoming.amount
+                )
+                try repo.save(existing.copy(amount: newAmount, startingPrice: newAvg))
+                return .merged
+            } else {
+                try repo.save(incoming)
+                return .inserted
+            }
+        }
+        
+        private func mergedAvgCost(
+            oldAvg: Decimal?,
+            oldAmount: Decimal,
+            addPrice: Decimal?,
+            addAmount: Decimal
+        ) -> Decimal? {
+            guard addAmount > 0 else { return oldAvg }
+
+            switch (oldAvg, addPrice) {
+            case let (oldAvg?, addPrice?):
+                let total = oldAmount + addAmount
+                guard total > 0 else { return nil }
+                return (oldAmount * oldAvg + addAmount * addPrice) / total
+
+            case (nil, let addPrice?):
+                return addPrice
+
+            case (_, nil):
+                return oldAvg
+            }
         }
     }
 

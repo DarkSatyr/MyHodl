@@ -142,15 +142,14 @@ struct EditCoinView: View {
                 .padding(.bottom, 10)
                 
                 BaseButton(title: "Save", action: {
-                    if viewModel.save() {
-                        onSave()
-                    }
+                    viewModel.save()
                 })
                 .padding(.horizontal, 16)
                 
                 Spacer()
             }
         }
+        .onChange(of: viewModel.saveEventID, { _, _ in onSave() })
         .sheet(isPresented: $showDatePicker) {
             NavigationStack {
                 CalendarView(title: "Select date",
@@ -168,6 +167,14 @@ struct EditCoinView: View {
             }
             .presentationDetents([.medium])
         }
+        .alert("Актив вже додано", isPresented: $viewModel.showDuplicateAlert, actions: {
+            Button("Add", role: .confirm) {
+                viewModel.save(confirmDuplicate: true)
+            }
+            Button("Cancel", role: .cancel) { }
+        }, message: {
+            Text("Цей актив уже є у вашому портфелі. Додати кількість до існуючої позиції?")
+        })
         .onTapGesture {
             isFocused = false
         }
@@ -201,7 +208,7 @@ struct FieldErrorRow: View {
 
 #Preview {
     EditCoinView(viewModel: EditCoinViewModel(asset: nil,
-                                              assetsAddUseCase:
-                                                AssetsUseCases.Add(repo: AssetsRepositoryImpl(modelContainer: try! ModelContainer()))), onSave: {})
+                                              getAssetUseCase: AssetsUseCases.GetAssetByCode(repo: AssetsRepositoryImpl(modelContainer: try! ModelContainer())),
+                                              upsertAssetUseCase: AssetsUseCases.UpsertAsset(repo: AssetsRepositoryImpl(modelContainer: try! ModelContainer()))), onSave: {})
         .environment(ThemeManager())
 }

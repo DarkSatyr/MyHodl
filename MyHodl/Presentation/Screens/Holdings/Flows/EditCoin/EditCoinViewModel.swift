@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 
+// TODO: Add loc
 @MainActor
 final class EditCoinViewModel: ObservableObject {
     
@@ -25,18 +26,25 @@ final class EditCoinViewModel: ObservableObject {
     @Published var showNameAndCodeError = false
     @Published var amountError = ""
     @Published var showAmountError = false
+    @Published var showDuplicateAlert = false
+    @Published var saveEventID: UUID?
     
-    private let assetsAddUseCase: AssetsUseCases.Add
+    private let getAssetUseCase: AssetsUseCases.GetAssetByCode
+    private let upsertAssetUseCase: AssetsUseCases.UpsertAsset
     private var cancellables = Set<AnyCancellable>()
     
-    init(asset: AssetID?, assetsAddUseCase: AssetsUseCases.Add) {
+    init(asset: AssetID?,
+         getAssetUseCase: AssetsUseCases.GetAssetByCode,
+         upsertAssetUseCase: AssetsUseCases.UpsertAsset) {
+        
         if let asset {
             name = asset.name
             code = asset.code.uppercased()
             coinNameIsEditable = false
         }
         
-        self.assetsAddUseCase = assetsAddUseCase
+        self.getAssetUseCase = getAssetUseCase
+        self.upsertAssetUseCase = upsertAssetUseCase
         
         $code
             .removeDuplicates()
@@ -62,7 +70,26 @@ final class EditCoinViewModel: ObservableObject {
             .assign(to: &$total)
     }
     
-    func save() -> Bool {
+    func save(confirmDuplicate: Bool = false) {
+        guard validate() else { return }
+        do {
+            if !confirmDuplicate, try getAssetUseCase(code) != nil {
+                showDuplicateAlert = true
+                return
+            }
+            let asset = Asset(code: code,
+                              fullName: name,
+                              amount: amountDecimal,
+                              startingPrice: priceDecimal,
+                              currentPrice: priceDecimal)
+            try upsertAssetUseCase(asset)
+            saveEventID = UUID()
+        } catch {
+            print("Asset storage failed")
+        }
+    }
+    
+    private func validate() -> Bool {
         showAmountError = false
         showNameAndCodeError = false
         
@@ -81,23 +108,6 @@ final class EditCoinViewModel: ObservableObject {
             amountError = "Quantity must be greater than 0"
             showAmountError = true
         }
-        
-        guard !showNameAndCodeError && !showAmountError else {
-            return false
-        }
-        
-        let asset = Asset(code: code,
-                          fullName: name,
-                          amount: amountDecimal,
-                          startingPrice: priceDecimal,
-                          currentPrice: priceDecimal)
-        
-        do {
-            try assetsAddUseCase(asset: asset)
-        } catch {
-            print("Asset storage failed")
-        }
-        
-        return true
+        return !showNameAndCodeError && !showAmountError
     }
 }

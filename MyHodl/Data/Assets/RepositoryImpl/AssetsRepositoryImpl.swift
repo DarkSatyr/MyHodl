@@ -19,7 +19,16 @@ final class AssetsRepositoryImpl: AssetsRepository {
     
     func save(_ asset: Asset) throws {
         let context = ModelContext(modelContainer)
-        context.insert(AssetRecord(from: asset))
+        if var record = try self.fetchAssetRecord(code: asset.code, context: context) {
+            // update
+            record.fullName = asset.fullName
+            record.amount = asset.amount
+            record.startingPrice = asset.startingPrice
+            record.currentPrice = asset.currentPrice
+        } else {
+            // insert
+            context.insert(AssetRecord(from: asset))
+        }
         try context.save()
     }
     
@@ -40,5 +49,19 @@ final class AssetsRepositoryImpl: AssetsRepository {
             .receive(on: DispatchQueue.main)
             .replaceError(with: [])
             .eraseToAnyPublisher()
+    }
+    
+    func asset(code: String) throws -> Asset? {
+        let record = try fetchAssetRecord(code: code, context: ModelContext(modelContainer))
+        return record?.toDomain()
+    }
+    
+    private func fetchAssetRecord(code: String, context: ModelContext) throws -> AssetRecord? {
+        let normalized = code.normalize()
+        var descriptor = FetchDescriptor<AssetRecord>(predicate: #Predicate {
+            $0.code == normalized
+        })
+        descriptor.fetchLimit = 1
+        return try context.fetch(descriptor).first
     }
 }
