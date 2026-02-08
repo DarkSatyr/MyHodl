@@ -18,27 +18,33 @@ struct HoldingsView: View {
     }
     
     var body: some View {
-        PageView {
-            ScrollView(showsIndicators: false) {
-                SearchBar(text: $viewModel.searchText, placeholder: L10n.searchCoins)
-                    .padding(.horizontal, 16)
-                VStack(spacing: 20) {
-                    BalanceView(total: viewModel.totalBalance,
-                                changePercent: viewModel.totalBalanceChange)
-                    AllAssetsView(assets: viewModel.filteredAssets)
+        Group {
+            if viewModel.isEmpty {
+                HoldingsEmptyView(showAddCoin: $showAddCoin)
+            } else {
+                PageView {
+                    ScrollView(showsIndicators: false) {
+                        SearchBar(text: $viewModel.searchText, placeholder: L10n.searchCoins)
+                            .padding(.horizontal, 16)
+                        VStack(spacing: 20) {
+                            BalanceView(total: viewModel.totalBalance,
+                                        changePercent: viewModel.totalBalanceChange)
+                            AllAssetsView(assets: viewModel.filteredAssets)
+                        }
+                        .padding(.horizontal, 16)
+                        .padding(.top, 16)
+                        .padding(.bottom, 20)
+                    }
+                } title: {
+                    TitleView {
+                        Text(L10n.holdings)
+                    } right: {
+                        Button("Add asset", systemImage: "plus") {  // TODO: Add loc
+                            showAddCoin = true
+                        }
+                        .foregroundStyle(.accent)
+                    }
                 }
-                .padding(.horizontal, 16)
-                .padding(.top, 16)
-                .padding(.bottom, 20)
-            }
-        } title: {
-            TitleView {
-                Text(L10n.holdings)
-            } right: {
-                Button("Add asset", systemImage: "plus") {  // TODO: Add loc
-                    showAddCoin = true
-                }
-                .foregroundStyle(.accent)
             }
         }
         .sheet(isPresented: $showAddCoin) {

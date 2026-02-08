@@ -16,6 +16,7 @@ final class HoldingsViewModel: ObservableObject {
     @Published var totalBalance: Decimal?
     @Published var totalBalanceChange: Decimal?
     @Published var searchText = ""
+    @Published var isEmpty = false
     
     private let assetsObserveUseCase: AssetsUseCases.Observe
     private var cancellables = Set<AnyCancellable>()
@@ -34,6 +35,7 @@ final class HoldingsViewModel: ObservableObject {
                 totalBalance = totalCurrent
                 let totalEntry = Self.totalEntry(for: assets)
                 totalBalanceChange = Self.totalBalanceChangePercent(current: totalCurrent, entry: totalEntry)
+                isEmpty = assets.isEmpty
             })
             .store(in: &cancellables)
         

@@ -39,6 +39,7 @@
 		767120A52EE1CF8F00215ED7 /* Publisher+Hodl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767120A42EE1CF8F00215ED7 /* Publisher+Hodl.swift */; };
 		767120A82EE8597800215ED7 /* EditCoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767120A72EE8597800215ED7 /* EditCoinView.swift */; };
 		767120AB2EE859A000215ED7 /* EditCoinViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767120AA2EE859A000215ED7 /* EditCoinViewModel.swift */; };
+		7672B6492F3915B8009C635F /* HoldingsEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7672B6482F3915B8009C635F /* HoldingsEmptyView.swift */; };
 		769999322ECCF67600F1C3AA /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769999312ECCF67600F1C3AA /* SearchBar.swift */; };
 		769999352ECD06DD00F1C3AA /* AllAssetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769999342ECD06DD00F1C3AA /* AllAssetsView.swift */; };
 		76E104F92EC1D8BC006C1E83 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 76E104F72EC1D8BC006C1E83 /* Localizable.strings */; };
@@ -102,6 +103,7 @@
 		767120A42EE1CF8F00215ED7 /* Publisher+Hodl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+Hodl.swift"; sourceTree = "<group>"; };
 		767120A72EE8597800215ED7 /* EditCoinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCoinView.swift; sourceTree = "<group>"; };
 		767120AA2EE859A000215ED7 /* EditCoinViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCoinViewModel.swift; sourceTree = "<group>"; };
+		7672B6482F3915B8009C635F /* HoldingsEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoldingsEmptyView.swift; sourceTree = "<group>"; };
 		769999312ECCF67600F1C3AA /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		769999342ECD06DD00F1C3AA /* AllAssetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllAssetsView.swift; sourceTree = "<group>"; };
 		76E104F82EC1D8BC006C1E83 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 				76EB83612EC37C2000D92E67 /* Dashboard */,
 				76601E8A2F323F6700D12490 /* DashboardEmpty */,
 				76EB83642EC37C7A00D92E67 /* Holdings */,
+				7672B6472F39157D009C635F /* HoldingsEmptyView */,
 				7668D2292EB5262A00131EB5 /* Settings */,
 			);
 			path = Screens;
@@ -424,6 +427,14 @@
 				767120AA2EE859A000215ED7 /* EditCoinViewModel.swift */,
 			);
 			path = EditCoin;
+			sourceTree = "<group>";
+		};
+		7672B6472F39157D009C635F /* HoldingsEmptyView */ = {
+			isa = PBXGroup;
+			children = (
+				7672B6482F3915B8009C635F /* HoldingsEmptyView.swift */,
+			);
+			path = HoldingsEmptyView;
 			sourceTree = "<group>";
 		};
 		769999332ECD02AC00F1C3AA /* Sections */ = {
@@ -690,6 +701,7 @@
 				767120AB2EE859A000215ED7 /* EditCoinViewModel.swift in Sources */,
 				76EB83882ECB4B8200D92E67 /* CryptoPrecision.swift in Sources */,
 				765332322ED8932D002FE36B /* BundleCryptoAssetsInfoRepository.swift in Sources */,
+				7672B6492F3915B8009C635F /* HoldingsEmptyView.swift in Sources */,
 				767120A82EE8597800215ED7 /* EditCoinView.swift in Sources */,
 				76EB837E2EC64A6500D92E67 /* DashboardCard.swift in Sources */,
 				765CEC042F3524F20015DB79 /* String+Hodl.swift in Sources */,

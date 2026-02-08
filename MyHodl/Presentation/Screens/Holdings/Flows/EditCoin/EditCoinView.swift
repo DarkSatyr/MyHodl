@@ -38,6 +38,7 @@ struct EditCoinView: View {
                             } set: {
                                 viewModel.name = $0.trimmed()
                             })
+                            .autocorrectionDisabled(true)
                             .foregroundStyle(themeManager.currentTheme.text)
                             .allowsHitTesting(viewModel.coinNameIsEditable)
                             .focused($isFocused)
@@ -47,6 +48,8 @@ struct EditCoinView: View {
                             } set: {
                                 viewModel.code = $0.uppercased().trimmed()
                             })
+                            .autocorrectionDisabled(true)
+                            .textInputAutocapitalization(.never)
                             .foregroundStyle(themeManager.currentTheme.textSecondary)
                             .allowsHitTesting(viewModel.coinNameIsEditable)
                             .focused($isFocused)
