@@ -33,9 +33,9 @@ struct HoldingsView: View {
             }
         } title: {
             TitleView {
-                Text(L10n.myHoldings)
+                Text(L10n.holdings)
             } right: {
-                Button("Add Coin", systemImage: "plus") {  // TODO: Add loc
+                Button("Add asset", systemImage: "plus") {  // TODO: Add loc
                     showAddCoin = true
                 }
                 .foregroundStyle(.accent)

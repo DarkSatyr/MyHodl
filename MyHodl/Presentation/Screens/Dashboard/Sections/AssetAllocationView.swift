@@ -57,17 +57,22 @@ struct AssetAllocationView: View {
             }
             .padding(.all)
         }
-        
     }
 }
 
 extension AssetAllocation {
-    init(crypto: Decimal) {
+    init?(crypto: Decimal) {
+        guard crypto.isValid, crypto >= 0 else {
+            return nil
+        }
         self.crypto = crypto
         self.fiat = 1 - crypto
     }
     
-    init(fiat: Decimal) {
+    init?(fiat: Decimal) {
+        guard fiat.isValid, fiat >= 0 else {
+            return nil
+        }
         self.fiat = fiat
         self.crypto = 1 - fiat
     }

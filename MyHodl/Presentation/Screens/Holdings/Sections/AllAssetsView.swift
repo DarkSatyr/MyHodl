@@ -42,13 +42,13 @@ struct AllAssetsView: View {
                         Text(AmountFormat.amount(asset.totalCurrent, currency: baseCurrency))
                             .font(themeManager.currentTheme.sectionTextFont)
                             .foregroundStyle(themeManager.currentTheme.text)
-                        if asset.code.uppercased() != baseCurrency {
-                            Text(AmountFormat.percentChange(asset.changePercent))
-                                .font(themeManager.currentTheme.font)
-                                .foregroundStyle(themeManager.currentTheme.color(change: asset.changePercent))
-                        } else {
+//                        if asset.code.uppercased() != baseCurrency {
+//                            Text(AmountFormat.percentChange(asset.changePercent))
+//                                .font(themeManager.currentTheme.font)
+//                                .foregroundStyle(themeManager.currentTheme.color(change: asset.changePercent))
+//                        } else {
                             Spacer()
-                        }
+//                        }
                     }
                 }
             }

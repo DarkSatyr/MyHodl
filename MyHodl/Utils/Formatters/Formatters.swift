@@ -19,7 +19,7 @@ enum AmountFormat {
     }
     
     static func percentChange(_ value: Decimal?) -> String {
-        guard let value else { return "-" }
+        guard let value else { return "" }
         return Percent.formatChange(value)
     }
     

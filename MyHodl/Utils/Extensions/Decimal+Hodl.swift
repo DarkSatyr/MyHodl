@@ -27,4 +27,6 @@ extension Decimal {
     }
     
     var stringValue: String { "\(self)" }
+    
+    var isValid: Bool { isNaN == false }
 }

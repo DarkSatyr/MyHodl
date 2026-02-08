@@ -30,9 +30,9 @@ struct BalanceView: View {
                         .font(themeManager.currentTheme.headerFont)
                         .foregroundStyle(themeManager.currentTheme.text)
                     Spacer()
-                    Text(AmountFormat.percentChange(changePercent))
-                        .font(themeManager.currentTheme.sectionTextFont)
-                        .foregroundStyle(themeManager.currentTheme.color(change: changePercent))
+//                    Text(AmountFormat.percentChange(changePercent))
+//                        .font(themeManager.currentTheme.sectionTextFont)
+//                        .foregroundStyle(themeManager.currentTheme.color(change: changePercent))
                 }
             }
             .padding(.all)

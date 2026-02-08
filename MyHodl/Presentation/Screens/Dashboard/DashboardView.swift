@@ -57,8 +57,6 @@ struct DashboardView: View {
     }
 }
 
-    
-
 #Preview {
     DashboardView(viewModel: AppContainer().makeDashboardViewModel())
         .environment(ThemeManager())
