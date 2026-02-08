@@ -22,7 +22,14 @@ final class AppContainer {
             let schema = Schema([
                 AssetRecord.self
             ])
-            let config = ModelConfiguration(schema: schema)
+            
+            let fm = FileManager.default
+            let appSupport = fm.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!
+            try fm.createDirectory(at: appSupport, withIntermediateDirectories: true)
+
+            let storeURL = appSupport.appendingPathComponent("default.store")
+            
+            let config = ModelConfiguration(schema: schema, url: storeURL)
             return try ModelContainer(
                 for: schema,
                 configurations: [config]
