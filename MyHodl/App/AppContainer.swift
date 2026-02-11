@@ -96,8 +96,15 @@ final class AppContainer {
         container.autoregister(EditCoinViewModel.self,
                                arguments: Optional<AssetID>.self, AssetsUseCases.GetAssetByCode.self, AssetsUseCases.UpsertAsset.self,
                                initializer: EditCoinViewModel.init)
-        container.autoregister(DashboardViewModel.self, argument: AssetsUseCases.Observe.self, initializer: DashboardViewModel.init)
-        container.autoregister(HoldingsViewModel.self, argument: AssetsUseCases.Observe.self, initializer: HoldingsViewModel.init)
+        container.autoregister(DashboardViewModel.self,
+                               argument: AssetsUseCases.Observe.self,
+                               initializer: DashboardViewModel.init)
+        .inObjectScope(.container)
+        
+        container.autoregister(HoldingsViewModel.self,
+                               argument: AssetsUseCases.Observe.self,
+                               initializer: HoldingsViewModel.init)
+        .inObjectScope(.container)
     }
     
     private func registerServices() {

@@ -9,20 +9,40 @@ import SwiftUI
 
 struct TopAssetsView: View {
     var assets: [DashboardAsset]
+    let onViewAllTap: () -> Void
     @Environment(ThemeManager.self) private var themeManager
     
-    init(assets: [DashboardAsset]) {
+    init(assets: [DashboardAsset], onViewAllTap: @escaping () -> Void) {
         self.assets = Array(assets.sorted(by: { lhs, rhs in
             (lhs.totalCurrent ?? 0) > (rhs.totalCurrent ?? 0)
         })
         .prefix(6))
+        self.onViewAllTap = onViewAllTap
     }
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text(L10n.topHoldings)
-                .font(themeManager.currentTheme.sectionHeaderFont)
-                .foregroundStyle(themeManager.currentTheme.textSecondary)
+            HStack {
+                Text(L10n.topHoldings)
+                    .font(themeManager.currentTheme.sectionHeaderFont)
+                    .foregroundStyle(themeManager.currentTheme.textSecondary)
+                Spacer()
+                Button(action: {
+                    onViewAllTap()
+                }, label: {
+                    HStack(alignment: .center, spacing: 4) {
+                        Text("View all ")
+                            .font(themeManager.currentTheme.sectionHeaderFont)
+                            .foregroundStyle(themeManager.currentTheme.textSecondary)
+                        Image(systemName: "chevron.right")
+                            .resizable()
+                            .frame(width: 8, height: 10)
+                            .foregroundStyle(themeManager.currentTheme.textSecondary.opacity(0.6))
+                    }
+                    
+                })
+            }
+            .padding(.bottom, 10)
             LazyVStack(spacing: 12) {
                 ForEach(assets) { asset in
                     HStack {
@@ -60,7 +80,9 @@ struct TopAssetsView: View {
 }
 
 #Preview {
-    TopAssetsView(assets: [DashboardAsset(code: "BTC", fullName: "Bitcoin", icon: .local(name: "btc"), currentPrice: 100000, previousPrice: 90001, amount: 1.2)])
-        .fixedSize(horizontal: false, vertical: true)
-        .environment(ThemeManager())
+    TopAssetsView(assets: [DashboardAsset(code: "BTC", fullName: "Bitcoin", icon: .local(name: "btc"), currentPrice: 100000, previousPrice: 90001, amount: 1.2)]) {
+        
+    }
+    .fixedSize(horizontal: false, vertical: true)
+    .environment(ThemeManager())
 }
