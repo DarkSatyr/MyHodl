@@ -26,6 +26,7 @@ final class DashboardViewModel: ObservableObject {
             .assign(to: &$assets)
         
         $assets
+            .dropFirst()
             .sink(receiveValue: { [weak self] assets in
                 guard let self else { return }
                 let totalCurrent = Self.totalCurrent(for: assets)

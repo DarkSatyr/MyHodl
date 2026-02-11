@@ -27,7 +27,8 @@ struct DashboardView: View {
                     ScrollView(showsIndicators: false) {
                         VStack(spacing: 20) {
                             BalanceView(total: viewModel.totalBalance,
-                                        changePercent: viewModel.totalBalanceChange)
+                                        changePercent: viewModel.totalBalanceChange,
+                                        showDate: true)
                             if let assetAllocation = viewModel.assetAllocation {
                                 AssetAllocationView(assetAllocation: assetAllocation)
                             }
@@ -41,12 +42,11 @@ struct DashboardView: View {
                     TitleView {
                         Text(L10n.dashboard)
                     } right: {
-                        Text(dayChangeTracker.currentDay.formatted(date: .abbreviated,
-                                                                   time: .omitted))
+                        Button("", systemImage: "plus") {  // TODO: Add loc
+                            showAddCoin = true
+                        }
+                        .foregroundStyle(.accent)
                     }
-                }
-                .onAppear {
-                    dayChangeTracker.start()
                 }
             }
         }

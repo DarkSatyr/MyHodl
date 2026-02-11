@@ -10,12 +10,15 @@ import SwiftUI
 struct BalanceView: View {
     
     @Environment(ThemeManager.self) private var themeManager
+    @StateObject private var dayChangeTracker = DayChangeTracker()
     var total: Decimal?
     var changePercent: Decimal?
+    let showDate: Bool
     
-    init(total: Decimal?, changePercent: Decimal?) {
+    init(total: Decimal?, changePercent: Decimal?, showDate: Bool = false) {
         self.total = total
         self.changePercent = changePercent
+        self.showDate = showDate
     }
     
     var body: some View {
@@ -34,8 +37,17 @@ struct BalanceView: View {
 //                        .font(themeManager.currentTheme.sectionTextFont)
 //                        .foregroundStyle(themeManager.currentTheme.color(change: changePercent))
                 }
+                if showDate {
+                    Text(dayChangeTracker.currentDay.formatted(date: .abbreviated,
+                                                               time: .omitted))
+                    .font(themeManager.currentTheme.sectionHeaderFont)
+                    .foregroundStyle(themeManager.currentTheme.textSecondary)
+                }
             }
             .padding(.all)
+        }
+        .onAppear {
+            dayChangeTracker.start()
         }
     }
 }
