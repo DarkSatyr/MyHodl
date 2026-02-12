@@ -13,6 +13,9 @@ struct AssetsCount {
     var isFiltered: Bool {
         total > filtered
     }
+    var isEmpty: Bool {
+        filtered < 1
+    }
 }
 
 struct HoldingsTotalBalanceView: View {

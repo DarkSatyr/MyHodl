@@ -28,6 +28,11 @@ struct HoldingsView: View {
                             .padding(.horizontal, 16)
                         VStack(spacing: 20) {
                             HoldingsTotalBalanceView(total: viewModel.totalBalance, assetsCount: viewModel.assetsCount)
+                            if viewModel.isEmptyAssetsFilteringResults {
+                                HoldingsEmptySearchResultsView {
+                                    viewModel.clearSearchText()
+                                }
+                            }
                             AllAssetsView(assets: viewModel.filteredAssets)
                         }
                         .padding(.horizontal, 16)

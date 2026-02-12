@@ -18,6 +18,7 @@ final class HoldingsViewModel: ObservableObject {
     @Published var totalBalanceChange: Decimal?
     @Published var searchText = ""
     @Published var isEmpty = false
+    @Published var isEmptyAssetsFilteringResults = false
     
     private let assetsObserveUseCase: AssetsUseCases.Observe
     private var cancellables = Set<AnyCancellable>()
@@ -53,6 +54,14 @@ final class HoldingsViewModel: ObservableObject {
                 AssetsCount(total: all.count, filtered: filtered.count)
             }
             .assign(to: &$assetsCount)
+        
+        $filteredAssets
+            .map { $0.isEmpty }
+            .assign(to: &$isEmptyAssetsFilteringResults)
+    }
+    
+    func clearSearchText() {
+        searchText = ""
     }
     
     private static func filterAssets(_ assets: [DashboardAsset], searchText: String) -> [DashboardAsset] {
