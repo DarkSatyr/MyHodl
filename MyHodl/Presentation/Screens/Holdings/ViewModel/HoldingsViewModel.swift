@@ -66,15 +66,29 @@ final class HoldingsViewModel: ObservableObject {
         searchText = ""
     }
     
-    func removeAssets(_ indexes: IndexSet) {
-        let assets = indexes.reduce(into: Set<String>()) { partialResult, index in
-            partialResult.insert(filteredAssets[index].id)
-        }
+    func deleteAssets(for indexes: IndexSet) {
+        let assets = Set(self.assets(indexes).map(\.id))
+        deleteAssets(assets)
+    }
+    
+    func deleteAssets(_ ids: Set<String>) {
         do {
-            try assetsDeleteUseCase(assets)
+            try assetsDeleteUseCase(ids)
         } catch {
             print("___Assets delete failed")
         }
+    }
+    
+    func assets(_ indexes: IndexSet) -> [DashboardAsset] {
+        indexes.reduce(into: [DashboardAsset]()) { partialResult, index in
+            partialResult.append(filteredAssets[index])
+        }
+    }
+    
+    func deleteAssetsTitle(_ indexes: IndexSet) -> String {
+        let assets = assets(indexes)
+        return assets.count == 1 ? "Delete \(assets[0].fullName) (\(assets[0].code.uppercased()))?"
+            : "Delete \(assets.count) assets?"
     }
     
     private static func filterAssets(_ assets: [DashboardAsset], searchText: String) -> [DashboardAsset] {

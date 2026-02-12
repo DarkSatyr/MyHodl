@@ -43,7 +43,7 @@ struct HoldingsView: View {
                                     .listRowSeparator(.hidden)
                             }
                             .onDelete { indexSet in
-                                viewModel.removeAssets(indexSet)
+                                viewModel.deleteAssets(for: indexSet)
                             }
                         }
                     }
