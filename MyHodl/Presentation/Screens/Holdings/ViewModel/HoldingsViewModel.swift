@@ -13,6 +13,7 @@ final class HoldingsViewModel: ObservableObject {
     
     @Published var assets = [DashboardAsset]()
     @Published var filteredAssets = [DashboardAsset]()
+    @Published var assetsCount: AssetsCount?
     @Published var totalBalance: Decimal?
     @Published var totalBalanceChange: Decimal?
     @Published var searchText = ""
@@ -46,6 +47,12 @@ final class HoldingsViewModel: ObservableObject {
                 Self.filterAssets(assets, searchText: searchText)
             }
             .assign(to: &$filteredAssets)
+        
+        Publishers.CombineLatest($assets, $filteredAssets)
+            .map { (all, filtered) in
+                AssetsCount(total: all.count, filtered: filtered.count)
+            }
+            .assign(to: &$assetsCount)
     }
     
     private static func filterAssets(_ assets: [DashboardAsset], searchText: String) -> [DashboardAsset] {

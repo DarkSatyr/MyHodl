@@ -29,8 +29,7 @@ struct DashboardView: View {
                     ScrollView(showsIndicators: false) {
                         VStack(spacing: 20) {
                             BalanceView(total: viewModel.totalBalance,
-                                        changePercent: viewModel.totalBalanceChange,
-                                        showDate: true)
+                                        changePercent: viewModel.totalBalanceChange)
                             if let assetAllocation = viewModel.assetAllocation {
                                 AssetAllocationView(assetAllocation: assetAllocation)
                             }

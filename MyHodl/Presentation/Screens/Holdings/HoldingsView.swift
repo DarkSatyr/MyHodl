@@ -19,7 +19,7 @@ struct HoldingsView: View {
     
     var body: some View {
         Group {
-            if viewModel.isEmpty {
+            if false {
                 HoldingsEmptyView(showAddCoin: $showAddCoin)
             } else {
                 PageView {
@@ -27,12 +27,10 @@ struct HoldingsView: View {
                         SearchBar(text: $viewModel.searchText, placeholder: L10n.searchCoins)
                             .padding(.horizontal, 16)
                         VStack(spacing: 20) {
-                            BalanceView(total: viewModel.totalBalance,
-                                        changePercent: viewModel.totalBalanceChange)
+                            HoldingsTotalBalanceView(total: viewModel.totalBalance, assetsCount: viewModel.assetsCount)
                             AllAssetsView(assets: viewModel.filteredAssets)
                         }
                         .padding(.horizontal, 16)
-                        .padding(.top, 16)
                         .padding(.bottom, 20)
                     }
                 } title: {
@@ -55,6 +53,10 @@ struct HoldingsView: View {
 }
 
 #Preview {
-    HoldingsView(viewModel: AppContainer().makeHoldingsViewModel())
+    let vm = AppContainer().makeHoldingsViewModel()
+    let asset = DashboardAsset(code: "BTC", fullName: "Bitcoin", icon: .placeholder, currentPrice: 67000, previousPrice: 100_000, amount: 1.2)
+    vm.assets = [asset]
+    return HoldingsView(viewModel: vm)
         .environment(ThemeManager())
+        .environment(AppContainer())
 }
