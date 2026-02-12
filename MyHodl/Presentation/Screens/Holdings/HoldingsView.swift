@@ -23,21 +23,32 @@ struct HoldingsView: View {
                 HoldingsEmptyView(showAddCoin: $showAddCoin)
             } else {
                 PageView {
-                    ScrollView(showsIndicators: false) {
+                    List {
                         SearchBar(text: $viewModel.searchText, placeholder: L10n.searchCoins)
-                            .padding(.horizontal, 16)
-                        VStack(spacing: 20) {
-                            HoldingsTotalBalanceView(total: viewModel.totalBalance, assetsCount: viewModel.assetsCount)
-                            if viewModel.isEmptyAssetsFilteringResults {
-                                HoldingsEmptySearchResultsView {
-                                    viewModel.clearSearchText()
-                                }
+                            .listRowInsets(.vertical, 0)
+                            .listRowSeparator(.hidden)
+                        HoldingsTotalBalanceView(total: viewModel.totalBalance, assetsCount: viewModel.assetsCount)
+                            .listRowSeparator(.hidden)
+                        if viewModel.isEmptyAssetsFilteringResults {
+                            HoldingsEmptySearchResultsView {
+                                viewModel.clearSearchText()
                             }
-                            AllAssetsView(assets: viewModel.filteredAssets)
+                            .frame(maxWidth: .infinity)
+                            .listRowSeparator(.hidden)
+                        } else {
+                            ForEach(viewModel.filteredAssets) { asset in
+                                AssetRow(asset: asset)
+                                    .listRowInsets(.vertical, 6)
+                                    .listRowBackground(Color.clear)
+                                    .listRowSeparator(.hidden)
+                            }
+                            .onDelete { indexSet in
+                                viewModel.removeAssets(indexSet)
+                            }
                         }
-                        .padding(.horizontal, 16)
-                        .padding(.bottom, 20)
                     }
+                    .listStyle(.plain)
+                    .scrollContentBackground(.hidden)
                 } title: {
                     TitleView {
                         Text(L10n.holdings)

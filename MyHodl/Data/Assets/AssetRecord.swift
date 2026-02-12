@@ -15,6 +15,7 @@ class AssetRecord {
     var amount: Decimal
     var startingPrice: Decimal?
     var currentPrice: Decimal?
+    var id: String
     
     init(code: String,
          fullName: String,
@@ -27,6 +28,7 @@ class AssetRecord {
         self.amount = amount
         self.startingPrice = startingPrice
         self.currentPrice = currentPrice
+        self.id = code
     }
 }
 

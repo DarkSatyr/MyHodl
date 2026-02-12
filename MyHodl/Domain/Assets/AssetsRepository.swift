@@ -12,4 +12,5 @@ protocol AssetsRepository {
     func save(_ asset: Asset) throws
     func observeAssets() -> AnyPublisher<[Asset], Never>
     func asset(code: String) throws -> Asset?
+    func delete(_ ids: Set<String>) throws
 }

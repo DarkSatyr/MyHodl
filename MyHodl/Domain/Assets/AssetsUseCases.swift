@@ -28,8 +28,8 @@ enum AssetsUseCases {
         
         @discardableResult
         func callAsFunction(_ incoming: Asset) throws -> UpsertResult {
-            if var existing = try repo.asset(code: incoming.code) {
-                var newAmount = existing.amount + incoming.amount
+            if let existing = try repo.asset(code: incoming.code) {
+                let newAmount = existing.amount + incoming.amount
                 let newAvg = mergedAvgCost(
                     oldAvg: existing.startingPrice,
                     oldAmount: existing.amount,
@@ -71,6 +71,13 @@ enum AssetsUseCases {
         let repo: AssetsRepository
         func callAsFunction() -> AnyPublisher<[Asset], Never> {
             repo.observeAssets()
+        }
+    }
+    
+    struct Delete {
+        let repo: AssetsRepository
+        func callAsFunction(_ ids: Set<String>) throws {
+            try repo.delete(ids)
         }
     }
 }
