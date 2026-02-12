@@ -19,7 +19,7 @@ struct HoldingsView: View {
     
     var body: some View {
         Group {
-            if false {
+            if viewModel.isEmpty {
                 HoldingsEmptyView(showAddCoin: $showAddCoin)
             } else {
                 PageView {
