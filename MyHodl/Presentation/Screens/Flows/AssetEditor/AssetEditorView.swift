@@ -210,7 +210,7 @@ struct FieldErrorRow: View {
 }
 
 #Preview {
-    AssetEditorView(viewModel: AssetEditorViewModel(asset: nil,
+    AssetEditorView(viewModel: AssetEditorViewModel(mode: .create(nil),
                                               getAssetUseCase: AssetsUseCases.GetAssetByCode(repo: AssetsRepositoryImpl(modelContainer: try! ModelContainer())),
                                               upsertAssetUseCase: AssetsUseCases.UpsertAsset(repo: AssetsRepositoryImpl(modelContainer: try! ModelContainer()))), onSave: {})
         .environment(ThemeManager())

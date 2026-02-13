@@ -75,7 +75,7 @@ struct AssetSelectView: View {
             .navigationDestination(for: AssetSelectViewModel.Route.self) { route in
                 switch route {
                 case .assetSelected(let asset):
-                    AssetEditorView(viewModel: appContainer.makeAssetEditorViewModel(asset: asset), onSave: {
+                    AssetEditorView(viewModel: appContainer.makeAssetEditorViewModel(mode: .create(asset)), onSave: {
                         dismiss()
                     })
                 }

@@ -8,6 +8,11 @@
 import Foundation
 import Combine
 
+enum AssetEditorMode {
+    case create(AssetID?)
+    case edit(DashboardAsset)
+}
+
 // TODO: Add loc
 @MainActor
 final class AssetEditorViewModel: ObservableObject {
@@ -32,20 +37,40 @@ final class AssetEditorViewModel: ObservableObject {
     private let getAssetUseCase: AssetsUseCases.GetAssetByCode
     private let upsertAssetUseCase: AssetsUseCases.UpsertAsset
     private var cancellables = Set<AnyCancellable>()
+    private let mode: AssetEditorMode
     
-    init(asset: AssetID?,
+    init(mode: AssetEditorMode,
          getAssetUseCase: AssetsUseCases.GetAssetByCode,
          upsertAssetUseCase: AssetsUseCases.UpsertAsset) {
         
-        if let asset {
-            name = asset.name
-            code = asset.code.uppercased()
-            coinNameIsEditable = false
-        }
-        
+        self.mode = mode
         self.getAssetUseCase = getAssetUseCase
         self.upsertAssetUseCase = upsertAssetUseCase
         
+        setup()
+        subscribe()
+    }
+    
+    func save(confirmDuplicate: Bool = false) {
+        guard validate() else { return }
+        do {
+            if !confirmDuplicate, try getAssetUseCase(code) != nil {
+                showDuplicateAlert = true
+                return
+            }
+            let asset = Asset(code: code,
+                              fullName: name,
+                              amount: amountDecimal,
+                              startingPrice: priceDecimal,
+                              currentPrice: priceDecimal)
+            try upsertAssetUseCase(asset)
+            saveEventID = UUID()
+        } catch {
+            print("Asset storage failed")
+        }
+    }
+    
+    private func subscribe() {
         $code
             .removeDuplicates()
             .map { code in
@@ -70,22 +95,16 @@ final class AssetEditorViewModel: ObservableObject {
             .assign(to: &$total)
     }
     
-    func save(confirmDuplicate: Bool = false) {
-        guard validate() else { return }
-        do {
-            if !confirmDuplicate, try getAssetUseCase(code) != nil {
-                showDuplicateAlert = true
-                return
+    private func setup() {
+        switch mode {
+        case .create(let assetID):
+            if let assetID {
+                name = assetID.name
+                code = assetID.code.uppercased()
+                coinNameIsEditable = false
             }
-            let asset = Asset(code: code,
-                              fullName: name,
-                              amount: amountDecimal,
-                              startingPrice: priceDecimal,
-                              currentPrice: priceDecimal)
-            try upsertAssetUseCase(asset)
-            saveEventID = UUID()
-        } catch {
-            print("Asset storage failed")
+        case .edit(let dashboardAsset):
+            break
         }
     }
     
