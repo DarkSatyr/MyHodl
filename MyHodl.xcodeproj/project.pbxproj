@@ -450,19 +450,19 @@
 		7672B65A2F3F8F41009C635F /* Flows */ = {
 			isa = PBXGroup;
 			children = (
-				7672B65B2F3F91B2009C635F /* AddAsset */,
+				7672B65B2F3F91B2009C635F /* AssetSelect */,
 				7672B6592F3F8C18009C635F /* AssetEditor */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
 		};
-		7672B65B2F3F91B2009C635F /* AddAsset */ = {
+		7672B65B2F3F91B2009C635F /* AssetSelect */ = {
 			isa = PBXGroup;
 			children = (
 				7653320B2ED70C70002FE36B /* AddCoinView.swift */,
 				7653320D2ED70C7B002FE36B /* AddCoinViewModel.swift */,
 			);
-			path = AddAsset;
+			path = AssetSelect;
 			sourceTree = "<group>";
 		};
 		769999332ECD02AC00F1C3AA /* Sections */ = {
