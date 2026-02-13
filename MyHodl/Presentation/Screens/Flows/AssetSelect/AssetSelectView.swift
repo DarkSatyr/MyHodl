@@ -1,5 +1,5 @@
 //
-//  AddCoinView.swift
+//  AssetSelectView.swift
 //  MyHodl
 //
 //  Created by DarkSatyr on 26.11.2025.
@@ -7,17 +7,17 @@
 
 import SwiftUI
 
-struct AddCoinView: View {
+struct AssetSelectView: View {
     
     @Environment(ThemeManager.self) private var themeManager
     @Environment(\.dismiss) private var dismiss
     @Environment(AppContainer.self) private var appContainer
 
-    init(viewModel: AddCoinViewModel) {
+    init(viewModel: AssetSelectViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
     }
     
-    @StateObject private var viewModel: AddCoinViewModel
+    @StateObject private var viewModel: AssetSelectViewModel
     
     var body: some View {
         NavigationStack(path: $viewModel.path) {
@@ -72,7 +72,7 @@ struct AddCoinView: View {
                     .foregroundStyle(themeManager.currentTheme.text)
                 }
             }
-            .navigationDestination(for: AddCoinViewModel.Route.self) { route in
+            .navigationDestination(for: AssetSelectViewModel.Route.self) { route in
                 switch route {
                 case .assetSelected(let asset):
                     AssetEditorView(viewModel: appContainer.makeAssetEditorViewModel(asset: asset), onSave: {
@@ -86,7 +86,7 @@ struct AddCoinView: View {
 }
 
 #Preview {
-    AddCoinView(viewModel: AppContainer().makeAddCoinViewModel())
+    AssetSelectView(viewModel: AppContainer().makeAssetSelectViewModel())
         .environment(ThemeManager())
         .environment(AppContainer())
 }

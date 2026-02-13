@@ -1,5 +1,5 @@
 //
-//  AddCoinViewModel.swift
+//  AssetSelectViewModel.swift
 //  MyHodl
 //
 //  Created by DarkSatyr on 26.11.2025.
@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 @MainActor
-final class AddCoinViewModel: ObservableObject {
+final class AssetSelectViewModel: ObservableObject {
     
     enum Route: Hashable {
         case assetSelected(AssetID?)

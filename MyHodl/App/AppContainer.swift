@@ -53,8 +53,8 @@ final class AppContainer {
         container.resolve(ThemeManager.self)!
     }
     
-    func makeAddCoinViewModel() -> AddCoinViewModel {
-        container.resolve(AddCoinViewModel.self)!
+    func makeAssetSelectViewModel() -> AssetSelectViewModel {
+        container.resolve(AssetSelectViewModel.self)!
     }
     
     func makeDashboardViewModel() -> DashboardViewModel {
@@ -94,7 +94,7 @@ final class AppContainer {
     }
     
     private func registerViewModels() {
-        container.autoregister(AddCoinViewModel.self, initializer: AddCoinViewModel.init)
+        container.autoregister(AssetSelectViewModel.self, initializer: AssetSelectViewModel.init)
         container.autoregister(AssetEditorViewModel.self,
                                arguments: Optional<AssetID>.self, AssetsUseCases.GetAssetByCode.self, AssetsUseCases.UpsertAsset.self,
                                initializer: AssetEditorViewModel.init)
