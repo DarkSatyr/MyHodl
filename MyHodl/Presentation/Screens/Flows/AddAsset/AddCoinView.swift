@@ -75,7 +75,7 @@ struct AddCoinView: View {
             .navigationDestination(for: AddCoinViewModel.Route.self) { route in
                 switch route {
                 case .assetSelected(let asset):
-                    EditCoinView(viewModel: appContainer.makeEditCoinViewModel(asset: asset), onSave: {
+                    AssetEditorView(viewModel: appContainer.makeAssetEditorViewModel(asset: asset), onSave: {
                         dismiss()
                     })
                 }

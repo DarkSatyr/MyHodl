@@ -1,5 +1,5 @@
 //
-//  EditCoinView.swift
+//  AssetEditorView.swift
 //  MyHodl
 //
 //  Created by DarkSatyr on 09.12.2025.
@@ -9,17 +9,17 @@ import SwiftUI
 import SwiftData
 
 // TODO: Add loc
-struct EditCoinView: View {
+struct AssetEditorView: View {
     
     @Environment(ThemeManager.self) private var themeManager
-    @StateObject private var viewModel: EditCoinViewModel
+    @StateObject private var viewModel: AssetEditorViewModel
     @State private var showDatePicker = false
     @FocusState private var isFocused: Bool
     @Environment(\.dismiss) private var dismiss
     
     var onSave: () -> ()
     
-    init(viewModel: EditCoinViewModel, onSave: @escaping () -> ()) {
+    init(viewModel: AssetEditorViewModel, onSave: @escaping () -> ()) {
         _viewModel = StateObject(wrappedValue: viewModel)
         self.onSave = onSave
     }
@@ -210,7 +210,7 @@ struct FieldErrorRow: View {
 }
 
 #Preview {
-    EditCoinView(viewModel: EditCoinViewModel(asset: nil,
+    AssetEditorView(viewModel: AssetEditorViewModel(asset: nil,
                                               getAssetUseCase: AssetsUseCases.GetAssetByCode(repo: AssetsRepositoryImpl(modelContainer: try! ModelContainer())),
                                               upsertAssetUseCase: AssetsUseCases.UpsertAsset(repo: AssetsRepositoryImpl(modelContainer: try! ModelContainer()))), onSave: {})
         .environment(ThemeManager())

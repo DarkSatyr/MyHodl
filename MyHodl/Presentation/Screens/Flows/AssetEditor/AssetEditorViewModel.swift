@@ -1,5 +1,5 @@
 //
-//  EditCoinViewModel.swift
+//  AssetEditorViewModel.swift
 //  MyHodl
 //
 //  Created by DarkSatyr on 09.12.2025.
@@ -10,7 +10,7 @@ import Combine
 
 // TODO: Add loc
 @MainActor
-final class EditCoinViewModel: ObservableObject {
+final class AssetEditorViewModel: ObservableObject {
     
     @Published var amount = ""
     @Published var price = ""

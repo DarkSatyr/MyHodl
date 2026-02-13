@@ -68,10 +68,10 @@ final class AppContainer {
         return container.resolve(HoldingsViewModel.self, arguments: observe, delete)!
     }
     
-    func makeEditCoinViewModel(asset: AssetID?) -> EditCoinViewModel {
+    func makeAssetEditorViewModel(asset: AssetID?) -> AssetEditorViewModel {
         let get = container.resolve(AssetsUseCases.GetAssetByCode.self)!
         let upsert = container.resolve(AssetsUseCases.UpsertAsset.self)!
-        return container.resolve(EditCoinViewModel.self, arguments: asset, get, upsert)!
+        return container.resolve(AssetEditorViewModel.self, arguments: asset, get, upsert)!
     }
     
     // Private
@@ -95,9 +95,9 @@ final class AppContainer {
     
     private func registerViewModels() {
         container.autoregister(AddCoinViewModel.self, initializer: AddCoinViewModel.init)
-        container.autoregister(EditCoinViewModel.self,
+        container.autoregister(AssetEditorViewModel.self,
                                arguments: Optional<AssetID>.self, AssetsUseCases.GetAssetByCode.self, AssetsUseCases.UpsertAsset.self,
-                               initializer: EditCoinViewModel.init)
+                               initializer: AssetEditorViewModel.init)
         container.autoregister(DashboardViewModel.self,
                                argument: AssetsUseCases.Observe.self,
                                initializer: DashboardViewModel.init)
