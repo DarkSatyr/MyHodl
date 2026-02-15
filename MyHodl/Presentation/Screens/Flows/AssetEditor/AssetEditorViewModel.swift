@@ -129,6 +129,25 @@ final class AssetEditorViewModel: ObservableObject {
                 return amount * price
             }
             .assign(to: &$total)
+        
+        $amountDecimal
+            .removeDuplicates()
+            .sink { [weak self] amount in
+                guard let self else { return }
+                if amount > 0 {
+                    showAmountError = false
+                }
+            }
+            .store(in: &cancellables)
+        
+        Publishers.CombineLatest($name, $code)
+            .sink { [weak self] (name, code) in
+                guard let self else { return }
+                if !name.isEmpty && !code.isEmpty {
+                    showNameAndCodeError = false
+                }
+            }
+            .store(in: &cancellables)
     }
     
     private func setup() {
@@ -136,7 +155,7 @@ final class AssetEditorViewModel: ObservableObject {
         case .create(let assetID):
             if let assetID {
                 name = assetID.name
-                code = assetID.code
+                code = assetID.code.normalize()
                 assetIdentityIsEditable = false
             }
             title = "Add asset"
@@ -169,7 +188,7 @@ final class AssetEditorViewModel: ObservableObject {
         }
         
         if amountDecimal <= 0 {
-            amountError = "Quantity must be greater than 0"
+            amountError = "Quantity must be greater than zero"
             showAmountError = true
         }
         return !showNameAndCodeError && !showAmountError
