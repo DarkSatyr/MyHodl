@@ -58,20 +58,15 @@ final class AppContainer {
     }
     
     func makeDashboardViewModel() -> DashboardViewModel {
-        let observe = container.resolve(AssetsUseCases.Observe.self)!
-        return container.resolve(DashboardViewModel.self, argument: observe)!
+        container.resolve(DashboardViewModel.self)!
     }
     
     func makeHoldingsViewModel() -> HoldingsViewModel {
-        let observe = container.resolve(AssetsUseCases.Observe.self)!
-        let delete = container.resolve(AssetsUseCases.Delete.self)!
-        return container.resolve(HoldingsViewModel.self, arguments: observe, delete)!
+        container.resolve(HoldingsViewModel.self)!
     }
     
     func makeAssetEditorViewModel(mode: AssetEditorMode) -> AssetEditorViewModel {
-        let get = container.resolve(AssetsUseCases.GetAssetByCode.self)!
-        let upsert = container.resolve(AssetsUseCases.UpsertAsset.self)!
-        return container.resolve(AssetEditorViewModel.self, arguments: mode, get, upsert)!
+        container.resolve(AssetEditorViewModel.self, argument: mode)!
     }
     
     // Private
@@ -95,17 +90,20 @@ final class AppContainer {
     
     private func registerViewModels() {
         container.autoregister(AssetSelectViewModel.self, initializer: AssetSelectViewModel.init)
-        container.autoregister(AssetEditorViewModel.self,
-                               arguments: AssetEditorMode.self, AssetsUseCases.GetAssetByCode.self, AssetsUseCases.UpsertAsset.self,
-                               initializer: AssetEditorViewModel.init)
-        container.autoregister(DashboardViewModel.self,
-                               argument: AssetsUseCases.Observe.self,
-                               initializer: DashboardViewModel.init)
+        container.register(AssetEditorViewModel.self) { r, mode in
+            AssetEditorViewModel(mode: mode,
+                                 getAssetUseCase: r~>,
+                                 upsertAssetUseCase: r~>,
+                                 deleteAssetUseCase: r~>)
+        }
+        container.register(DashboardViewModel.self) { r in
+            DashboardViewModel(assetsObserveUseCase: r~>)
+        }
         .inObjectScope(.container)
         
-        container.autoregister(HoldingsViewModel.self,
-                               arguments: AssetsUseCases.Observe.self, AssetsUseCases.Delete.self,
-                               initializer: HoldingsViewModel.init)
+        container.register(HoldingsViewModel.self) { r in
+            HoldingsViewModel(assetsObserveUseCase: r~>)
+        }
         .inObjectScope(.container)
     }
     

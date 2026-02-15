@@ -14,14 +14,20 @@ struct AssetEditorView: View {
     @Environment(ThemeManager.self) private var themeManager
     @StateObject private var viewModel: AssetEditorViewModel
     @State private var showDatePicker = false
+    @State private var showDeleteAlert = false
     @FocusState private var isFocused: Bool
     @Environment(\.dismiss) private var dismiss
     
-    var onSave: () -> ()
+    var onSave: () -> Void
+    var onDelete: (() -> Void)?
     
-    init(viewModel: AssetEditorViewModel, onSave: @escaping () -> ()) {
+    init(viewModel: AssetEditorViewModel,
+         onSave: @escaping () -> Void,
+         onDelete: (() -> Void)? = nil) {
+        
         _viewModel = StateObject(wrappedValue: viewModel)
         self.onSave = onSave
+        self.onDelete = onDelete
     }
     
     var body: some View {
@@ -40,7 +46,7 @@ struct AssetEditorView: View {
                             })
                             .autocorrectionDisabled(true)
                             .foregroundStyle(themeManager.currentTheme.text)
-                            .allowsHitTesting(viewModel.coinNameIsEditable)
+                            .allowsHitTesting(viewModel.assetIdentityIsEditable)
                             .focused($isFocused)
                             
                             TextField("Code", text: Binding {
@@ -51,7 +57,7 @@ struct AssetEditorView: View {
                             .autocorrectionDisabled(true)
                             .textInputAutocapitalization(.never)
                             .foregroundStyle(themeManager.currentTheme.textSecondary)
-                            .allowsHitTesting(viewModel.coinNameIsEditable)
+                            .allowsHitTesting(viewModel.assetIdentityIsEditable)
                             .focused($isFocused)
                         }
                         Spacer()
@@ -77,7 +83,7 @@ struct AssetEditorView: View {
                                     .foregroundStyle(themeManager.currentTheme.text)
                                     .focused($isFocused)
                                 Spacer()
-                                Text(viewModel.code.uppercased())
+                                Text(viewModel.code)
                                     .foregroundStyle(themeManager.currentTheme.textSecondary)
                             }
                         }
@@ -144,15 +150,22 @@ struct AssetEditorView: View {
                 .padding(.all)
                 .padding(.bottom, 10)
                 
-                BaseButton(title: "Save", action: {
-                    viewModel.save()
-                })
+                VStack(spacing: 12) {
+                    BaseButton(title: "Save", type: .normal, action: {
+                        viewModel.save()
+                    })
+                    BaseButton(title: "Delete", type: .destructive, action: {
+                        showDeleteAlert = true
+                    })
+                    .opacity(viewModel.showDeleteButton ? 1 : 0)
+                }
                 .padding(.horizontal, 16)
                 
                 Spacer()
             }
         }
         .onChange(of: viewModel.saveEventID, { _, _ in onSave() })
+        .onChange(of: viewModel.deleteEventID, { _, _ in onDelete?() })
         .sheet(isPresented: $showDatePicker) {
             NavigationStack {
                 CalendarView(title: "Select date",
@@ -178,10 +191,20 @@ struct AssetEditorView: View {
         }, message: {
             Text("Цей актив уже є у вашому портфелі. Додати кількість до існуючої позиції?")
         })
+        .alert(
+            viewModel.deleteTitle(), isPresented: $showDeleteAlert
+        ) {
+            Button("Cancel", role: .cancel) { }
+            Button("Delete", role: .destructive) {
+                viewModel.delete()
+            }
+        } message: {
+            Text("This action cannot be undone")
+        }
         .onTapGesture {
             isFocused = false
         }
-        .navigationTitle("Add asset") // TODO: Add loc
+        .navigationTitle(viewModel.title) // TODO: Add loc
         .toolbarTitleDisplayMode(.inline)
         .background(BackgroundSurface().ignoresSafeArea())
     }
@@ -212,6 +235,7 @@ struct FieldErrorRow: View {
 #Preview {
     AssetEditorView(viewModel: AssetEditorViewModel(mode: .create(nil),
                                               getAssetUseCase: AssetsUseCases.GetAssetByCode(repo: AssetsRepositoryImpl(modelContainer: try! ModelContainer())),
-                                              upsertAssetUseCase: AssetsUseCases.UpsertAsset(repo: AssetsRepositoryImpl(modelContainer: try! ModelContainer()))), onSave: {})
+                                              upsertAssetUseCase: AssetsUseCases.UpsertAsset(repo: AssetsRepositoryImpl(modelContainer: try! ModelContainer())),
+                                              deleteAssetUseCase: AssetsUseCases.Delete(repo: AssetsRepositoryImpl(modelContainer: try! ModelContainer()))), onSave: {})
         .environment(ThemeManager())
 }

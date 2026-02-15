@@ -62,23 +62,27 @@ final class AssetsRepositoryImpl: AssetsRepository {
     }
     
     func asset(code: String) throws -> Asset? {
-        let record = try fetchAssetRecord(code: code, context: ModelContext(modelContainer))
+        let record = try fetchAssetRecord(code: code)
         return record?.toDomain()
     }
     
-    func delete(_ ids: Set<String>) throws {
-        guard !ids.isEmpty else { return }
-        let normalizedIds = ids.map { $0.normalize() }
+    func delete(_ id: String) throws {
+        guard !id.isEmpty else { return }
+        let normalized = id.normalize()
         let context = ModelContext(modelContainer)
         try context.delete(model: AssetRecord.self, where: #Predicate {
-            normalizedIds.contains($0.id)
+            normalized == $0.id
         })
         try context.save()
         changes.send(())
     }
     
+    private func fetchAssetRecord(code: String) throws -> AssetRecord? {
+        try fetchAssetRecord(code: code, context: ModelContext(modelContainer))
+    }
+    
     private func fetchAssetRecord(code: String, context: ModelContext) throws -> AssetRecord? {
-        let normalized = code.normalize()
+        let normalized = code.normalize().uppercased()
         var descriptor = FetchDescriptor<AssetRecord>(predicate: #Predicate {
             $0.code == normalized
         })

@@ -55,7 +55,7 @@ struct AssetSelectView: View {
                     }
                 }
                 
-                BaseButton(title: "Custom Token", action: {
+                BaseButton(title: "Custom Token", type: .normal, action: {
                     viewModel.showAddCoin(asset: nil)
                 })
                 .padding(.horizontal, 16)

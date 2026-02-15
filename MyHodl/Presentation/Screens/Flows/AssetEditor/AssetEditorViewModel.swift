@@ -24,28 +24,34 @@ final class AssetEditorViewModel: ObservableObject {
     @Published var code: String = ""
     @Published var image: ImageSource = .placeholder
     @Published var date: Date = Date()
-    @Published var coinNameIsEditable = true
+    @Published var assetIdentityIsEditable = true
     @Published var amountDecimal: Decimal = 0
-    @Published var priceDecimal: Decimal = 0
+    @Published var priceDecimal: Decimal?
     @Published var nameAndCodeError = ""
     @Published var showNameAndCodeError = false
     @Published var amountError = ""
     @Published var showAmountError = false
     @Published var showDuplicateAlert = false
     @Published var saveEventID: UUID?
+    @Published var deleteEventID: UUID?
+    @Published var title: String = ""
+    @Published var showDeleteButton = false
     
     private let getAssetUseCase: AssetsUseCases.GetAssetByCode
     private let upsertAssetUseCase: AssetsUseCases.UpsertAsset
+    private let deleteAssetUseCase: AssetsUseCases.Delete
     private var cancellables = Set<AnyCancellable>()
     private let mode: AssetEditorMode
     
     init(mode: AssetEditorMode,
          getAssetUseCase: AssetsUseCases.GetAssetByCode,
-         upsertAssetUseCase: AssetsUseCases.UpsertAsset) {
+         upsertAssetUseCase: AssetsUseCases.UpsertAsset,
+         deleteAssetUseCase: AssetsUseCases.Delete) {
         
         self.mode = mode
         self.getAssetUseCase = getAssetUseCase
         self.upsertAssetUseCase = upsertAssetUseCase
+        self.deleteAssetUseCase = deleteAssetUseCase
         
         setup()
         subscribe()
@@ -54,7 +60,7 @@ final class AssetEditorViewModel: ObservableObject {
     func save(confirmDuplicate: Bool = false) {
         guard validate() else { return }
         do {
-            if !confirmDuplicate, try getAssetUseCase(code) != nil {
+            if !confirmDuplicate, try getAssetUseCase(code) != nil, case .create(_) = mode {
                 showDuplicateAlert = true
                 return
             }
@@ -63,10 +69,39 @@ final class AssetEditorViewModel: ObservableObject {
                               amount: amountDecimal,
                               startingPrice: priceDecimal,
                               currentPrice: priceDecimal)
-            try upsertAssetUseCase(asset)
+            try upsertAssetUseCase(asset, policy: policy())
             saveEventID = UUID()
         } catch {
             print("Asset storage failed")
+        }
+    }
+    
+    private func policy() -> AssetsUseCases.UpsertAsset.UpsertPolicy {
+        switch mode {
+        case .create:
+            return .createOrMergeByCode
+        case .edit:
+            return .updateExistingOnly
+        }
+    }
+    
+    func deleteTitle() -> String {
+        switch mode {
+        case .create(let assetID):
+            return assetID?.name ?? ""
+        case .edit(let asset):
+            return "Delete" + " " + asset.fullName.capitalized + "?"
+        }
+    }
+    
+    func delete() {
+        do {
+            if case .edit(let asset) = mode {
+                try deleteAssetUseCase(asset.id)
+                deleteEventID = UUID()
+            }
+        } catch {
+            print("___Assets delete failed")
         }
     }
     
@@ -89,8 +124,9 @@ final class AssetEditorViewModel: ObservableObject {
             .assign(to: &$priceDecimal)
         
         Publishers.CombineLatest3($amountDecimal, $priceDecimal, $code)
-            .map { (amount: Decimal, price: Decimal, code: String) in
-                amount * price
+            .map { (amount: Decimal, price: Decimal?, code: String) in
+                guard let price else { return 0 }
+                return amount * price
             }
             .assign(to: &$total)
     }
@@ -100,11 +136,20 @@ final class AssetEditorViewModel: ObservableObject {
         case .create(let assetID):
             if let assetID {
                 name = assetID.name
-                code = assetID.code.uppercased()
-                coinNameIsEditable = false
+                code = assetID.code
+                assetIdentityIsEditable = false
             }
-        case .edit(let dashboardAsset):
-            break
+            title = "Add asset"
+        case .edit(let asset):
+            name = asset.fullName
+            code = asset.code
+            amountDecimal = asset.amount
+            amount = amountDecimal.stringValue
+            priceDecimal = asset.currentPrice
+            price = priceDecimal?.stringValue ?? ""
+            assetIdentityIsEditable = false
+            title = "Edit asset"
+            showDeleteButton = true
         }
     }
     

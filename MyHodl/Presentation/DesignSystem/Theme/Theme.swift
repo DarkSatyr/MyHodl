@@ -66,6 +66,7 @@ extension Theme {
     // Color
     var background: Color { Color.background }
     var text: Color { Color.text }
+    var textWarning: Color { Color.negative }
     var textSecondary: Color { Color.textSecondary }
     var card: Color { Color.card }
     var accent: Color { Color.accent }

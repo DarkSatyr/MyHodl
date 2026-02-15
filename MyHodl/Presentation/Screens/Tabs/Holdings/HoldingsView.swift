@@ -11,7 +11,9 @@ struct HoldingsView: View {
     @Environment(ThemeManager.self) private var themeManager
     @Environment(AppContainer.self) private var appContainer
     @StateObject private var viewModel: HoldingsViewModel
-    @State private var showAddCoin = false
+    @State private var showAddAsset = false
+    @State private var showEditAsset: DashboardAsset?
+    @Environment(\.dismiss) private var dismiss
     
     init(viewModel: HoldingsViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
@@ -20,7 +22,7 @@ struct HoldingsView: View {
     var body: some View {
         Group {
             if viewModel.isEmpty {
-                HoldingsEmptyView(showAddCoin: $showAddCoin)
+                HoldingsEmptyView(showAddCoin: $showAddAsset)
             } else {
                 PageView {
                     List {
@@ -41,9 +43,9 @@ struct HoldingsView: View {
                                     .listRowInsets(.vertical, 6)
                                     .listRowBackground(Color.clear)
                                     .listRowSeparator(.hidden)
-                            }
-                            .onDelete { indexSet in
-                                viewModel.deleteAssets(for: indexSet)
+                                    .onTapGesture {
+                                        showEditAsset = asset
+                                    }
                             }
                         }
                     }
@@ -54,16 +56,20 @@ struct HoldingsView: View {
                         Text(L10n.holdings)
                     } right: {
                         Button("Add asset", systemImage: "plus") {  // TODO: Add loc
-                            showAddCoin = true
+                            showAddAsset = true
                         }
                         .foregroundStyle(.accent)
                     }
                 }
             }
         }
-        .sheet(isPresented: $showAddCoin) {
+        .sheet(isPresented: $showAddAsset) {
             AssetSelectView(viewModel: appContainer.makeAssetSelectViewModel())
                 .interactiveDismissDisabled()
+        }
+        .sheet(item: $showEditAsset) { asset in
+            AssetEditorScreen(viewModel: appContainer.makeAssetEditorViewModel(mode: .edit(asset)))
+            .interactiveDismissDisabled()
         }
     }
 }

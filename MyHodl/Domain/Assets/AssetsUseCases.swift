@@ -19,15 +19,31 @@ enum AssetsUseCases {
     
     struct UpsertAsset {
         
+        enum UpsertPolicy {
+            case createOrMergeByCode   // Add flow
+            case updateExistingOnly // Edit flow
+        }
+        
         enum UpsertResult {
             case inserted
             case merged
+            case updated
         }
         
         let repo: AssetsRepository
         
         @discardableResult
-        func callAsFunction(_ incoming: Asset) throws -> UpsertResult {
+        func callAsFunction(_ incoming: Asset, policy: UpsertPolicy) throws -> UpsertResult {
+            switch policy {
+            case .createOrMergeByCode:
+                return try createOrMerge(incoming)
+            case .updateExistingOnly:
+                return try update(incoming)
+            }
+            
+        }
+        
+        private func createOrMerge(_ incoming: Asset) throws -> UpsertResult {
             if let existing = try repo.asset(code: incoming.code) {
                 let newAmount = existing.amount + incoming.amount
                 let newAvg = mergedAvgCost(
@@ -42,6 +58,11 @@ enum AssetsUseCases {
                 try repo.save(incoming)
                 return .inserted
             }
+        }
+        
+        private func update(_ incoming: Asset) throws -> UpsertResult {
+            try repo.save(incoming)
+            return .updated
         }
         
         private func mergedAvgCost(
@@ -76,8 +97,8 @@ enum AssetsUseCases {
     
     struct Delete {
         let repo: AssetsRepository
-        func callAsFunction(_ ids: Set<String>) throws {
-            try repo.delete(ids)
+        func callAsFunction(_ id: String) throws {
+            try repo.delete(id)
         }
     }
 }

@@ -44,5 +44,6 @@ struct AssetRow: View {
 //                        }
             }
         }
+        .contentShape(Rectangle())
     }
 }

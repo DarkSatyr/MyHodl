@@ -21,12 +21,10 @@ final class HoldingsViewModel: ObservableObject {
     @Published var isEmptyAssetsFilteringResults = false
     
     private let assetsObserveUseCase: AssetsUseCases.Observe
-    private let assetsDeleteUseCase: AssetsUseCases.Delete
     private var cancellables = Set<AnyCancellable>()
     
-    init(assetsObserveUseCase: AssetsUseCases.Observe, assetsDeleteUseCase: AssetsUseCases.Delete) {
+    init(assetsObserveUseCase: AssetsUseCases.Observe) {
         self.assetsObserveUseCase = assetsObserveUseCase
-        self.assetsDeleteUseCase = assetsDeleteUseCase
         
         assetsObserveUseCase()
             .map { $0.map(DashboardAsset.init) }
@@ -64,19 +62,6 @@ final class HoldingsViewModel: ObservableObject {
     
     func clearSearchText() {
         searchText = ""
-    }
-    
-    func deleteAssets(for indexes: IndexSet) {
-        let assets = Set(self.assets(indexes).map(\.id))
-        deleteAssets(assets)
-    }
-    
-    func deleteAssets(_ ids: Set<String>) {
-        do {
-            try assetsDeleteUseCase(ids)
-        } catch {
-            print("___Assets delete failed")
-        }
     }
     
     func assets(_ indexes: IndexSet) -> [DashboardAsset] {
