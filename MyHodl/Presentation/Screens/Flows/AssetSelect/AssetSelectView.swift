@@ -42,7 +42,7 @@ struct AssetSelectView: View {
                                     .frame(width: 40, height: 40)
                                 Text(asset.name)
                                     .foregroundStyle(themeManager.currentTheme.text)
-                                    .font(themeManager.currentTheme.sectionTextFont)
+                                    .font(themeManager.currentTheme.sectionHeaderFont)
                             }
                             Spacer()
                             ChevronView()

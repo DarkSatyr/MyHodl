@@ -51,7 +51,7 @@ struct TopAssetsView: View {
                                 .frame(width: 40, height: 40)
                             VStack(alignment: .leading, spacing: 2) {
                                 Text(asset.fullName.capitalized)
-                                    .font(themeManager.currentTheme.sectionTextFont)
+                                    .font(themeManager.currentTheme.sectionHeaderFont)
                                     .foregroundStyle(themeManager.currentTheme.text)
                                 Text(asset.code.uppercased())
                                     .font(themeManager.currentTheme.font)
@@ -61,7 +61,7 @@ struct TopAssetsView: View {
                         Spacer()
                         VStack(alignment: .trailing, spacing: 2) {
                             Text(optional: AmountFormat.fiatAmountPrefixed(asset.totalCurrent, currency: baseCurrency))
-                                .font(themeManager.currentTheme.sectionTextFont)
+                                .font(themeManager.currentTheme.sectionHeaderFont)
                                 .foregroundStyle(themeManager.currentTheme.text)
 //                            if asset.code.uppercased() != baseCurrency {
 //                                Text(AmountFormat.percentChange(asset.changePercent))

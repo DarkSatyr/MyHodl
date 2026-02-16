@@ -19,7 +19,7 @@ struct AssetRow: View {
                     .frame(width: 40, height: 40)
                 VStack(alignment: .leading, spacing: 2) {
                     Text(asset.fullName.capitalized)
-                        .font(themeManager.currentTheme.sectionTextFont)
+                        .font(themeManager.currentTheme.sectionHeaderFont)
                         .foregroundStyle(themeManager.currentTheme.text)
                     HStack(spacing: 2) {
                         Text(optional: AmountFormat.amount(asset.amount, currency: asset.code))
@@ -34,7 +34,7 @@ struct AssetRow: View {
             Spacer()
             VStack(alignment: .trailing, spacing: 2) {
                 Text(optional: AmountFormat.fiatAmountPrefixed(asset.totalCurrent, currency: baseCurrency))
-                    .font(themeManager.currentTheme.sectionTextFont)
+                    .font(themeManager.currentTheme.sectionHeaderFont)
                     .foregroundStyle(themeManager.currentTheme.text)
 //                        if asset.code.uppercased() != baseCurrency {
 //                            Text(AmountFormat.percentChange(asset.changePercent))

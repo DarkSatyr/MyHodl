@@ -62,7 +62,7 @@ extension Theme {
     var headerFont: Font { Font.system(size: 34, weight: .bold) }
     var highlightedFont: Font { Font.system(size: 20, weight: .bold) }
     var sectionHeaderFont: Font { Font.system(size: 17, weight: .semibold) }
-    var sectionTextFont: Font { Font.system(size: 17, weight: .semibold) }
+    var sectionTextFont: Font { Font.system(size: 17) }
     // Color
     var background: Color { Color.background }
     var text: Color { Color.text }

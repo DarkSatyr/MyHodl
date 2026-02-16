@@ -46,6 +46,7 @@ struct AssetEditorView: View {
                             })
                             .autocorrectionDisabled(true)
                             .foregroundStyle(themeManager.currentTheme.text)
+                            .font(themeManager.currentTheme.sectionHeaderFont)
                             .allowsHitTesting(viewModel.assetIdentityIsEditable)
                             .focused($isFocused)
                             
@@ -57,6 +58,7 @@ struct AssetEditorView: View {
                             .autocorrectionDisabled(true)
                             .textInputAutocapitalization(.never)
                             .foregroundStyle(themeManager.currentTheme.textSecondary)
+                            .font(themeManager.currentTheme.sectionTextFont)
                             .allowsHitTesting(viewModel.assetIdentityIsEditable)
                             .focused($isFocused)
                         }
@@ -67,39 +69,44 @@ struct AssetEditorView: View {
                     
                     FieldErrorRow(text: viewModel.nameAndCodeError,
                                   show: viewModel.showNameAndCodeError)
+                    .padding(.horizontal)
                     
-                    HStack {
-                        VStack {
-                            HStack {
-                                Text("Quantity")
-                                    .foregroundStyle(themeManager.currentTheme.textSecondary)
-                                Spacer()
-                            }
-                            HStack {
-                                TextField("",
-                                          text: $viewModel.amount,
-                                          prompt: initialAmountFormatted())
-                                    .keyboardType(.decimalPad)
-                                    .foregroundStyle(themeManager.currentTheme.text)
-                                    .focused($isFocused)
-                                Spacer()
-                                Text(viewModel.code)
-                                    .foregroundStyle(themeManager.currentTheme.textSecondary)
-                            }
+                    VStack {
+                        HStack {
+                            Text("Quantity")
+                                .foregroundStyle(themeManager.currentTheme.textSecondary)
+                                .font(themeManager.currentTheme.sectionTextFont)
+                            Spacer()
+                        }
+                        HStack {
+                            TextField("",
+                                      text: $viewModel.amount,
+                                      prompt: initialAmountFormatted())
+                                .keyboardType(.decimalPad)
+                                .foregroundStyle(themeManager.currentTheme.text)
+                                .font(themeManager.currentTheme.sectionTextFont)
+                                .focused($isFocused)
+                            Text(viewModel.code)
+                                .foregroundStyle(themeManager.currentTheme.textSecondary)
+                                .font(themeManager.currentTheme.sectionTextFont)
                         }
                     }
-                    .padding(.vertical, 4)
+                    .frame(maxWidth: .infinity)
                     .padding(.horizontal)
+                    .padding(.top)
 
                     FieldErrorRow(text: viewModel.amountError,
                                   show: viewModel.showAmountError)
+                    .padding(.horizontal)
                     
                     VStack {
                         HStack {
                             Text("≈")
                                 .foregroundStyle(themeManager.currentTheme.textSecondary)
+                                .font(themeManager.currentTheme.sectionTextFont)
                             Text(optional: AmountFormat.fiatAmountPrefixed(viewModel.total, currency: viewModel.code))
                                 .foregroundStyle(themeManager.currentTheme.textSecondary)
+                                .font(themeManager.currentTheme.sectionTextFont)
                             Spacer()
                         }
                         .padding(.bottom, 6)
@@ -107,6 +114,7 @@ struct AssetEditorView: View {
                             HStack {
                                 Text("Purchase price (optional)")
                                     .foregroundStyle(themeManager.currentTheme.textSecondary)
+                                    .font(themeManager.currentTheme.sectionTextFont)
                                 Spacer()
                             }
                             TextField("",
@@ -114,6 +122,7 @@ struct AssetEditorView: View {
                                       prompt: initialAmountFormatted())
                             .keyboardType(.decimalPad)
                             .foregroundStyle(themeManager.currentTheme.text)
+                            .font(themeManager.currentTheme.sectionTextFont)
                             .focused($isFocused)
                         }
                     }
@@ -122,16 +131,19 @@ struct AssetEditorView: View {
                     .padding(.vertical, 4)
                     
                     FadedSeparator()
+                        .padding(.horizontal)
                     
                     VStack {
                         HStack {
                             Text("Date")
                                 .foregroundStyle(themeManager.currentTheme.textSecondary)
+                                .font(themeManager.currentTheme.sectionTextFont)
                             Spacer()
                         }
                         HStack {
                             Text(DateFormat.date(viewModel.date))
                                 .foregroundStyle(themeManager.currentTheme.text)
+                                .font(themeManager.currentTheme.sectionTextFont)
                             Spacer()
                             ChevronView()
                         }
@@ -146,6 +158,7 @@ struct AssetEditorView: View {
                     Spacer()
                     
                     FadedSeparator()
+                        .padding(.horizontal)
                 }
                 .padding(.all)
                 .padding(.bottom, 10)
@@ -228,7 +241,6 @@ struct FieldErrorRow: View {
             if show { ErrorSeparator() }
             else { FadedSeparator() }
         }
-        .padding(.horizontal)
     }
 }
 
