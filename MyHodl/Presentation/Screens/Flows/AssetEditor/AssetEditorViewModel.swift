@@ -52,7 +52,6 @@ final class AssetEditorViewModel: ObservableObject {
         self.getAssetUseCase = getAssetUseCase
         self.upsertAssetUseCase = upsertAssetUseCase
         self.deleteAssetUseCase = deleteAssetUseCase
-        
         setup()
         subscribe()
     }
@@ -116,12 +115,12 @@ final class AssetEditorViewModel: ObservableObject {
         
         $amount
             .removeDuplicates()
-            .map { Decimal.decimalWithCurrentLocale(string: $0, fallback: 0) }
+            .map(Decimal.decimalWithCurrentLocale)
             .assign(to: &$amountDecimal)
         
         $price
             .removeDuplicates()
-            .map { Decimal.decimalWithCurrentLocale(string: $0, fallback: 0) }
+            .map(Decimal.decimalWithCurrentLocale)
             .assign(to: &$priceDecimal)
         
         Publishers.CombineLatest3($amountDecimal, $priceDecimal, $code)

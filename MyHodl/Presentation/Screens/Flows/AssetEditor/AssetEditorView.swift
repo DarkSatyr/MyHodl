@@ -82,13 +82,14 @@ struct AssetEditorView: View {
                             TextField("",
                                       text: $viewModel.amount,
                                       prompt: initialAmountFormatted())
-                                .keyboardType(.decimalPad)
-                                .foregroundStyle(themeManager.currentTheme.text)
-                                .font(themeManager.currentTheme.sectionHeaderFont)
-                                .focused($isFocused)
-                            Text(viewModel.code)
-                                .foregroundStyle(themeManager.currentTheme.textSecondary)
-                                .font(themeManager.currentTheme.sectionTextFont)
+                            .limitCurrencyDecimals($viewModel.amount, currency: viewModel.code)
+                            .keyboardType(.decimalPad)
+                            .foregroundStyle(themeManager.currentTheme.text)
+                            .font(themeManager.currentTheme.sectionHeaderFont)
+                            .focused($isFocused)
+                        Text(viewModel.code)
+                            .foregroundStyle(themeManager.currentTheme.textSecondary)
+                            .font(themeManager.currentTheme.sectionTextFont)
                         }
                     }
                     .frame(maxWidth: .infinity)
@@ -120,6 +121,7 @@ struct AssetEditorView: View {
                             TextField("",
                                       text: $viewModel.price,
                                       prompt: initialAmountFormatted())
+                            .limitPriceDecimals($viewModel.price, price: viewModel.price, currency: viewModel.code)
                             .keyboardType(.decimalPad)
                             .foregroundStyle(themeManager.currentTheme.text)
                             .font(themeManager.currentTheme.sectionHeaderFont)

@@ -93,12 +93,12 @@ enum CryptoFormat {
 
     static func amount(_ value: Decimal, currency: String) -> String? {
         formatter.minimumFractionDigits = 2
-        formatter.maximumFractionDigits = CryptoPrecision.amountDigits(for: currency.lowercased())
+        formatter.maximumFractionDigits = amountFractionDigits(currency: currency)
         return formatter.string(for: value)
     }
     
     static func amountPlaceholder(_ value: Decimal, currency: String, fallback: String = "0") -> String {
-        let digits = CryptoPrecision.amountDigits(for: currency.lowercased())
+        let digits = amountFractionDigits(currency: currency)
         formatter.minimumFractionDigits = digits
         formatter.maximumFractionDigits = digits
         return formatter.string(for: value) ?? fallback
@@ -106,8 +106,16 @@ enum CryptoFormat {
     
     static func price(_ value: Decimal, currency: String) -> String? {
         formatter.minimumFractionDigits = 2
-        formatter.maximumFractionDigits = CryptoPrecision.priceDigits(for: currency.lowercased(), and: value)
+        formatter.maximumFractionDigits = priceFractionDigits(price: value, currency: currency.lowercased())
         return formatter.string(for: value)
+    }
+    
+    static func amountFractionDigits(currency: String) -> Int {
+        CryptoPrecision.amountDigits(for: currency.lowercased())
+    }
+    
+    static func priceFractionDigits(price: Decimal, currency: String) -> Int {
+        CryptoPrecision.priceDigits(for: currency.lowercased(), and: price)
     }
 }
 

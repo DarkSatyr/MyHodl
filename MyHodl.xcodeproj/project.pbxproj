@@ -44,6 +44,9 @@
 		7672B64E2F3E2F11009C635F /* HoldingsEmptySearchResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7672B64D2F3E2F11009C635F /* HoldingsEmptySearchResultsView.swift */; };
 		7672B65D2F3FA568009C635F /* AssetEditorScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7672B65C2F3FA568009C635F /* AssetEditorScreen.swift */; };
 		767A52BC2F43645D0099998B /* Text+Hodl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767A52BB2F43645D0099998B /* Text+Hodl.swift */; };
+		767A52BE2F438DA90099998B /* DecimalInputFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767A52BD2F438DA90099998B /* DecimalInputFilter.swift */; };
+		767A52C02F43A9AC0099998B /* Locale+Hodl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767A52BF2F43A9AC0099998B /* Locale+Hodl.swift */; };
+		767A52C32F43ABBE0099998B /* LimitInputTextModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767A52C22F43ABBE0099998B /* LimitInputTextModifier.swift */; };
 		769999322ECCF67600F1C3AA /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769999312ECCF67600F1C3AA /* SearchBar.swift */; };
 		769999352ECD06DD00F1C3AA /* AssetRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769999342ECD06DD00F1C3AA /* AssetRow.swift */; };
 		76E104F92EC1D8BC006C1E83 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 76E104F72EC1D8BC006C1E83 /* Localizable.strings */; };
@@ -112,6 +115,9 @@
 		7672B64D2F3E2F11009C635F /* HoldingsEmptySearchResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoldingsEmptySearchResultsView.swift; sourceTree = "<group>"; };
 		7672B65C2F3FA568009C635F /* AssetEditorScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetEditorScreen.swift; sourceTree = "<group>"; };
 		767A52BB2F43645D0099998B /* Text+Hodl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+Hodl.swift"; sourceTree = "<group>"; };
+		767A52BD2F438DA90099998B /* DecimalInputFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalInputFilter.swift; sourceTree = "<group>"; };
+		767A52BF2F43A9AC0099998B /* Locale+Hodl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Locale+Hodl.swift"; sourceTree = "<group>"; };
+		767A52C22F43ABBE0099998B /* LimitInputTextModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitInputTextModifier.swift; sourceTree = "<group>"; };
 		769999312ECCF67600F1C3AA /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		769999342ECD06DD00F1C3AA /* AssetRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetRow.swift; sourceTree = "<group>"; };
 		76E104F82EC1D8BC006C1E83 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -241,6 +247,7 @@
 				76EB838E2ECCD91B00D92E67 /* BackgroundSurface.swift */,
 				765CEBFD2F33D95C0015DB79 /* ChevronView.swift */,
 				765CEC012F35228F0015DB79 /* CalendarView.swift */,
+				767A52C12F43ABB00099998B /* View Modifiers */,
 				765CEBFA2F3385EE0015DB79 /* Buttons */,
 				76601E8F2F32936300D12490 /* Separators */,
 			);
@@ -271,6 +278,7 @@
 				76EB83802EC6696600D92E67 /* Formatters.swift */,
 				76EB83872ECB4B8200D92E67 /* CryptoPrecision.swift */,
 				76EB838B2ECC734400D92E67 /* FiatSymbol.swift */,
+				767A52BD2F438DA90099998B /* DecimalInputFilter.swift */,
 			);
 			path = Formatters;
 			sourceTree = "<group>";
@@ -290,6 +298,7 @@
 				76EB83892ECBA6E300D92E67 /* Decimal+Hodl.swift */,
 				767120A42EE1CF8F00215ED7 /* Publisher+Hodl.swift */,
 				765CEC032F3524F20015DB79 /* String+Hodl.swift */,
+				767A52BF2F43A9AC0099998B /* Locale+Hodl.swift */,
 				767A52BA2F43644C0099998B /* UI */,
 			);
 			path = Extensions;
@@ -477,6 +486,14 @@
 				767A52BB2F43645D0099998B /* Text+Hodl.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		767A52C12F43ABB00099998B /* View Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				767A52C22F43ABBE0099998B /* LimitInputTextModifier.swift */,
+			);
+			path = "View Modifiers";
 			sourceTree = "<group>";
 		};
 		769999332ECD02AC00F1C3AA /* Sections */ = {
@@ -704,6 +721,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				767A52BE2F438DA90099998B /* DecimalInputFilter.swift in Sources */,
 				76EB83852EC73F6300D92E67 /* IconView.swift in Sources */,
 				7609476E2EAA66C30010F54D /* Theme.swift in Sources */,
 				765332272ED865F9002FE36B /* CryptoAssetInfo.swift in Sources */,
@@ -737,6 +755,7 @@
 				769999322ECCF67600F1C3AA /* SearchBar.swift in Sources */,
 				760947702EAA66CC0010F54D /* ThemeManager.swift in Sources */,
 				7672B64E2F3E2F11009C635F /* HoldingsEmptySearchResultsView.swift in Sources */,
+				767A52C02F43A9AC0099998B /* Locale+Hodl.swift in Sources */,
 				765332302ED8929B002FE36B /* CryptoAssetsFileLoader.swift in Sources */,
 				76EB83922ECCE43900D92E67 /* PageView.swift in Sources */,
 				7653322B2ED885C7002FE36B /* CryptoAssetsInfoRepository.swift in Sources */,
@@ -744,6 +763,7 @@
 				76EB83682EC3C37600D92E67 /* DayChangeTracker.swift in Sources */,
 				76EB83812EC6696700D92E67 /* Formatters.swift in Sources */,
 				76412F742EAB6590005E5A9A /* RootView.swift in Sources */,
+				767A52C32F43ABBE0099998B /* LimitInputTextModifier.swift in Sources */,
 				7672B64C2F3E001F009C635F /* HoldingsTotalBalanceView.swift in Sources */,
 				767120AB2EE859A000215ED7 /* AssetEditorViewModel.swift in Sources */,
 				76EB83882ECB4B8200D92E67 /* CryptoPrecision.swift in Sources */,
