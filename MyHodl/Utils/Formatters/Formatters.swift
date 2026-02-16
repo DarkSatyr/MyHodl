@@ -21,18 +21,18 @@ enum AmountFormat {
         return FiatSymbol.symbol(for: baseCurrency) + formatted
     }
     
-    static func amount(_ amount: Decimal?, currency: String) -> String {
-        guard let amount else { return "-" }
+    static func amount(_ amount: Decimal?, currency: String) -> String? {
+        guard let amount else { return nil }
         return CryptoFormat.amount(amount, currency: currency)
     }
     
-    static func percentChange(_ value: Decimal?) -> String {
-        guard let value else { return "" }
+    static func percentChange(_ value: Decimal?) -> String? {
+        guard let value else { return nil }
         return Percent.formatChange(value)
     }
     
-    static func percent(_ value: Decimal?) -> String {
-        guard let value else { return "-" }
+    static func percent(_ value: Decimal?) -> String? {
+        guard let value else { return nil }
         return Percent.formatAmount(value)
     }
 }
@@ -56,14 +56,14 @@ enum Percent {
         return f
     }()
 
-    static func formatChange(_ value: Decimal) -> String {
+    static func formatChange(_ value: Decimal) -> String? {
         formatter.positivePrefix = "+"
-        return formatter.string(for: value) ?? "0%"
+        return formatter.string(for: value)
     }
     
-    static func formatAmount(_ value: Decimal) -> String {
+    static func formatAmount(_ value: Decimal) -> String? {
         formatter.positivePrefix = ""
-        return formatter.string(for: value) ?? "0%"
+        return formatter.string(for: value)
     }
 }
 
@@ -91,21 +91,23 @@ enum CryptoFormat {
         return f
     }()
 
-    static func amount(_ value: Decimal, currency: String) -> String {
+    static func amount(_ value: Decimal, currency: String) -> String? {
+        formatter.minimumFractionDigits = 2
         formatter.maximumFractionDigits = CryptoPrecision.amountDigits(for: currency.lowercased())
-        return formatter.string(for: value) ?? "0"
+        return formatter.string(for: value)
     }
     
-    static func amountPlaceholder(_ value: Decimal, currency: String) -> String {
+    static func amountPlaceholder(_ value: Decimal, currency: String, fallback: String = "0") -> String {
         let digits = CryptoPrecision.amountDigits(for: currency.lowercased())
-        formatter.maximumFractionDigits = digits
         formatter.minimumFractionDigits = digits
-        return formatter.string(for: value) ?? "0"
+        formatter.maximumFractionDigits = digits
+        return formatter.string(for: value) ?? fallback
     }
     
-    static func price(_ value: Decimal, currency: String) -> String {
+    static func price(_ value: Decimal, currency: String) -> String? {
+        formatter.minimumFractionDigits = 2
         formatter.maximumFractionDigits = CryptoPrecision.priceDigits(for: currency.lowercased(), and: value)
-        return formatter.string(for: value) ?? "0"
+        return formatter.string(for: value)
     }
 }
 

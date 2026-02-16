@@ -22,7 +22,7 @@ struct AssetRow: View {
                         .font(themeManager.currentTheme.sectionTextFont)
                         .foregroundStyle(themeManager.currentTheme.text)
                     HStack(spacing: 2) {
-                        Text(AmountFormat.amount(asset.amount, currency: asset.code))
+                        Text(optional: AmountFormat.amount(asset.amount, currency: asset.code))
                             .font(themeManager.currentTheme.font)
                             .foregroundStyle(themeManager.currentTheme.textSecondary)
                         Text(asset.code.uppercased())

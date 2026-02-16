@@ -19,13 +19,13 @@ final class AssetEditorViewModel: ObservableObject {
     
     @Published var amount = ""
     @Published var price = ""
-    @Published var total: Decimal = 0
+    @Published var total: Decimal?
     @Published var name: String = ""
     @Published var code: String = ""
     @Published var image: ImageSource = .placeholder
     @Published var date: Date = Date()
     @Published var assetIdentityIsEditable = true
-    @Published var amountDecimal: Decimal = 0
+    @Published var amountDecimal: Decimal?
     @Published var priceDecimal: Decimal?
     @Published var nameAndCodeError = ""
     @Published var showNameAndCodeError = false
@@ -60,13 +60,14 @@ final class AssetEditorViewModel: ObservableObject {
     func save(confirmDuplicate: Bool = false) {
         guard validate() else { return }
         do {
+            guard let amount = amountDecimal else { return }
             if !confirmDuplicate, try getAssetUseCase(code) != nil, case .create(_) = mode {
                 showDuplicateAlert = true
                 return
             }
             let asset = Asset(code: code,
                               fullName: name,
-                              amount: amountDecimal,
+                              amount: amount,
                               startingPrice: priceDecimal,
                               currentPrice: priceDecimal)
             try upsertAssetUseCase(asset, policy: policy())
@@ -124,18 +125,18 @@ final class AssetEditorViewModel: ObservableObject {
             .assign(to: &$priceDecimal)
         
         Publishers.CombineLatest3($amountDecimal, $priceDecimal, $code)
-            .map { (amount: Decimal, price: Decimal?, code: String) in
-                guard let price else { return 0 }
+            .map { (amount: Decimal?, price: Decimal?, code: String) in
+                guard let amount, let price else { return 0 }
                 return amount * price
             }
             .assign(to: &$total)
         
         $amountDecimal
+            .map { $0 ?? 0 > 0 }
             .removeDuplicates()
-            .sink { [weak self] amount in
-                guard let self else { return }
-                if amount > 0 {
-                    showAmountError = false
+            .sink { [weak self] isValid in
+                if isValid {
+                    self?.showAmountError = false
                 }
             }
             .store(in: &cancellables)
@@ -163,7 +164,7 @@ final class AssetEditorViewModel: ObservableObject {
             name = asset.fullName
             code = asset.code
             amountDecimal = asset.amount
-            amount = CryptoFormat.amount(amountDecimal, currency: code)
+            amount = CryptoFormat.amount(asset.amount, currency: code) ?? ""
             priceDecimal = asset.currentPrice
             price = PriceFormat.fiatPrice(priceDecimal, currency: FiatSymbol.usd) ?? ""
             assetIdentityIsEditable = false
@@ -187,9 +188,10 @@ final class AssetEditorViewModel: ObservableObject {
             showNameAndCodeError = true
         }
         
-        if amountDecimal <= 0 {
+        guard let amount = amountDecimal, amount > 0 else {
             amountError = "Quantity must be greater than zero"
             showAmountError = true
+            return false
         }
         return !showNameAndCodeError && !showAmountError
     }

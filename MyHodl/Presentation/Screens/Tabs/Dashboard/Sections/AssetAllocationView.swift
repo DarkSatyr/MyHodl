@@ -29,14 +29,14 @@ struct AssetAllocationView: View {
                         Text(L10n.crypto)
                             .font(themeManager.currentTheme.highlightedFont)
                             .foregroundStyle(themeManager.currentTheme.text)
-                        Text(AmountFormat.percent(assetAllocation.crypto))
+                        Text(optional: AmountFormat.percent(assetAllocation.crypto))
                             .font(themeManager.currentTheme.highlightedFont)
                             .foregroundStyle(themeManager.currentTheme.accent)
                     } else {
                         Text(L10n.fiat)
                             .font(themeManager.currentTheme.highlightedFont)
                             .foregroundStyle(themeManager.currentTheme.text)
-                        Text(AmountFormat.percent(assetAllocation.fiat))
+                        Text(optional: AmountFormat.percent(assetAllocation.fiat))
                             .font(themeManager.currentTheme.highlightedFont)
                             .foregroundStyle(themeManager.currentTheme.accent)
                     }
