@@ -49,6 +49,7 @@ struct AssetSelectView: View {
                         }
                         .padding(.leading)
                         .padding(.trailing, 20)
+                        .contentShape(Rectangle())
                         .onTapGesture {
                             viewModel.showAddCoin(asset: asset.assetID)
                         }
