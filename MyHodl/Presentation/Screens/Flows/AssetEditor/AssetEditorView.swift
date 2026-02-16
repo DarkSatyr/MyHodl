@@ -84,7 +84,7 @@ struct AssetEditorView: View {
                                       prompt: initialAmountFormatted())
                                 .keyboardType(.decimalPad)
                                 .foregroundStyle(themeManager.currentTheme.text)
-                                .font(themeManager.currentTheme.sectionTextFont)
+                                .font(themeManager.currentTheme.sectionHeaderFont)
                                 .focused($isFocused)
                             Text(viewModel.code)
                                 .foregroundStyle(themeManager.currentTheme.textSecondary)
@@ -122,7 +122,7 @@ struct AssetEditorView: View {
                                       prompt: initialAmountFormatted())
                             .keyboardType(.decimalPad)
                             .foregroundStyle(themeManager.currentTheme.text)
-                            .font(themeManager.currentTheme.sectionTextFont)
+                            .font(themeManager.currentTheme.sectionHeaderFont)
                             .focused($isFocused)
                         }
                     }
@@ -143,7 +143,7 @@ struct AssetEditorView: View {
                         HStack {
                             Text(DateFormat.date(viewModel.date))
                                 .foregroundStyle(themeManager.currentTheme.text)
-                                .font(themeManager.currentTheme.sectionTextFont)
+                                .font(themeManager.currentTheme.sectionHeaderFont)
                             Spacer()
                             ChevronView()
                         }
