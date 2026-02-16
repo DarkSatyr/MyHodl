@@ -163,9 +163,9 @@ final class AssetEditorViewModel: ObservableObject {
             name = asset.fullName
             code = asset.code
             amountDecimal = asset.amount
-            amount = amountDecimal.stringValue
+            amount = CryptoFormat.amount(amountDecimal, currency: code)
             priceDecimal = asset.currentPrice
-            price = priceDecimal?.stringValue ?? ""
+            price = PriceFormat.fiatPrice(priceDecimal, currency: FiatSymbol.usd) ?? ""
             assetIdentityIsEditable = false
             title = "Edit asset"
             showDeleteButton = true

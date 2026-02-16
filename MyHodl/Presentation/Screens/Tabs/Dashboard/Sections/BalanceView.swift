@@ -27,7 +27,7 @@ struct BalanceView: View {
                     .font(themeManager.currentTheme.sectionHeaderFont)
                     .foregroundStyle(themeManager.currentTheme.textSecondary)
                 HStack {
-                    Text(FiatSymbol.symbol(for: baseCurrency) + AmountFormat.amount(total, currency: baseCurrency))
+                    Text(optional: AmountFormat.fiatAmountPrefixed(total, currency: baseCurrency))
                         .font(themeManager.currentTheme.headerFont)
                         .foregroundStyle(themeManager.currentTheme.text)
                     Spacer()

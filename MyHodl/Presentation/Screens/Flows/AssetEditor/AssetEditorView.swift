@@ -98,7 +98,7 @@ struct AssetEditorView: View {
                         HStack {
                             Text("≈")
                                 .foregroundStyle(themeManager.currentTheme.textSecondary)
-                            Text(FiatSymbol.usd.rawValue + AmountFormat.amount(viewModel.total, currency: viewModel.code))
+                            Text(optional: AmountFormat.fiatAmountPrefixed(viewModel.total, currency: viewModel.code))
                                 .foregroundStyle(themeManager.currentTheme.textSecondary)
                             Spacer()
                         }
@@ -210,7 +210,7 @@ struct AssetEditorView: View {
     }
     
     private func initialAmountFormatted() -> Text {
-        Text(Decimal.decimalWithCurrentLocale(string: "0.0", fallback: 0).stringValue)
+        Text(CryptoFormat.amountPlaceholder(0, currency: viewModel.code))
     }
 }
 

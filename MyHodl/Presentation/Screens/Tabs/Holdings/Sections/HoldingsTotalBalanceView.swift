@@ -31,7 +31,7 @@ struct HoldingsTotalBalanceView: View {
                     .font(themeManager.currentTheme.sectionHeaderFont)
                     .foregroundStyle(themeManager.currentTheme.text)
                 Spacer()
-                Text(FiatSymbol.symbol(for: baseCurrency) + AmountFormat.amount(total, currency: baseCurrency))
+                Text(optional: AmountFormat.fiatAmountPrefixed(total, currency: baseCurrency))
                     .font(themeManager.currentTheme.sectionHeaderFont)
                     .foregroundStyle(themeManager.currentTheme.text)
             }

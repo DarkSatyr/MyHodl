@@ -60,7 +60,7 @@ struct TopAssetsView: View {
                         }
                         Spacer()
                         VStack(alignment: .trailing, spacing: 2) {
-                            Text(AmountFormat.amount(asset.totalCurrent, currency: baseCurrency))
+                            Text(optional: AmountFormat.fiatAmountPrefixed(asset.totalCurrent, currency: baseCurrency))
                                 .font(themeManager.currentTheme.sectionTextFont)
                                 .foregroundStyle(themeManager.currentTheme.text)
 //                            if asset.code.uppercased() != baseCurrency {

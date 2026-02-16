@@ -13,6 +13,14 @@ let baseCurrency = "USD"
 
 @MainActor
 enum AmountFormat {
+    
+    static func fiatAmountPrefixed(_ amount: Decimal?, currency: String) -> String? {
+        guard let amount, let formatted = FiatFormat.amount(amount, currency: currency) else {
+            return nil
+        }
+        return FiatSymbol.symbol(for: baseCurrency) + formatted
+    }
+    
     static func amount(_ amount: Decimal?, currency: String) -> String {
         guard let amount else { return "-" }
         return CryptoFormat.amount(amount, currency: currency)
@@ -31,9 +39,9 @@ enum AmountFormat {
 
 @MainActor
 enum PriceFormat {
-    static func price(_ price: Decimal?, currency: String) -> String {
-        guard let price else { return "-" }
-        return CryptoFormat.price(price, currency: currency)
+    static func fiatPrice(_ price: Decimal?, currency: FiatSymbol) -> String? {
+        guard let price else { return nil }
+        return CryptoFormat.price(price, currency: currency.rawValue)
     }
 }
 
@@ -60,6 +68,21 @@ enum Percent {
 }
 
 @MainActor
+enum FiatFormat {
+    private static let formatter: NumberFormatter = {
+        let f = NumberFormatter()
+        f.minimumFractionDigits = 2
+        f.maximumFractionDigits = 2
+        f.usesGroupingSeparator = true
+        return f
+    }()
+
+    static func amount(_ value: Decimal, currency: String) -> String? {
+        return formatter.string(for: value)
+    }
+}
+
+@MainActor
 enum CryptoFormat {
     private static let formatter: NumberFormatter = {
         let f = NumberFormatter()
@@ -70,6 +93,13 @@ enum CryptoFormat {
 
     static func amount(_ value: Decimal, currency: String) -> String {
         formatter.maximumFractionDigits = CryptoPrecision.amountDigits(for: currency.lowercased())
+        return formatter.string(for: value) ?? "0"
+    }
+    
+    static func amountPlaceholder(_ value: Decimal, currency: String) -> String {
+        let digits = CryptoPrecision.amountDigits(for: currency.lowercased())
+        formatter.maximumFractionDigits = digits
+        formatter.minimumFractionDigits = digits
         return formatter.string(for: value) ?? "0"
     }
     
