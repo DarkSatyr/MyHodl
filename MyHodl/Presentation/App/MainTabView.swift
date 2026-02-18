@@ -7,38 +7,32 @@
 
 import SwiftUI
 
-enum MainTab {
-    case dashboard
-    case holdings
-    case settings
-}
-
 struct MainTabView: View {
-    @State var selectedTab = MainTab.dashboard
     @Environment(ThemeManager.self) private var themeManager
     @Environment(AppContainer.self) private var appContainer
+    @EnvironmentObject private var appRouter: AppRouter
     
     var body: some View {
-        TabView(selection: $selectedTab) {
+        TabView(selection: $appRouter.selectedTab) {
             DashboardView(viewModel: appContainer.makeDashboardViewModel()) {
-                selectedTab = .holdings
+                appRouter.selectedTab = .holdings
             }
             .tabItem {
                 Label(L10n.dashboard, systemImage: "chart.line.uptrend.xyaxis")
             }
-            .tag(MainTab.dashboard)
+            .tag(AppRouter.Tab.dashboard)
             
             HoldingsView(viewModel: appContainer.makeHoldingsViewModel())
                 .tabItem {
                     Label(L10n.holdings, systemImage: "bitcoinsign.circle")
                 }
-                .tag(MainTab.holdings)
+                .tag(AppRouter.Tab.holdings)
             
             SettingsView()
                 .tabItem {
                     Label(L10n.settings, systemImage: "gearshape")
                 }
-                .tag(MainTab.settings)
+                .tag(AppRouter.Tab.settings)
         }
         .tint(themeManager.currentTheme.accent)
     }

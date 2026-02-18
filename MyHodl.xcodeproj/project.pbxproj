@@ -13,6 +13,7 @@
 		7609476C2EAA66A70010F54D /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 760947652EAA66A70010F54D /* Launch Screen.storyboard */; };
 		7609476E2EAA66C30010F54D /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7609476D2EAA66C30010F54D /* Theme.swift */; };
 		760947702EAA66CC0010F54D /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7609476F2EAA66CC0010F54D /* ThemeManager.swift */; };
+		760DB9E32F45EC0800979A0B /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760DB9E22F45EC0800979A0B /* AppRouter.swift */; };
 		76412F742EAB6590005E5A9A /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76412F732EAB6590005E5A9A /* RootView.swift */; };
 		7653320C2ED70C70002FE36B /* AssetSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7653320B2ED70C70002FE36B /* AssetSelectView.swift */; };
 		7653320E2ED70C7B002FE36B /* AssetSelectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7653320D2ED70C7B002FE36B /* AssetSelectViewModel.swift */; };
@@ -86,6 +87,7 @@
 		760947672EAA66A70010F54D /* MyHodlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHodlApp.swift; sourceTree = "<group>"; };
 		7609476D2EAA66C30010F54D /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		7609476F2EAA66CC0010F54D /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		760DB9E22F45EC0800979A0B /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		76412F732EAB6590005E5A9A /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		7653320B2ED70C70002FE36B /* AssetSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetSelectView.swift; sourceTree = "<group>"; };
 		7653320D2ED70C7B002FE36B /* AssetSelectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetSelectViewModel.swift; sourceTree = "<group>"; };
@@ -268,6 +270,7 @@
 			children = (
 				76412F732EAB6590005E5A9A /* RootView.swift */,
 				760947642EAA66A70010F54D /* MainTabView.swift */,
+				760DB9E22F45EC0800979A0B /* AppRouter.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -753,6 +756,7 @@
 				76EB838F2ECCD91B00D92E67 /* BackgroundSurface.swift in Sources */,
 				7668D2202EB34ADE00131EB5 /* SettingsView.swift in Sources */,
 				769999322ECCF67600F1C3AA /* SearchBar.swift in Sources */,
+				760DB9E32F45EC0800979A0B /* AppRouter.swift in Sources */,
 				760947702EAA66CC0010F54D /* ThemeManager.swift in Sources */,
 				7672B64E2F3E2F11009C635F /* HoldingsEmptySearchResultsView.swift in Sources */,
 				767A52C02F43A9AC0099998B /* Locale+Hodl.swift in Sources */,

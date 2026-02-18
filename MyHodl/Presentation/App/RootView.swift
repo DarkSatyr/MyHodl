@@ -10,9 +10,11 @@ import SwiftUI
 struct RootView: View {
     @Environment(\.colorScheme) private var systemScheme
     @Environment(ThemeManager.self) private var themeManager
+    @State private var appRouter: AppRouter = AppRouter()
 
     var body: some View {
         MainTabView()
+            .environmentObject(appRouter)
             .background(themeManager.currentTheme.background)
             .onAppear {
                 themeManager.updateSystemScheme(systemScheme)
