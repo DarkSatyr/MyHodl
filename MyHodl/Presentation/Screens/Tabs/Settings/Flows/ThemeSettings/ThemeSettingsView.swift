@@ -12,41 +12,39 @@ struct ThemeSettingsView: View {
     @Environment(ThemeManager.self) private var themeManager
     
     var body: some View {
-        NavigationStack {
-            List {
-                Section {
-                    ForEach(ThemeType.allCases, id: \.self) { type in
-                        HStack {
-                            VStack(alignment: .leading, spacing: 4) {
-                                Text(type.rawValue.capitalized)
-                                    .foregroundStyle(themeManager.currentTheme.text)
-                                    .font(themeManager.currentTheme.font)
-                                Text(type.subtitle.capitalized)
-                                    .foregroundStyle(themeManager.currentTheme.textSecondary)
-                                    .font(themeManager.currentTheme.subtitleFont)
-                            }
-                            Spacer()
-                            if type == selectedType {
-                                Image(systemName: "checkmark")
-                                    .foregroundStyle(.tint)
-                                    .fontWeight(.semibold)
-                            }
+        List {
+            Section {
+                ForEach(ThemeType.allCases, id: \.self) { type in
+                    HStack {
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text(type.rawValue.capitalized)
+                                .foregroundStyle(themeManager.currentTheme.text)
+                                .font(themeManager.currentTheme.font)
+                            Text(type.subtitle.capitalized)
+                                .foregroundStyle(themeManager.currentTheme.textSecondary)
+                                .font(themeManager.currentTheme.subtitleFont)
                         }
-                        .contentShape(Rectangle())
-                        .onTapGesture {
-                            selectedType = type
-                            themeManager.setThemeType(type)
+                        Spacer()
+                        if type == selectedType {
+                            Image(systemName: "checkmark")
+                                .foregroundStyle(.tint)
+                                .fontWeight(.semibold)
                         }
                     }
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        selectedType = type
+                        themeManager.setThemeType(type)
+                    }
                 }
-                .listRowBackground(themeManager.currentTheme.card)
             }
-            .listStyle(.insetGrouped)
-            .scrollContentBackground(.hidden)
-            .background(themeManager.currentTheme.background)
-            .navigationTitle(L10n.themeSelect)
-            .toolbarTitleDisplayMode(.inline)
+            .listRowBackground(themeManager.currentTheme.card)
         }
+        .listStyle(.insetGrouped)
+        .scrollContentBackground(.hidden)
+        .background(themeManager.currentTheme.background)
+        .navigationTitle(L10n.themeSelect)
+        .toolbarTitleDisplayMode(.inline)
         .onAppear {
             selectedType = themeManager.type
         }

@@ -15,5 +15,22 @@ final class AppRouter: ObservableObject {
         case dashboard, holdings, settings
     }
     
+    enum Destination: Hashable {
+        case settingsChangeTheme
+    }
+    
     @Published var selectedTab = AppRouter.Tab.dashboard
+    @Published var settingsPath = [Destination]()
+    
+    func push(destination: Destination, inTab tab: Tab? = nil) {
+        let tab = tab ?? selectedTab
+        switch tab {
+        case .dashboard:
+            break
+        case .holdings:
+            break
+        case .settings:
+            settingsPath.append(destination)
+        }
+    }
 }

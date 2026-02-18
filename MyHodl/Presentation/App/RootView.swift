@@ -10,7 +10,7 @@ import SwiftUI
 struct RootView: View {
     @Environment(\.colorScheme) private var systemScheme
     @Environment(ThemeManager.self) private var themeManager
-    @State private var appRouter: AppRouter = AppRouter()
+    @StateObject private var appRouter = AppRouter()
 
     var body: some View {
         MainTabView()

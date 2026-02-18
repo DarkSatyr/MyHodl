@@ -25,30 +25,32 @@ struct DashboardView: View {
             if viewModel.isEmpty {
                 DashboardEmptyView(showAddCoin: $showAddCoin)
             } else {
-                PageView {
-                    ScrollView(showsIndicators: false) {
-                        VStack(spacing: 20) {
-                            BalanceView(total: viewModel.totalBalance,
-                                        changePercent: viewModel.totalBalanceChange)
-                            if let assetAllocation = viewModel.assetAllocation {
-                                AssetAllocationView(assetAllocation: assetAllocation)
+                NavigationStack {
+                    PageView {
+                        ScrollView(showsIndicators: false) {
+                            VStack(spacing: 20) {
+                                BalanceView(total: viewModel.totalBalance,
+                                            changePercent: viewModel.totalBalanceChange)
+                                if let assetAllocation = viewModel.assetAllocation {
+                                    AssetAllocationView(assetAllocation: assetAllocation)
+                                }
+                                TopAssetsView(assets: viewModel.assets) {
+                                    self.onViewAllHoldings()
+                                }
                             }
-                            TopAssetsView(assets: viewModel.assets) {
-                                self.onViewAllHoldings()
+                            .padding(.horizontal, 16)
+                            .padding(.top, 16)
+                            .padding(.bottom, 20)
+                        }
+                    } title: {
+                        TitleView {
+                            Text(L10n.dashboard)
+                        } right: {
+                            Button("", systemImage: "plus") {  // TODO: Add loc
+                                showAddCoin = true
                             }
+                            .foregroundStyle(.accent)
                         }
-                        .padding(.horizontal, 16)
-                        .padding(.top, 16)
-                        .padding(.bottom, 20)
-                    }
-                } title: {
-                    TitleView {
-                        Text(L10n.dashboard)
-                    } right: {
-                        Button("", systemImage: "plus") {  // TODO: Add loc
-                            showAddCoin = true
-                        }
-                        .foregroundStyle(.accent)
                     }
                 }
             }

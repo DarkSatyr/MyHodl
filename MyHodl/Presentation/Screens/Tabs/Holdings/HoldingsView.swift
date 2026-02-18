@@ -24,41 +24,43 @@ struct HoldingsView: View {
             if viewModel.isEmpty {
                 HoldingsEmptyView(showAddCoin: $showAddAsset)
             } else {
-                PageView {
-                    List {
-                        SearchBar(text: $viewModel.searchText, placeholder: L10n.searchCoins)
-                            .listRowInsets(.vertical, 0)
-                            .listRowSeparator(.hidden)
-                        HoldingsTotalBalanceView(total: viewModel.totalBalance, assetsCount: viewModel.assetsCount)
-                            .listRowSeparator(.hidden)
-                        if viewModel.isEmptyAssetsFilteringResults {
-                            HoldingsEmptySearchResultsView {
-                                viewModel.clearSearchText()
-                            }
-                            .frame(maxWidth: .infinity)
-                            .listRowSeparator(.hidden)
-                        } else {
-                            ForEach(viewModel.filteredAssets) { asset in
-                                AssetRow(asset: asset)
-                                    .listRowInsets(.vertical, 6)
-                                    .listRowBackground(Color.clear)
-                                    .listRowSeparator(.hidden)
-                                    .onTapGesture {
-                                        showEditAsset = asset
-                                    }
+                NavigationStack {
+                    PageView {
+                        List {
+                            SearchBar(text: $viewModel.searchText, placeholder: L10n.searchCoins)
+                                .listRowInsets(.vertical, 0)
+                                .listRowSeparator(.hidden)
+                            HoldingsTotalBalanceView(total: viewModel.totalBalance, assetsCount: viewModel.assetsCount)
+                                .listRowSeparator(.hidden)
+                            if viewModel.isEmptyAssetsFilteringResults {
+                                HoldingsEmptySearchResultsView {
+                                    viewModel.clearSearchText()
+                                }
+                                .frame(maxWidth: .infinity)
+                                .listRowSeparator(.hidden)
+                            } else {
+                                ForEach(viewModel.filteredAssets) { asset in
+                                    AssetRow(asset: asset)
+                                        .listRowInsets(.vertical, 6)
+                                        .listRowBackground(Color.clear)
+                                        .listRowSeparator(.hidden)
+                                        .onTapGesture {
+                                            showEditAsset = asset
+                                        }
+                                }
                             }
                         }
-                    }
-                    .listStyle(.plain)
-                    .scrollContentBackground(.hidden)
-                } title: {
-                    TitleView {
-                        Text(L10n.holdings)
-                    } right: {
-                        Button("Add asset", systemImage: "plus") {  // TODO: Add loc
-                            showAddAsset = true
+                        .listStyle(.plain)
+                        .scrollContentBackground(.hidden)
+                    } title: {
+                        TitleView {
+                            Text(L10n.holdings)
+                        } right: {
+                            Button("Add asset", systemImage: "plus") {  // TODO: Add loc
+                                showAddAsset = true
+                            }
+                            .foregroundStyle(.accent)
                         }
-                        .foregroundStyle(.accent)
                     }
                 }
             }

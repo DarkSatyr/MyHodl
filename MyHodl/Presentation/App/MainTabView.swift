@@ -10,12 +10,12 @@ import SwiftUI
 struct MainTabView: View {
     @Environment(ThemeManager.self) private var themeManager
     @Environment(AppContainer.self) private var appContainer
-    @EnvironmentObject private var appRouter: AppRouter
+    @EnvironmentObject private var router: AppRouter
     
     var body: some View {
-        TabView(selection: $appRouter.selectedTab) {
+        TabView(selection: $router.selectedTab) {
             DashboardView(viewModel: appContainer.makeDashboardViewModel()) {
-                appRouter.selectedTab = .holdings
+                router.selectedTab = .holdings
             }
             .tabItem {
                 Label(L10n.dashboard, systemImage: "chart.line.uptrend.xyaxis")

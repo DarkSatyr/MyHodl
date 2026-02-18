@@ -14,17 +14,15 @@ struct PageView<Content: View, Title: View>: View {
     @Environment(ThemeManager.self) private var themeManager
     
     var body: some View {
-        NavigationStack {
-            content()
-                .background(
-                    BackgroundSurface()
-                        .ignoresSafeArea()
-                )
-                .safeAreaInset(edge: .top) {
-                    title()
-                        .fixedSize(horizontal: false, vertical: true)
-                }
-        }
+        content()
+            .background(
+                BackgroundSurface()
+                    .ignoresSafeArea()
+            )
+            .safeAreaInset(edge: .top) {
+                title()
+                    .fixedSize(horizontal: false, vertical: true)
+            }
         .background(themeManager.currentTheme.background)
     }
 }
