@@ -10,11 +10,18 @@ import SwiftUI
 
 final class HoldingsRouter: ObservableObject {
 
-    enum Sheet: Identifiable, Hashable {
+    enum Sheet: Identifiable {
         case assetEdit(DashboardAsset)
         case assetAdd
 
-        var id: Self { self }
+        var id: String {
+            switch self {
+            case .assetAdd:
+                return "add"
+            case .assetEdit:
+                return "edit"
+            }
+        }
     }
 
     @Published var sheet: Sheet?
