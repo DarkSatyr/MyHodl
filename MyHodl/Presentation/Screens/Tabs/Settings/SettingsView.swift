@@ -10,14 +10,18 @@ import SwiftUI
 struct SettingsView: View {
     @Environment(ThemeManager.self) private var themeManager
     @Environment(\.dismiss) private var dismiss
-    @EnvironmentObject private var router: AppRouter
-    
+    @StateObject private var router: SettingsRouter
+
+    init(router: SettingsRouter) {
+        _router = StateObject(wrappedValue: router)
+    }
+
     var body: some View {
-        NavigationStack(path: $router.settingsPath) {
+        NavigationStack(path: $router.path) {
             PageView(content: {
                 List {
                     Section {
-                        NavigationLink(value: AppRouter.Destination.settingsChangeTheme) {
+                        NavigationLink(value: SettingsRouter.Destination.settingsChangeTheme) {
                             LabeledContent {
                                 Text(themeManager.type.name)
                                     .foregroundStyle(themeManager.currentTheme.textSecondary)
@@ -40,7 +44,7 @@ struct SettingsView: View {
                     Text(L10n.settings)
                 } right: {}
             })
-            .navigationDestination(for: AppRouter.Destination.self) { destination in
+            .navigationDestination(for: SettingsRouter.Destination.self) { destination in
                 switch destination {
                 case .settingsChangeTheme:
                     ThemeSettingsView()
@@ -51,6 +55,6 @@ struct SettingsView: View {
 }
 
 #Preview {
-    SettingsView()
+    SettingsView(router: AppRouter().settingsRouter)
         .environment(ThemeManager())
 }

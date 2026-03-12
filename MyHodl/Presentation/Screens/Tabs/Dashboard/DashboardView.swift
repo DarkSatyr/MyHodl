@@ -9,15 +9,17 @@ import SwiftUI
 
 struct DashboardView: View {
     @StateObject private var viewModel: DashboardViewModel
-    let onViewAllHoldings: () -> Void
+    let onShowHoldings: () -> Void
     @Environment(AppContainer.self) private var appContainer
     @Environment(ThemeManager.self) private var themeManager
     @StateObject private var dayChangeTracker = DayChangeTracker()
     @State private var showAddCoin: Bool = false
-    
-    init(viewModel: DashboardViewModel, onViewAllHoldings: @escaping () -> Void) {
+    private let router: DashboardRouter
+
+    init(viewModel: DashboardViewModel, router: DashboardRouter, onShowHoldings: @escaping () -> Void) {
         _viewModel = StateObject(wrappedValue: viewModel)
-        self.onViewAllHoldings = onViewAllHoldings
+        self.router = router
+        self.onShowHoldings = onShowHoldings
     }
     
     var body: some View {
@@ -35,7 +37,7 @@ struct DashboardView: View {
                                     AssetAllocationView(assetAllocation: assetAllocation)
                                 }
                                 TopAssetsView(assets: viewModel.assets) {
-                                    self.onViewAllHoldings()
+                                    self.onShowHoldings()
                                 }
                             }
                             .padding(.horizontal, 16)
@@ -63,8 +65,9 @@ struct DashboardView: View {
 }
 
 #Preview {
-    DashboardView(viewModel: AppContainer().makeDashboardViewModel()) {
-        
+    DashboardView(viewModel: AppContainer().makeDashboardViewModel(),
+                  router: AppRouter().dashboardRouter) {
+
     }
     .environment(ThemeManager())
 }

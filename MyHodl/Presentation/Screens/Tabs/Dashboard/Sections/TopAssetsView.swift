@@ -9,15 +9,15 @@ import SwiftUI
 
 struct TopAssetsView: View {
     var assets: [DashboardAsset]
-    let onViewAllTap: () -> Void
+    let onShowHoldings: () -> Void
     @Environment(ThemeManager.self) private var themeManager
     
-    init(assets: [DashboardAsset], onViewAllTap: @escaping () -> Void) {
+    init(assets: [DashboardAsset], onShowHoldings: @escaping () -> Void) {
         self.assets = Array(assets.sorted(by: { lhs, rhs in
             (lhs.totalCurrent ?? 0) > (rhs.totalCurrent ?? 0)
         })
         .prefix(6))
-        self.onViewAllTap = onViewAllTap
+        self.onShowHoldings = onShowHoldings
     }
     
     var body: some View {
@@ -28,7 +28,7 @@ struct TopAssetsView: View {
                     .foregroundStyle(themeManager.currentTheme.textSecondary)
                 Spacer()
                 Button(action: {
-                    onViewAllTap()
+                    onShowHoldings()
                 }, label: {
                     HStack(alignment: .center, spacing: 4) {
                         Text("View all ")

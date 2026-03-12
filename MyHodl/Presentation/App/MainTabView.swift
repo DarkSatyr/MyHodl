@@ -14,21 +14,23 @@ struct MainTabView: View {
     
     var body: some View {
         TabView(selection: $router.selectedTab) {
-            DashboardView(viewModel: appContainer.makeDashboardViewModel()) {
+            DashboardView(viewModel: appContainer.makeDashboardViewModel(),
+                          router: router.dashboardRouter,
+                          onShowHoldings: {
                 router.selectedTab = .holdings
-            }
+            })
             .tabItem {
                 Label(L10n.dashboard, systemImage: "chart.line.uptrend.xyaxis")
             }
             .tag(AppRouter.Tab.dashboard)
             
-            HoldingsView(viewModel: appContainer.makeHoldingsViewModel())
+            HoldingsView(viewModel: appContainer.makeHoldingsViewModel(), router: router.holdingsRouter)
                 .tabItem {
                     Label(L10n.holdings, systemImage: "bitcoinsign.circle")
                 }
                 .tag(AppRouter.Tab.holdings)
             
-            SettingsView()
+            SettingsView(router: router.settingsRouter)
                 .tabItem {
                     Label(L10n.settings, systemImage: "gearshape")
                 }

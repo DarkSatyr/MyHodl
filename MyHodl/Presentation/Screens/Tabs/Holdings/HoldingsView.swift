@@ -14,9 +14,11 @@ struct HoldingsView: View {
     @State private var showAddAsset = false
     @State private var showEditAsset: DashboardAsset?
     @Environment(\.dismiss) private var dismiss
-    
-    init(viewModel: HoldingsViewModel) {
+    private let router: HoldingsRouter
+
+    init(viewModel: HoldingsViewModel, router: HoldingsRouter) {
         _viewModel = StateObject(wrappedValue: viewModel)
+        self.router = router
     }
     
     var body: some View {
@@ -80,7 +82,7 @@ struct HoldingsView: View {
     let vm = AppContainer().makeHoldingsViewModel()
     let asset = DashboardAsset(code: "BTC", fullName: "Bitcoin", icon: .placeholder, currentPrice: 67000, previousPrice: 100_000, amount: 1.2)
     vm.assets = [asset]
-    return HoldingsView(viewModel: vm)
+    return HoldingsView(viewModel: vm, router: AppRouter().holdingsRouter)
         .environment(ThemeManager())
         .environment(AppContainer())
 }
