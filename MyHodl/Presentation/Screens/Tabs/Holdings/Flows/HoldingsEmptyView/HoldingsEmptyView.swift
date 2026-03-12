@@ -10,8 +10,12 @@ import SwiftUI
 // TODO: Add loc
 struct HoldingsEmptyView: View {
     @Environment(ThemeManager.self) private var themeManager
-    @Binding var showAddCoin: Bool
-    
+    private let router: HoldingsRouter
+
+    init(router: HoldingsRouter) {
+        self.router = router
+    }
+
     var body: some View {
         NavigationStack {
             PageView {
@@ -29,8 +33,8 @@ struct HoldingsEmptyView: View {
                                 .foregroundStyle(themeManager.currentTheme.textSecondary)
                                 .font(themeManager.currentTheme.subtitleFont)
                         }
-                        Button {
-                            showAddCoin = true
+                        Button { [weak router] in
+                            router?.presentAssetAdd()
                         } label: {
                             Text("Add asset")
                                 .font(.headline)
@@ -49,8 +53,8 @@ struct HoldingsEmptyView: View {
                 TitleView {
                     Text(L10n.holdings)
                 } right: {
-                    Button("Add asset", systemImage: "plus") {  // TODO: Add loc
-                        showAddCoin = true
+                    Button("Add asset", systemImage: "plus") { [weak router] in // TODO: Add loc
+                        router?.presentAssetAdd()
                     }
                     .foregroundStyle(.accent)
                 }
@@ -60,10 +64,6 @@ struct HoldingsEmptyView: View {
 }
 
 #Preview {
-    HoldingsEmptyView(showAddCoin: Binding(get: {
-        false
-    }, set: { _ in
-        
-    }))
-    .environment(ThemeManager())
+    HoldingsEmptyView(router: HoldingsRouter())
+        .environment(ThemeManager())
 }

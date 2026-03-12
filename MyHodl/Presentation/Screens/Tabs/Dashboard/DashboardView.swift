@@ -13,19 +13,18 @@ struct DashboardView: View {
     @Environment(AppContainer.self) private var appContainer
     @Environment(ThemeManager.self) private var themeManager
     @StateObject private var dayChangeTracker = DayChangeTracker()
-    @State private var showAddCoin: Bool = false
-    private let router: DashboardRouter
+    @StateObject private var router: DashboardRouter
 
     init(viewModel: DashboardViewModel, router: DashboardRouter, onShowHoldings: @escaping () -> Void) {
         _viewModel = StateObject(wrappedValue: viewModel)
-        self.router = router
+        _router = StateObject(wrappedValue: router)
         self.onShowHoldings = onShowHoldings
     }
     
     var body: some View {
         Group {
             if viewModel.isEmpty {
-                DashboardEmptyView(showAddCoin: $showAddCoin)
+                DashboardEmptyView(router: router)
             } else {
                 NavigationStack {
                     PageView {
@@ -49,7 +48,7 @@ struct DashboardView: View {
                             Text(L10n.dashboard)
                         } right: {
                             Button("", systemImage: "plus") {  // TODO: Add loc
-                                showAddCoin = true
+                                router.presentAssetAdd()
                             }
                             .foregroundStyle(.accent)
                         }
@@ -57,9 +56,16 @@ struct DashboardView: View {
                 }
             }
         }
-        .sheet(isPresented: $showAddCoin) {
-            AssetSelectView(viewModel: appContainer.makeAssetSelectViewModel())
-                .interactiveDismissDisabled()
+        .sheet(item: $router.sheet) { destination in
+            switch destination {
+            case .assetAdd:
+                if let assetEditingRouter = router.assetEditingRouter {
+                    AssetEditorScreen(screenType: .select,
+                                      router: assetEditingRouter)
+                        .interactiveDismissDisabled()
+                }
+            }
+
         }
     }
 }

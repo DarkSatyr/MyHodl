@@ -11,20 +11,18 @@ struct HoldingsView: View {
     @Environment(ThemeManager.self) private var themeManager
     @Environment(AppContainer.self) private var appContainer
     @StateObject private var viewModel: HoldingsViewModel
-    @State private var showAddAsset = false
-    @State private var showEditAsset: DashboardAsset?
     @Environment(\.dismiss) private var dismiss
-    private let router: HoldingsRouter
+    @StateObject private var router: HoldingsRouter
 
     init(viewModel: HoldingsViewModel, router: HoldingsRouter) {
         _viewModel = StateObject(wrappedValue: viewModel)
-        self.router = router
+        _router = StateObject(wrappedValue: router)
     }
     
     var body: some View {
         Group {
             if viewModel.isEmpty {
-                HoldingsEmptyView(showAddCoin: $showAddAsset)
+                HoldingsEmptyView(router: router)
             } else {
                 NavigationStack {
                     PageView {
@@ -46,8 +44,8 @@ struct HoldingsView: View {
                                         .listRowInsets(.vertical, 6)
                                         .listRowBackground(Color.clear)
                                         .listRowSeparator(.hidden)
-                                        .onTapGesture {
-                                            showEditAsset = asset
+                                        .onTapGesture { [weak router] in
+                                            router?.presentAssetEditing(asset)
                                         }
                                 }
                             }
@@ -58,8 +56,8 @@ struct HoldingsView: View {
                         TitleView {
                             Text(L10n.holdings)
                         } right: {
-                            Button("Add asset", systemImage: "plus") {  // TODO: Add loc
-                                showAddAsset = true
+                            Button("Add asset", systemImage: "plus") { // TODO: Add loc
+                                router.presentAssetAdd()
                             }
                             .foregroundStyle(.accent)
                         }
@@ -67,12 +65,23 @@ struct HoldingsView: View {
                 }
             }
         }
-        .sheet(isPresented: $showAddAsset) {
-            AssetSelectView(viewModel: appContainer.makeAssetSelectViewModel())
-                .interactiveDismissDisabled()
+        .sheet(item: $router.sheet) { destination in
+            switch destination {
+            case .assetAdd:
+                assetEditorScreen(.select)
+            case .assetEdit(let asset):
+                assetEditorScreen(.edit(asset))
+            }
         }
-        .sheet(item: $showEditAsset) { asset in
-            AssetEditorScreen(viewModel: appContainer.makeAssetEditorViewModel(mode: .edit(asset)))
+    }
+
+    @ViewBuilder
+    private func assetEditorScreen(_ screenType: AssetEditorScreen.ScreenType) -> some View {
+        if let assetEditingRouter = router.assetEditingRouter {
+            AssetEditorScreen(
+                screenType: screenType,
+                router: assetEditingRouter
+            )
             .interactiveDismissDisabled()
         }
     }

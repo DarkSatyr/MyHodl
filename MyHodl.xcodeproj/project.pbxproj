@@ -53,6 +53,7 @@
 		76DC65E92F62D89C00BE6F6A /* DashboardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DC65E82F62D89C00BE6F6A /* DashboardRouter.swift */; };
 		76DC65EC2F62D90C00BE6F6A /* HoldingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DC65EB2F62D90C00BE6F6A /* HoldingsRouter.swift */; };
 		76DC65F12F62DABE00BE6F6A /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DC65F02F62DABE00BE6F6A /* SettingsRouter.swift */; };
+		76DC65F52F62E96100BE6F6A /* AssetEditingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DC65F42F62E96100BE6F6A /* AssetEditingRouter.swift */; };
 		76E104F92EC1D8BC006C1E83 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 76E104F72EC1D8BC006C1E83 /* Localizable.strings */; };
 		76E104FB2EC1D914006C1E83 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 76E104FA2EC1D914006C1E83 /* swiftgen.yml */; };
 		76E105052EC1DF87006C1E83 /* LocalizationStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E105032EC1DF87006C1E83 /* LocalizationStrings.swift */; };
@@ -128,6 +129,7 @@
 		76DC65E82F62D89C00BE6F6A /* DashboardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardRouter.swift; sourceTree = "<group>"; };
 		76DC65EB2F62D90C00BE6F6A /* HoldingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoldingsRouter.swift; sourceTree = "<group>"; };
 		76DC65F02F62DABE00BE6F6A /* SettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
+		76DC65F42F62E96100BE6F6A /* AssetEditingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetEditingRouter.swift; sourceTree = "<group>"; };
 		76E104F82EC1D8BC006C1E83 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		76E104FA2EC1D914006C1E83 /* swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		76E104FC2EC1D98C006C1E83 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -467,7 +469,6 @@
 			children = (
 				767120A72EE8597800215ED7 /* AssetEditorView.swift */,
 				767120AA2EE859A000215ED7 /* AssetEditorViewModel.swift */,
-				7672B65C2F3FA568009C635F /* AssetEditorScreen.swift */,
 			);
 			path = AssetEditor;
 			sourceTree = "<group>";
@@ -475,8 +476,7 @@
 		7672B65A2F3F8F41009C635F /* Flows */ = {
 			isa = PBXGroup;
 			children = (
-				7672B65B2F3F91B2009C635F /* AssetSelect */,
-				7672B6592F3F8C18009C635F /* AssetEditor */,
+				76DC65F22F62E90300BE6F6A /* AssetEditing */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -547,6 +547,25 @@
 			path = Navigation;
 			sourceTree = "<group>";
 		};
+		76DC65F22F62E90300BE6F6A /* AssetEditing */ = {
+			isa = PBXGroup;
+			children = (
+				7672B65C2F3FA568009C635F /* AssetEditorScreen.swift */,
+				7672B65B2F3F91B2009C635F /* AssetSelect */,
+				7672B6592F3F8C18009C635F /* AssetEditor */,
+				76DC65F32F62E91F00BE6F6A /* Navigation */,
+			);
+			path = AssetEditing;
+			sourceTree = "<group>";
+		};
+		76DC65F32F62E91F00BE6F6A /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				76DC65F42F62E96100BE6F6A /* AssetEditingRouter.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 		76E104F42EC1D57E006C1E83 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -603,9 +622,9 @@
 			isa = PBXGroup;
 			children = (
 				76EB83652EC37D6300D92E67 /* HoldingsView.swift */,
-				76DC65EA2F62D8FA00BE6F6A /* Navigation */,
 				765332222ED71E54002FE36B /* ViewModel */,
 				769999332ECD02AC00F1C3AA /* Sections */,
+				76DC65EA2F62D8FA00BE6F6A /* Navigation */,
 				765332232ED71F4E002FE36B /* Flows */,
 			);
 			path = Holdings;
@@ -791,6 +810,7 @@
 				7653320E2ED70C7B002FE36B /* AssetSelectViewModel.swift in Sources */,
 				765CEBFE2F33D95C0015DB79 /* ChevronView.swift in Sources */,
 				765332292ED86F05002FE36B /* FetchCryptoAssetsInfoUseCase.swift in Sources */,
+				76DC65F52F62E96100BE6F6A /* AssetEditingRouter.swift in Sources */,
 				76EB83962ECCEC2200D92E67 /* DashboardAsset.swift in Sources */,
 				76601E932F32938600D12490 /* GlowSeparator.swift in Sources */,
 				76FCBA192F36334500C914F9 /* AssetsUseCases.swift in Sources */,

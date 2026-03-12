@@ -8,11 +8,14 @@
 import SwiftUI
 // TODO: Add loc
 struct DashboardEmptyView: View {
-    
-    @Binding var showAddCoin: Bool
     @Environment(ThemeManager.self) private var themeManager
     @Environment(AppContainer.self) private var appContainer
-    
+    private let router: DashboardRouter
+
+    init(router: DashboardRouter) {
+        self.router = router
+    }
+
     var body: some View {
         VStack(spacing: 20) {
             Image(.dashboardEmptyLogo)
@@ -30,7 +33,7 @@ struct DashboardEmptyView: View {
             }
             HStack {
                 GradientPillButton(title: "Add your first asset") {
-                    showAddCoin = true
+                    router.presentAssetAdd()
                 }
             }
             .padding(.horizontal, 50)
@@ -56,10 +59,6 @@ struct DashboardEmptyView: View {
 }
 
 #Preview {
-    DashboardEmptyView(showAddCoin: Binding(get: {
-        false
-    }, set: { _ in
-        
-    }))
-    .environment(ThemeManager())
+    DashboardEmptyView(router: DashboardRouter())
+        .environment(ThemeManager())
 }

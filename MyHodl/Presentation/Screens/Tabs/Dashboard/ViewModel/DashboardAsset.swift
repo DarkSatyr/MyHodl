@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct DashboardAsset: Identifiable {
+struct DashboardAsset: Identifiable, Hashable {
     let code: String
     let fullName: String
     let icon: ImageSource
@@ -29,6 +29,14 @@ struct DashboardAsset: Identifiable {
     var totalCurrent: Decimal? {
         guard let currentPrice else { return nil }
         return currentPrice * amount
+    }
+
+    static func == (lhs: DashboardAsset, rhs: DashboardAsset) -> Bool {
+        lhs.code == rhs.code
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(code)
     }
 }
 

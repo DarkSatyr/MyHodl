@@ -16,18 +16,12 @@ struct AssetEditorView: View {
     @State private var showDatePicker = false
     @State private var showDeleteAlert = false
     @FocusState private var isFocused: Bool
-    @Environment(\.dismiss) private var dismiss
-    
-    var onSave: () -> Void
-    var onDelete: (() -> Void)?
+    @StateObject private var router: AssetEditingRouter
     
     init(viewModel: AssetEditorViewModel,
-         onSave: @escaping () -> Void,
-         onDelete: (() -> Void)? = nil) {
-        
+         router: AssetEditingRouter) {
         _viewModel = StateObject(wrappedValue: viewModel)
-        self.onSave = onSave
-        self.onDelete = onDelete
+        _router = StateObject(wrappedValue: router)
     }
     
     var body: some View {
@@ -179,8 +173,8 @@ struct AssetEditorView: View {
                 Spacer()
             }
         }
-        .onChange(of: viewModel.saveEventID, { _, _ in onSave() })
-        .onChange(of: viewModel.deleteEventID, { _, _ in onDelete?() })
+        .onChange(of: viewModel.saveEventID, { [weak router] _, _ in router?.close() })
+        .onChange(of: viewModel.deleteEventID, { [weak router] _, _ in router?.close() })
         .sheet(isPresented: $showDatePicker) {
             NavigationStack {
                 CalendarView(title: "Select date",
@@ -250,6 +244,7 @@ struct FieldErrorRow: View {
     AssetEditorView(viewModel: AssetEditorViewModel(mode: .create(nil),
                                               getAssetUseCase: AssetsUseCases.GetAssetByCode(repo: AssetsRepositoryImpl(modelContainer: try! ModelContainer())),
                                               upsertAssetUseCase: AssetsUseCases.UpsertAsset(repo: AssetsRepositoryImpl(modelContainer: try! ModelContainer())),
-                                              deleteAssetUseCase: AssetsUseCases.Delete(repo: AssetsRepositoryImpl(modelContainer: try! ModelContainer()))), onSave: {})
+                                              deleteAssetUseCase: AssetsUseCases.Delete(repo: AssetsRepositoryImpl(modelContainer: try! ModelContainer()))),
+                    router: AssetEditingRouter {})
         .environment(ThemeManager())
 }

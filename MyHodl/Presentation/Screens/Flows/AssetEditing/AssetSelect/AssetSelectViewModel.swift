@@ -11,10 +11,6 @@ import Combine
 @MainActor
 final class AssetSelectViewModel: ObservableObject {
     
-    enum Route: Hashable {
-        case assetSelected(AssetID?)
-    }
-    
     struct SearchResult {
         let assets: [CryptoAssetInfo]
         let sectionName: String
@@ -22,7 +18,6 @@ final class AssetSelectViewModel: ObservableObject {
     
     @Published var searchedText = ""
     @Published var searchResult = SearchResult(assets: [], sectionName: "Popular assets") // TODO: Add loc
-    @Published var path = [Route]()
     private let fetchAssetsUseCase: FetchCryptoAssetsInfoUseCase
     
     init(fetchAssetsUseCase: FetchCryptoAssetsInfoUseCase) {
@@ -42,9 +37,5 @@ final class AssetSelectViewModel: ObservableObject {
             }
             .receive(on: RunLoop.main)
             .assign(to: &$searchResult)
-    }
-    
-    func showAddCoin(asset: AssetID?) {
-        path.append(.assetSelected(asset))
     }
 }
