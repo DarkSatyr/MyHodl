@@ -13,6 +13,8 @@ modern, modular iOS architecture for financial applications. The goal of
 the project is to demonstrate a scalable SwiftUI architecture while
 providing a useful cryptocurrency portfolio tracker.
 
+⭐ If you find this project useful, please consider giving it a star on GitHub.
+
 ------------------------------------------------------------------------
 
 ## Features
